@@ -14,3 +14,9 @@
 
 -El siguiente sitio fue selecionado por Home y estetica;
 -https://materialesnuciari.com.ar/porcelanatos-ilva/index.html?gclid=CjwKCAjw14uVBhBEEiwAaufYxw1v8GBvRZS9juUw8JlkjOywHu6qHlJPmgUtmvkVBMFxVxgDIK76sBoC_hsQAvD_BwE
+
+-el siguiente sitio fue seleccionado elegi por las estetica; 
+-https://www.nimat.com.ar/cja-18-pzscersan-lorenzo-33x33-rua-antideslizante-tostado
+
+-el siguiente sitio fue seleccionado por las foto y estetica;
+-https://www.familiabercomat.com/pisos-y-revestimientos/ceramicos-y-porcellanatos-porcelanatos/ceramicos-esmaltados/
