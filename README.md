@@ -23,3 +23,6 @@
 
 - **_El siguiente sitio fue seleccionado por el formato de registro_**
 -https://www.micarrefour.com.ar/?_ga=2.86760976.961112208.1655091714-2138584553.1655091714
+
+- **_El siguiente sitio fue seleccionado por el formato del Carrito de Compras_**
+-https://www.nimat.com.ar/ceramicas-y-porcellanatos
