@@ -6,7 +6,8 @@
 - Facundo Orcajo, 22 años, San Miguel. Soy estudiante de Desarrollo Web de la Fundación Formar.
 
 ## Descripcion
--
+-Les ofrecemos la mejor calidad en cerámicas para remodelar su hogar. Contamos con garantía y asesoramiento personalizado para que cada cliente disfrute de una completa experiencia de compra. Teniendo como compromiso con la comunidad trabajar bajo la premisa de entregar el mejor servicio,compuesto por buena atencion, calidad y buenos precios.
+-Apuntamos al comprador ocacional, maestro de obra, que necesitan refacionar un lugar espesifico, como por ejemplo; baños, comedores, patios, veredas etc.
 
 ## Sitios de referencia
 - **_El siguiente sitio fue selecionado por el detalle de producto_**
