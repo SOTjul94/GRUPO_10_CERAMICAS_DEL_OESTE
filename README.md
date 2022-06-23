@@ -27,3 +27,11 @@
 
 - **_El siguiente sitio fue seleccionado por el formato del Carrito de Compras_**
 -https://www.nimat.com.ar/ceramicas-y-porcellanatos
+
+
+## Wireframe
+- **_El siguiente link lleva al wireframe del carrito de compras formato pc_**
+https://wireframepro.mockflow.com/space/MQGZ8zwXNnb
+
+- **_El siguiente link lleva al wireframe del carrito de compras formato celular e ipad_**
+https://wireframepro.mockflow.com/space/M8BX6ItUPnb
