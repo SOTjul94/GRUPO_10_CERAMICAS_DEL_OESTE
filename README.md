@@ -28,15 +28,25 @@
 - **_El siguiente sitio fue seleccionado por el formato del Carrito de Compras_**
 -https://www.nimat.com.ar/ceramicas-y-porcellanatos
 
+## Diseño
+- **_Colores_**
+https://color.adobe.com/es/My-Color-Theme-color-theme-20229273/
+- **_Tipografía_**
+https://fonts.google.com/specimen/Manrope?preview.text=Casi%20antes%20de%20que%20nos%20di%C3%A9ramos%20cuenta,%20hab%C3%ADamos%20dejado%20el%20suelo.&preview.text_type=custom
+- **_Logo_**
+file:///C:/Users/Facu/Desktop/logoDelGrupo1.htm
+
 ## Wireframes
 - **_Wireframe de Detalle de producto_**
 -https://wireframepro.mockflow.com/space/MqmEPleqOnb
 - **_Wireframe de Login_**
 -https://wireframepro.mockflow.com/space/MeIA5AXcAh
 
-## Wireframe
 - **_El siguiente link lleva al wireframe del carrito de compras formato pc_**
 https://wireframepro.mockflow.com/space/MQGZ8zwXNnb
 
 - **_El siguiente link lleva al wireframe del carrito de compras formato celular e ipad_**
 https://wireframepro.mockflow.com/space/M8BX6ItUPnb
+
+- **_El siguiente link lleva al wireframe del formulario de registro en 3 formatos_**
+https://wireframepro.mockflow.com/#/space/MY06yVSZK
