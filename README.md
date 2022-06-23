@@ -50,3 +50,6 @@ https://wireframepro.mockflow.com/space/M8BX6ItUPnb
 
 - **_El siguiente link lleva al wireframe del formulario de registro en 3 formatos_**
 https://wireframepro.mockflow.com/#/space/MY06yVSZK
+
+- **_El siguiente link lleva al wireframe del home en 3 formatos_**
+https://wireframepro.mockflow.com/space/MsPfEO3dMnb
