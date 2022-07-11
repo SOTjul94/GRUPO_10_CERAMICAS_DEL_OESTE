@@ -5,9 +5,9 @@
 - Abril Nuñez, 18 años, San Miguel. Soy estudiante de Desarrollo Web de la Fundación Formar.
 - Facundo Orcajo, 22 años, San Miguel. Soy estudiante de Desarrollo Web de la Fundación Formar.
 
-## Descripcion
--Les ofrecemos la mejor calidad en cerámicas para remodelar su hogar. Contamos con garantía y asesoramiento personalizado para que cada cliente disfrute de una completa experiencia de compra. Teniendo como compromiso con la comunidad trabajar bajo la premisa de entregar el mejor servicio,compuesto por buena atencion, calidad y buenos precios.
--Apuntamos al comprador ocacional, maestro de obra, que necesitan refacionar un lugar espesifico, como por ejemplo; baños, comedores, patios, veredas etc.
+## Descripción
+- Somos un grupo de desarrolladores que elaboramos  ofrecer a los clientes con nuestro E-commerce y con la mejor calidad en cerámicas para remodelar su hogar. Contamos con garantía y asesoramiento personalizado para que cada cliente disfrute de una completa experiencia de compra. Teniendo como compromiso con la comunidad trabajar bajo la premisa de entregar el mejor servicio, compuesto por buena atencion, calidad y buenos precios.
+- Apuntamos al comprador ocasional, maestro de obra, que necesitan refaccionar un lugar específico, como por ejemplo; baños, comedores, patios, veredas etc.
 
 ## Sitios de referencia
 - **_El siguiente sitio fue selecionado por el detalle de producto_**
