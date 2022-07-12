@@ -1,0 +1,23 @@
+{
+  "name": "grupo_10_ceramicas_del_oeste",
+  "version": "1.0.0",
+  "description": "- Uriel Aguirre. 18 años, Lanus. Soy estudiante de Desarrollo Web de la Fundación Formar.\r - Leonardo Luna,28 años,san miguel.soy estudiante de Desarrollo  web de la Fundacion formar.\r - Abril Nuñez, 18 años, San Miguel. Soy estudiante de Desarrollo Web de la Fundación Formar.\r - Facundo Orcajo, 22 años, San Miguel. Soy estudiante de Desarrollo Web de la Fundación Formar.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SOTjul94/GRUPO_10_CERAMICAS_DEL_OESTE.git"
+  },
+  "keywords": [],
+  "author": "Leonardo luna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SOTjul94/GRUPO_10_CERAMICAS_DEL_OESTE/issues"
+  },
+  "homepage": "https://github.com/SOTjul94/GRUPO_10_CERAMICAS_DEL_OESTE#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

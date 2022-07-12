@@ -28,7 +28,7 @@
 - **_El siguiente sitio fue seleccionado por el formato del Carrito de Compras_**
 -https://www.nimat.com.ar/ceramicas-y-porcellanatos
 
-## Diseño
+## Diseño 
 - **_Colores_**
 https://color.adobe.com/es/My-Color-Theme-color-theme-20229273/
 - **_Tipografía_**
