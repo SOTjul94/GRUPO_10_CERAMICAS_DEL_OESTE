@@ -53,3 +53,7 @@ https://wireframepro.mockflow.com/#/space/MY06yVSZK
 
 - **_El siguiente link lleva al wireframe del home en 3 formatos_**
 https://wireframepro.mockflow.com/space/MsPfEO3dMnb
+
+
+## Tablero de trabajo.
+- **_https://trello.com/b/ZfuQZSxI/grupo10ceramicasdeloeste_**
