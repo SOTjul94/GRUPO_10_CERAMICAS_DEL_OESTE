@@ -1,0 +1,29 @@
+body.index{
+    background-image: urlimagen;
+}
+
+
+/*header*/
+.index__header{
+}
+
+.index__header__logo__img{
+
+}
+.index__header__menu ul li{
+background-color: var(--colorGris);
+}
+ .index__header__menu ul li a{
+    text-transform:uppercase ;
+ }
+
+
+
+
+
+/*main */
+
+
+
+
+/*footer*/
