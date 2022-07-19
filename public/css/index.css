@@ -1,29 +1,71 @@
-body.index{
-    background-image: urlimagen;
-}
 
-
-/*header*/
 .index__header{
+  text-align: center;
+  margin-left: 150px;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: blue;
+   text-align: center;
+    
+}
+.index__header__logo{
+    order: 1;
+    text-align: center;
+    width: 5%;
+}
+.index__button i{
+   
+    margin-left: 150px;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;}
+
+.index__header__menu{
+    
+    text-transform: uppercase;
+    background-color: var(--colorgris) ;
+    text-align: center;
+    margin: 20px 0;
+    padding: 5px;
+
+
+}
+.index__header__menu ul li {
+    background-color: var(--colorgris) ;
+    text-align: center;
+    margin: 2px 0;
+    padding: 5px;
+
+
+}
+.index__header__menu ul li a{
+
+    text-transform: uppercase;
+    
+}
+.index__main__section{
+border: #fff;
+}
+.index__main__section__article {
+
+
+    text-align: center;
 }
 
-.index__header__logo__img{
+
+.index__main__section__article__photo{
+
+   text-align: center;
+
+
 
 }
-.index__header__menu ul li{
-background-color: var(--colorGris);
+.index__footer{
+
+    text-align: center;
 }
- .index__header__menu ul li a{
-    text-transform:uppercase ;
- }
-
-
-
-
-
-/*main */
-
-
-
-
-/*footer*/
