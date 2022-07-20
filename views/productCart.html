@@ -1,14 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="/css/productCart.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/5eea6a578f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap" rel="stylesheet">
+
     <title>Carrito de compras</title>
 </head>
-<body>
-    <h1>carrito de compras</h1>
-    
+
+<body class="productCart-body">
+
+    <header class="productCart__header">
+        <section class="productCart__heater__section">
+            <div id="productCart__header__div-img">
+                <img class="header__logo1" src="/img/Cerámicas_img2.png" alt="logo">
+                <img class="header__logo2" src="/img/Cerámicas_img.png" alt="logo">
+            </div>
+            <h1 class="header__h1">Céramicas Del Oeste</h1>
+            <div class="productCart__header__div-iconRedes">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="productCart__header__div-Location">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+
+            <div productCart__header__div-busqueda>
+                <form action="">
+                    <input class="productCart__header__div-busqueda-input" type="text" placeholder="Buscar">
+                    <button type="submit"><i class="fa-solid fa-search"></i></button>
+                </form>
+            </div>
+            <div>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </section>
+        <section class="productCart__heater__section2">
+            <nav>
+                <ul>
+
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+        <h1 class="productCart__main__h1">Mi Carrito</h1>
+        <section class="productCart__main__section">
+            <article class="productCart__main__article">
+                <div class="productCart__main__div1">
+                    <img src="/img/ceramica copacabana.jpeg" alt="Cerámica Copacabana">
+
+                    <h2>Cja 10 pzs céramica SCOP Copacabana 45,3x45,3</h2>
+                </div>
+
+                <div class="productCart__main__div2">
+                    <form action="">
+                        <label for="quantity">Cantidad</label>
+                        <input type="number" name="quantity" id="Cantidad">
+                    </form>
+                    <p>Precio: $2.800</p>
+                    <p>Total: $2.800</p>
+                    <form action="" method="">
+                        <button type="reset">Eliminar</button>
+                </div>
+
+                </form>
+            </article>
+            <article class="productCart__main__article">
+                <div class="productCart__main__div1">
+                    <img src="/img/ceramica ferrazzano.jpeg" alt="Cerámica ferrazzano">
+
+                    <h2>Cja 18 pzs céramica ferrazzano 36x36 Ceibo Nat Brillante</h2>
+                </div>
+
+                <div class="productCart__main__div2">
+                    <form action="">
+                        <label for="quantity">Cantidad</label>
+                        <input type="number" name="quantity" id="Cantidad">
+                    </form>
+                    <p>Precio: $2.980</p>
+                    <p>Total: $2.980</p>
+                    <form action="" method="">
+                        <button type="reset">Eliminar</button>
+                </div>
+                </form>
+            </article>
+        </section>
+        <section class="productCart__main__section-pago">
+            <div>
+                <p>Subtotal:</p>
+                <p>$5.780</p>
+            </div>
+            <div>
+                <p>Envío:</p>
+                <form action="" method="get">
+                    <label for="envio"></label>
+                    <select name="envio" id="envio">
+                        <option value="">Retiro en Sucursal</option>
+                        <option value="">Retiro en Correo Argentino</option>
+                        <option value="">Envío a domicilio</option>
+                    </select>
+                </form>
+            </div>
+            <div>
+                <p>Total:</p>
+                <p>$5.780</p>
+            </div>
+            <div>
+                <p>Forma de pago:</p>
+                <form action="" method="get">
+                    <label for="pago"></label>
+                    <select name="pago" id="pago">
+                        <option value="">Efectivo</option>
+                        <option value="">Tarjeta de crédito</option>
+                        <option value="">Tarjeta de débito</option>
+                        <option value="">Mercado pago</option>
+                    </select>
+            </div>
+        </section>
+        <section class="productCart__main__section-end">
+        <button type="submit">Finalizar compra</button>
+        <button type="reset">Cancelar</button>
+    </section>
+    </main>
+    <footer> </footer>
+
 </body>
+
 </html>
