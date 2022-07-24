@@ -140,6 +140,7 @@ width: 30px;
     align-items: center
 
 }
+
 .productCart__main__section-end {
     display: flex;
     flex-direction: column;
@@ -148,7 +149,7 @@ width: 30px;
 }
 
 .productCart__main__section-end button {
-    width: 40%;
+    width: 70%;
     margin-bottom: 5px;
     background-color: #69E0C9;
   border: solid 0.5px #fff;
@@ -241,16 +242,19 @@ width: 30px;
       margin-left: 12px;
     }
     
-    @media (max-width:425px) {
+    @media (min-width:320px) {
       .productCart__header__div-iconRedes{
         display: none;
       }
       .productCart__header__div-Location{
   display: none;
       }
+      .productCart__heater__section-pago select {
+        width: 30px
+      }
     }
 
-@media (max-width: 600px) {
+@media (min-width: 460px) {
     /*BODY*/
     .productCart__body {
         font-size: 10px;
