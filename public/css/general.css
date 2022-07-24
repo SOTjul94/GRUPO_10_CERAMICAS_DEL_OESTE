@@ -1,30 +1,15 @@
-@import './index.css';
+
+/*Aca va a ir lo general, tipo de letra, colores, etc. Y cuando se decida el Header y el Footer.*/
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap');
 
 :root{
-    --colorRojo :black;
-    --colorGris : black;
+    --colorVerdeAlto: #2E6157;
+    --colorVerdeMedio: #51AD9B;
+    --colorVerdeCasiMedio: #69E0C9;
+    --colorVerdeBajo: #C0FAEE;
+    --colorGris: #626363;
+    --colorRojo: red;
+    --colorBlanco: #fff;
+    --colorNegro: black;
+    --tipografiaGeneral: 'ABeeZee';
 }
-
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-a {
-    text-decoration: none;
-    color: #fff;
-}
-
-li {
-    list-style: none;
-}
-
-ol, ul {
-    padding: 0;
-}
-

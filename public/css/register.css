@@ -1,0 +1,129 @@
+@import './headerRegister.css';
+@import './general.css';
+
+
+body{
+    font-family: var(--tipografiaGeneral);
+}
+h1{
+    text-align: center;
+}
+.registro__header--volver I{
+    padding: 12px;
+    color: var(--colorRojo);
+}
+.form__box{
+    margin-bottom: 30px;
+}
+.form__label{
+    width: 100%;
+    margin-top: 10px;
+}
+.form__input{
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-bottom: 1px solid var(--colorGris);
+}
+.foto1{
+    display: flex;
+    height: 35px;
+    padding-left: 80px;
+    padding-bottom: 2px;
+}
+.foto2{
+    display: flex;
+    height: 28px;
+    padding-left: 61px;
+    margin-bottom: 5px;
+}
+
+.form__box--caja{
+    display: block;
+    text-align: right;
+    background-color: var(--colorVerdeCasiMedio);
+    line-height: 45px;
+    background: linear-gradient(360deg, var(--colorVerdeCasiMedio), var(--colorVerdeBajo), var(--colorBlanco));
+    border: none;
+}
+.form__box--button{
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 10px;
+    background-color: var(--colorGris);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+}
+.registro__main{
+    padding: 8px;
+}
+
+
+/*Tablet*/
+@media (min-width:768px) {
+    h1{
+        text-align: center;
+    }
+    .foto1{
+        display: flex;
+        height: 40px;
+        padding-left: 320px;
+        padding-bottom: 2px;
+    }
+    .foto2{
+        display: flex;
+        height: 33px;
+        padding-left: 300px;
+        margin-bottom: 5px;
+    }
+    .form__box--caja{
+        display: block;
+        width: 100%;
+        text-align: right;
+        background-color: var(--colorVerdeCasiMedio);
+        line-height: 45px;
+    }
+    .form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .form__box{
+        width: 45%;
+    }
+
+/*Desktop*/
+@media (min-width:1440px) {
+    h1{
+        text-align: center;
+    }
+    .foto1{
+        display: flex;
+        height: 37px;
+        padding-left: 650px;
+        padding-bottom: 2px;
+    }
+    .foto2{
+        display: flex;
+        height: 30px;
+        padding-left: 630px;
+        margin-bottom: 5px;
+    }
+    .form__box--caja{
+        display: block;
+        width: 100%;
+        text-align: right;
+        background-color: var(--colorVerdeCasiMedio);
+        line-height: 45px;
+    }
+    .form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .form__box{
+        width: 45%;
+    }    
+}
+}
