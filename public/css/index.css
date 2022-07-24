@@ -1,71 +1,274 @@
 
-.index__header{
-  text-align: center;
-  margin-left: 150px;
-    display: inline-block;
-    border-radius: 2px;
-    background-color: blue;
-   text-align: center;
+/*.index__body{
+    background-image: url('/images/ceramicacerro.jpg');  
+}*/
+
+.index__header_inscripciones{
+    justify-content: space-around;
+    text-decoration: none;
+    align-items:center;
+    text-align:end;
+    margin: 1px ;
+    padding: 8px 0;
+     text-transform:capitalize;
+    position: relative;
+     margin-top: 2px;
+     align-items:flex-end;
+    justify-content: space-around;
+    @media( min-width: 768px;)
+    height: 50%;
+    font-size: 18px; 
     
+
 }
-.index__header__logo{
-    order: 1;
-    text-align: center;
-    width: 5%;
+
+
+.index__header{
+    
+    
+    background-image: url('/images/ceramicacerro.jpg');
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+    justify-content: space-around;
+    align-items: center;
+
 }
+
+.foto2{
+   
+    display: flex;
+    height: 45px;
+    padding-left: 71px;
+    margin-bottom: -9px;
+}
+
+.foto1{
+    height: 58px;
+    padding-left: 58px;
+    padding-bottom: 15px;
+    border: 10;
+    margin-bottom:-9px ;
+}
+   
+
+
+
 .index__button i{
    
-    margin-left: 150px;
-    display: inline-block;
-    border-radius: 2px;
-    background-color: blue;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    font-size: 24px;
-    color: #fff;}
+    width: 250px;
+    height: 250px;
+    font-size: 1px;
+    color: var(--colorGris);
+}
 
 .index__header__menu{
     
+    background-image: url('/images/ceramicacerro.jpg');
     text-transform: uppercase;
     background-color: var(--colorgris) ;
     text-align: center;
     margin: 20px 0;
     padding: 5px;
+    box-shadow: 2px 02px 10px rgb(100, 100, 100);
+    width: 45%;
 
 
 }
-.index__header__menu ul li {
-    background-color: var(--colorgris) ;
-    text-align: center;
-    margin: 2px 0;
-    padding: 5px;
 
-
-}
-.index__header__menu ul li a{
-
-    text-transform: uppercase;
+.index__header__menu_nav{
     
+    background-color: rgb(47, 255, 238) ;
+    
+    text-decoration: none;
+    text-align: center;
+    margin: 1px 0;
+    padding: 8px 0;
+     text-transform:capitalize;
+    position: relative;
+     margin-top: 2px;
+     justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+    
+    
+    @media( min-width: 768px;)
+    height: 50%;
+    font-size: 18px; 
+    
+    background-color: antiquewhite;
+    box-shadow: 2px 02px 10px rgb(100, 100, 100);
+    width: 99,1%;
+    flex-direction: row;
 }
+
+
+
+
+.index__header__menu ul li{
+   
+    background-color: var(--colorGris);
+    text-align: center;
+    margin: 1px 0;
+    padding: 8px 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+    text-decoration: none;
+
+}
+
+.index__header__menu ul li a{
+  text-transform:capitalize;
+  @media( min-width: 768px;)
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: solid 1px black;  
+  text-decoration: none;  
+  text-align: center;
+}
+
+.index__main{
+   background-color: rgb(47, 255, 238) ;
+   width: 100%;
+   margin-top: 2px;
+   text-decoration: none;
+   padding: 0;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   border: solid 1px black;
+   text-align: center;
+   background-color: antiquewhite;
+  outline-color:auto;
+  
+
+}
+
+
 .index__main__section{
-border: #fff;
+background-color: rgb(47, 255, 238) ;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+border: solid px black;
+width: 100%;
+padding: 0px;
+font-size: 18px;
+text-align: center;
+background-color: antiquewhite;
 }
 .index__main__section__article {
-
-
-    text-align: center;
+ width: 100%;
+ margin: 1px ;
+ box-shadow: 1px 0px 10px rgb(100, 100, 100);
+ width: 99,1%;
+    
 }
 
 
 .index__main__section__article__photo{
-
+    background-color: rgb(47, 255, 238) ;
    text-align: center;
+   margin-top: 1px;
+   display:inline;
+   width: 10PX;
+   align-items: center;
+   align-items:flex-start;
+background-color: antiquewhite;
+box-shadow: 1px 0px 10px rgb(100, 100, 100);
+    width: 99,1%;
+}
+
+
+.index__p{
+    font-family: "Abezee", sans-serif;
+    align-items:center;
+    border: solid 1px black;
+    text-align:center;
+    background-color: antiquewhite;
+     width: 99,1%;
+    border: solid px black;
+    flex-direction:row;
+    margin-top: 1px;
+    padding: 0;
+    box-shadow: 2px 02px 10px rgb(100, 100, 100);
+    width: 99,1%;
+
+     
+}
+
+.index__footer{
+
+    background-color: rgb(47, 255, 238) ;
+    text-align:center;
+    margin-top: 2px;
+    padding: 1px;
+    
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: row;
+     width: 100%;
+    font-family: "Abezee", sans-serif;
+    align-items:flex-start;
+    border: solid 1px black;
+    text-align:center;
+    
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    box-shadow: 1px 0px 10px rgb(100, 100, 100);
+    width: 99,1%;
+    
+
+
 
 
 
 }
-.index__footer{
+.footer_section_h3{
+    margin-bottom: 2%;
+    text-align:center;
+    margin-top: -5px;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 0px black;
+    display: flex;
+    background-color: rgb(47, 255, 238) ;
+    width: 80%;
+    background-color: antiquewhite;
 
-    text-align: center;
+      width: 20%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        gap: 100px;
+        box-shadow: 1px 0px 10px rgb(100, 100, 100);
+        width: 99,1%;
+       
+
+
+
+
+}
+.footer_section_p{
+    margin-top: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 1px 0px 10px rgb(100, 100, 100);
+    width: 99,1%;
+}
+.ultimo__p{
+
+    display: flex;
+    box-shadow: 1px 0px 10px rgb(100, 100, 100);
+    width: 99,1%;
+       
 }

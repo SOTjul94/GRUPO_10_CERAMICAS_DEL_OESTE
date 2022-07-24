@@ -1,7 +1,30 @@
+@import './index.css';
 
-/*Aca va a ir lo general, tipo de letra, colores, etc. Y cuando se decida el Header y el Footer.
+:root{
+    --colorRojo :black;
+    --colorGris : black;
+}
 
 
--------MAPEANDO----------
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
 
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+li {
+    list-style: none;
+}
+
+ol, ul {
+    padding: 0;
+}
 
