@@ -1,3 +1,5 @@
+
+
 .productCart__heater__section {
   background-color: white;
   display: flex;
@@ -29,16 +31,13 @@
 }
 
 .productCart__header__div-iconRedes {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 8%;
+  display: none;
+  
 }
 
 .productCart__header__div-Location {
-  display: flex;
-  width: 5%;
-  color: red;
+  display: none;
+  
 }
 .productCart__header__div-busqueda-input {
   font-size: 14px;
@@ -164,6 +163,10 @@ main .buttom_metros__cubrir__carrito{
   border-radius: 8px;
   font-weight: bold;
 }
+main .buttom_metros__cubrir__carrito a{
+  text-decoration: none;
+  color: white;
+}
 main .calcular__cajas{
   background-color: #69E0C9;;
   border: none;
@@ -276,7 +279,9 @@ main input[type="radio"]:checked ~ label {
   }
 main .buttom_metros__cubrir{
 color: black;
+
   }
+  
 
 /*FOOTER*/
 .footer__padre{
@@ -359,12 +364,12 @@ color: black;
     margin-left: 12px;
   }
   
-  @media (max-width:425px) {
+  @media (min-width:460px) {
     .productCart__header__div-iconRedes{
-      display: none;
+      display: flex;
     }
     .productCart__header__div-Location{
-display: none;
+display: flex;
     }
   }
   
@@ -375,7 +380,17 @@ display: none;
 
  
   @media (min-width:768px){
-    
+    .productCart__header__div-Location {
+      display: flex;
+      width: 5%;
+      color: red;
+    }
+    .productCart__header__div-iconRedes {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 8%;
+    }
     .detail__main {
       padding: 20px;
   }
