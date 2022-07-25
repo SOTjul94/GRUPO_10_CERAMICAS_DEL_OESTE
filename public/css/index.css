@@ -1,22 +1,47 @@
+@import '/css/general.css';
 
-/*.index__body{
-    background-image: url('/images/ceramicacerro.jpg');  
-}*/
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
 
-productCart__heater__section {
+.index__body{
+  font-family: var(--tipografiaGeneral);
+}
+.index__header__menu--nav  {
+    text-decoration:none;
+    background-color: var(--colorCrema) ;
+    border: solid 1px black;
+    align-items: center;
+    background-color: antiquewhite;
+    font-family: "Abezee", sans-serif;
+    align-items:center;
+    border: solid 1px black;
+    text-align:center;
+    background-color: antiquewhite;
+     width: 99,1%;
+    border: solid px black;
+    flex-direction:row;
+    margin-top: 1px;
+    padding: 0;
+    box-shadow: 2px 02px 10px rgb(100, 100, 100);
+    width: 50,1%;
+}
+
+.productCart__heater__section { 
     background-color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     border: solid 1px black;}
-
 .header__logo1 {
     display: flex;
     height: 30px;
     padding-left: 6px;
 }
-
 .header__logo2 {
     display: flex;
     height: 23px;
@@ -114,7 +139,7 @@ productCart__heater__section {
     border: solid 1px black;
 }
 
-@media (max-width:425px) {
+@media (min-width:425px) {
     .productCart__header__div-iconRedes{
       display: none;
     }
@@ -122,7 +147,7 @@ productCart__heater__section {
 display: none;
     }
   }
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   /*HEADER*/
   .productCart__header__div-iconRedes {
       display: none;
@@ -199,7 +224,7 @@ box-shadow: 1px 0px 10px rgb(100, 100, 100);
     margin-top: 1px;
     padding: 0;
     box-shadow: 2px 02px 10px rgb(100, 100, 100);
-    width: 99,1%;}
+    width: 50,1%;}
 .ultimo__p{
  display: flex;
 box-shadow: 1px 0px 10px rgb(100, 100, 100);
