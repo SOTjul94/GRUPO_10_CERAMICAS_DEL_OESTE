@@ -1,15 +1,17 @@
+@import "./general.css";
+
 .productCart-body {
-    font-family: "Abezee", sans-serif;
+    font-family: var(--tipografiaGeneral);
     background-color: #C0FAEE;
     
 }
 .productCart__heater__section {
-    background-color: #fff;
+    background-color: var(--colorBlanco);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border: solid 1px black;
+    border: solid 1px var(--colorNegro);
 }
 
 .header__logo1 {
@@ -28,7 +30,7 @@
 .header__h1 {
     
     font-size: 18px;
-    color: #2E6157;
+    color: var(--colorVerdeAlto);
     width: 20%;
 
 }
@@ -43,7 +45,7 @@
 .productCart__header__div-Location {
     display: flex;
     width: 5%;
-    color: red;
+    color: var(--colorRojo);
 }
 .productCart__header__div-busqueda-input {
     font-size: 14px;
@@ -51,12 +53,12 @@
 }
 
 .productCart__heater__section2 {
-    background-color: #69E0C9;
+    background-color: var(--colorVerdeCasiMedio);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border: solid 1px black;
+    border: solid 1px var(--colorNegro);
 }
 
 /*MAIN*/
@@ -73,16 +75,16 @@ main {
 }
 
 .productCart__main__h1 {
-    font-size: "Abezee", sans-serif;
+    font-size: var(--tipografiaGeneral);
     font-size: 20px;
 }
 .productCart__main__article {
     width: 100%;
     flex-direction: column;
     display: flex;
-    border: solid 1px black;
+    border: solid 1px var(--colorNegro);
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: var(--colorBlanco);
 }
 .productCart__main__article img {
     height: 100px;
@@ -91,17 +93,17 @@ main {
 
 }
 .productCart__main__article h2 {
-    font-size: "Abezee", sans-serif;
+    font-size: var(--tipografiaGeneral);
     font-size: 14px;
 }
 .productCart__main__article p {
-    font-size: "Abezee", sans-serif;
+    font-size: var(--tipografiaGeneral);
     font-size: 14px;
 }
 .productCart__main__article button {
-    background-color: #69E0C9;
+    background-color: var(--colorVerdeCasiMedio);
   border: none;
-  color: #fff;
+  color: var(--colorBlanco);
   padding: 12px 30px;
   text-align: center;
   text-decoration: none;
@@ -128,10 +130,10 @@ width: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: solid 1px black;
+    border: solid 1px var(--colorNegro);
     width: 60%;
     margin-left: 20%;
-    background-color: #fff;
+    background-color: var(--colorBlanco);
 }
 .productCart__main__section-pago div {
     display: flex;
@@ -151,9 +153,9 @@ width: 30px;
 .productCart__main__section-end button {
     width: 70%;
     margin-bottom: 5px;
-    background-color: #69E0C9;
-  border: solid 0.5px #fff;
-  color: #fff;
+    background-color: var(--colorVerdeCasiMedio);
+  border: solid 0.5px var(--colorBlanco);
+  color: var(--colorBlanco);
   padding: 12px 30px;
   text-align: center;
   text-decoration: none;
@@ -163,10 +165,10 @@ width: 30px;
     
 }
 .footer__padre{
-    border: 1px solid black;
+    border: 1px solid var(--colorNegro);
   }
     .productCart__footer__section {
-      background-color: white;
+      background-color: var(--colorBlanco);
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -193,7 +195,7 @@ width: 30px;
     .footer__h1 {
       
       font-size: 18px;
-      color: #2E6157;
+      color: vat(--colorVerdeAlto);
       width: 20%;
     
     }
@@ -208,20 +210,20 @@ width: 30px;
     .productCart__footer__div-Location {
       display: flex;
       width: 5%;
-      color: red;
+      color: var(--colorRojo);
     }
     .productCart__footer__div-busqueda-input {
       font-size: 14px;
-      width: 100px;;
+      width: 100px;
     }
     
     .productCart__footer__section2 {
-      background-color: #69E0C9;
+      background-color: var(--colorVerdeCasiMedio);
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
-      border: solid 1px black;
+      border: solid 1px var(--colorNegro);
     }
     .footer__3{
       margin-left: 12px;
