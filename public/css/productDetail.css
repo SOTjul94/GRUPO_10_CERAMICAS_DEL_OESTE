@@ -1,3 +1,4 @@
+@import  './general.css';
 body{
   font-family: 'ABeeZee', sans-serif;
 }
@@ -10,6 +11,7 @@ body{
   align-items: center;
   border: solid 1px black;
 }
+
 
 .header__logo1 {
   display: flex;
