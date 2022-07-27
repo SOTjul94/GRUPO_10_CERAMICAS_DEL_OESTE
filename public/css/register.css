@@ -68,13 +68,13 @@ h1{
     .foto1{
         display: flex;
         height: 40px;
-        padding-left: 320px;
+        padding-left: 41%;
         padding-bottom: 2px;
     }
     .foto2{
         display: flex;
         height: 33px;
-        padding-left: 300px;
+        padding-left: 38.5%;
         margin-bottom: 5px;
     }
     .form__box--caja{
@@ -94,20 +94,20 @@ h1{
     }
 
 /*Desktop*/
-@media (min-width:1440px) {
+@media (min-width:1024px) {
     h1{
         text-align: center;
     }
     .foto1{
         display: flex;
         height: 37px;
-        padding-left: 650px;
+        padding-left: 45%;
         padding-bottom: 2px;
     }
     .foto2{
         display: flex;
         height: 30px;
-        padding-left: 630px;
+        padding-left: 44%;
         margin-bottom: 5px;
     }
     .form__box--caja{
