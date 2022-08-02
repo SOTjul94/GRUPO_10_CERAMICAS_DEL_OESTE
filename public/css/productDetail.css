@@ -2,7 +2,13 @@
 body{
   font-family: 'ABeeZee', sans-serif;
 }
-
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
 .productCart__heater__section {
   background-color: white;
   display: flex;
@@ -11,7 +17,20 @@ body{
   align-items: center;
   border: solid 1px black;
 }
-
+.index__header__menu--nav ul{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+.productCart__heater__section2{
+  text-align: center;
+}
+.productCart__heater__section2{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 
 .header__logo1 {
   display: flex;

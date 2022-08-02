@@ -1,23 +1,62 @@
 @import  './general.css';
 /**/
+li{
+  text-decoration: none;
+}
+a{
+  color: black;
+}
 body{
   font-family: 'ABeeZee', sans-serif;
 }
 *{
   margin: 0;
   padding: 0;
-  border-radius: 5px;
   box-sizing: border-box;
 }
 body{
-  height: 100vh;
-  display: flex;
   align-items: center;
-  text-align: center;
   justify-content: center;
   background-size: cover;
   background-position: center;
-  background: linear-gradient(180deg, #69E0C9, #c0faee, #fff);
+}
+.index__header__menu--nav{
+  background-color: #69E0C9;
+  border: solid 1px black;
+}
+.header__logo1 {
+  display: flex;
+  height: 30px;
+  padding-left: 6px;
+}
+
+.header__logo2 {
+  display: flex;
+  height: 23px;
+  padding-left: 0px;
+  margin-bottom: 5px;
+}
+
+.header__h1 {
+  
+  font-size: 18px;
+  color: #2E6157;
+  width: 20%;
+
+}
+
+.productCart__header__div-iconRedes {
+  display: none;
+  
+}
+
+.productCart__header__div-Location {
+  display: none;
+  
+}
+.productCart__header__div-busqueda-input {
+  font-size: 14px;
+  width: 100px;;
 }
 .registro__header--volver i{
   margin-left: 0px;
@@ -37,18 +76,17 @@ body{
 }
 
 .container{
-  border-radius: 10px;
   border: 1px solid silver;
   position: relative;
-  width: 400px;
   background: white;
   padding: 60px 40px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
-header{
-  font-size: 32px;
-  
-  
-}
+
 .input-field, form .button{
   margin: 25px 0;
   position: relative;
@@ -178,11 +216,152 @@ form .button{
   color: #3498db;
   text-decoration: none;
 }
+.footer__padre{
+  border: 1px solid black;
+}
+  .productCart__footer__section {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+   
+     
+  }
+  
 
-@media (min-width:400px){
-.body__fondo{
-  background-color: linear-gradient(180deg, #69E0C9, #c0faee, #fff);
+
+  .footer__logo1 {
+    display: flex;
+    height: 30px;
+    padding-left: 6px;
+  }
+  
+  .footer__logo2 {
+    display: flex;
+    height: 23px;
+    padding-left: 0px;
+    margin-bottom: 5px;
+  }
+  
+  .footer__h1 {
+    
+    font-size: 18px;
+    color: #2E6157;
+    width: 20%;
+  
+  }
+  .productCart__heater__section{
+display: flex;
+justify-content: space-between;
+margin-top: 2%;
+  }
+  .productCart__footer__section{
+    margin-top: 1%;
+    margin-bottom: 2%;
+  }
+  
+  .productCart__footer__div-iconRedes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 8%;
+  }
+  
+  .productCart__footer__div-Location {
+    display: flex;
+    width: 5%;
+    color: red;
+  }
+  .productCart__footer__div-busqueda-input {
+    font-size: 14px;
+    width: 100px;;
+  }
+  
+  .productCart__footer__section2 {
+    background-color: #69E0C9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+  }
+  .footer__3{
+    margin-left: 12px;
+  }
+  .footer__3 p{
+    margin:0%
+  }
+  .footer__3 h4{
+    margin-bottom: 0%;
+  }
+
+  .footer__retiro__horario{
+    margin-top: 2%;
+  }
+  .footer__locales{
+    margin-top: 2%;
+  }
+  .footer__contacto{
+    margin-top: 2%;
+  }
+  .footer__atencion__cliente{
+    margin-top: 2%;
+    margin-bottom: 0%;
+  }
+
+@media (min-width:460px) {
+  .productCart__header__div-iconRedes{
+    display: flex;
+  }
+  .productCart__header__div-Location{
+display: flex;
+  }
+ 
 }
 
+@media (min-width:768px){
+  .productCart__header__div-Location {
+    display: flex;
+    width: 5%;
+    color: red;
+  }
+  .productCart__header__div-iconRedes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 8%;
+  }
+  .productCart__heater__section {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+}
+.foto1{
+margin-left: 6%;
+}
 
+.foto2{
+  margin-left: 7%;
+}
+.footer__3{
+  display: flex;
+  justify-content: space-between;
+}
+.footer__copy{
+  margin-left: 0%;
+}
+}
+
+@media (min-width:1040px){
+  .foto1{
+    margin-left: 6%;
+    }
+    
+    .foto2{
+      margin-left: 95px;
+    }
 }
