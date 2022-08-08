@@ -1,4 +1,9 @@
 @import "./general.css";
+.productCart-body {
+  font-family: var(--tipografiaGeneral);
+  background-color: #C0FAEE;
+  
+}
 
 .footer__padre{
     border: 1px solid var(--colorNegro);
@@ -61,6 +66,7 @@
       align-items: center;
       border: solid 1px var(--colorNegro);
     }
+    
     .footer__3{
       margin-left: 12px;
     }
@@ -79,6 +85,7 @@
       font-size: 11px;
       margin-left: 12px;
     }
+  
     @media (min-width: 1024px) {
         .footer__locales{
             margin-right: 20px;

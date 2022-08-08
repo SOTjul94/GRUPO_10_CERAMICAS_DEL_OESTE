@@ -1,68 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/15a2e4bbb7.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/css/productDetail.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
-    <title>Detalle de Producto</title>
-</head>
+<%- include("./partials/head") %> 
 <body>
-    <header class="productCart__header">
-        <section class="productCart__heater__section">
-            <div id="productCart__header__div-img">
-                <img class="header__logo1" src="/img/Cerámicas_img2.png" alt="logo">
-                <img class="header__logo2" src="/img/Cerámicas_img.png" alt="logo">
-            </div>
-            <h1 class="header__h1">Céramicas Del Oeste</h1>
-            <div class="productCart__header__div-iconRedes">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <div class="productCart__header__div-Location">
-                <i class="fa-solid fa-location-dot"></i>
-            </div>
-
-
-            <div class="productCart__header__div-busqueda">
-                <form action="">
-                    <input class="productCart__header__div-busqueda-input" type="text" placeholder="Buscar">
-                    <button type="submit"><i class="fa-solid fa-search"></i></button>
-                </form>
-            </div>
-            <div class="header__login1">
-                <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
-            <div class="header__login1">
-                <a href="/login"><i class="fa-solid fa-user"></i></a>
-            </div>
-        </section>
-        <a><section class="productCart__heater__section2"></a>
-        
-            <nav class="index__header__menu--nav">
-                <ul>
-                         <li><a href="">Productos</a></li>
-                         <li><a href="">Adhesivos</a></li>
-                         <li><a href="">Pastinas</a></li>
-                         <li><a href="">Decorados</a></li>
-                </ul>
-                </nav>
-                <nav class="index__header__menu--nav">
-                    <ul>
-                             <li><a href="">Quienes somos?</a></li>
-                             <li><a href="">Medios de pago</a></li>
-                             <li><a href="">AHORA 12</a></li>
-                    </ul>
-                    </nav>
-        </section>
-    </header>
+<%- include("./partials/header") %>
     <main class="detail__main">
         <div class="contenedor__1">
         <section class="detail__main__section general__main__section">

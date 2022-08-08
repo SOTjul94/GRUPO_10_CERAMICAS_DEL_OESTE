@@ -1,4 +1,14 @@
 @import "./general.css";
+.productCart-body {
+  font-family: var(--tipografiaGeneral);
+  background-color: #C0FAEE;
+  
+}
+.header__h1 {
+  color: #2E6157;
+  
+
+}
 
 .productCart__header__section {
     background-color: var(--colorBlanco);
