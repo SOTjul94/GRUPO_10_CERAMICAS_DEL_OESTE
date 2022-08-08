@@ -60,6 +60,9 @@
     align-items: center;
     border: solid 1px var(--colorNegro);
 }
+a {
+  color: var(--colorNegro);
+}
 
 /*MAIN*/
 main {
