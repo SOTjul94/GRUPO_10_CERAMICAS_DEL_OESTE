@@ -1,0 +1,508 @@
+@import  './general.css';
+body{
+  font-family: 'ABeeZee', sans-serif;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.productCart__heater__section {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: solid 1px black;
+}
+.index__header__menu--nav ul{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+.productCart__heater__section2{
+  text-align: center;
+}
+.productCart__heater__section2{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo1 {
+  display: flex;
+  height: 30px;
+  padding-left: 6px;
+}
+
+.header__logo2 {
+  display: flex;
+  height: 23px;
+  padding-left: 0px;
+  margin-bottom: 5px;
+}
+
+.header__h1 {
+  
+  font-size: 18px;
+  color: #2E6157;
+  width: 20%;
+
+}
+
+.productCart__header__div-iconRedes {
+  display: none;
+  
+}
+
+.productCart__header__div-Location {
+  display: none;
+  
+}
+.productCart__header__div-busqueda-input {
+  font-size: 14px;
+  width: 100px;;
+}
+
+.productCart__heater__section2 {
+  background-color: #69E0C9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: solid 1px black;
+}
+.header__login1 i {
+  color: black;
+}
+
+
+/*IMAGENES*/
+.detail__main{
+  padding: 10px;
+}
+.detail__main__section img {
+  width: 100%;
+  
+  
+}
+
+.detail__main__section--images{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+}
+
+.detail__main__section--images img{
+  width: 31%;
+}
+
+.detail__main__section--content h2{
+  margin: 20px 0;
+}
+
+main .codigo{
+  margin: 2%;
+  
+}
+main .Descripcion__titulo{
+color: #69E0C9;
+font-size: 25px;
+margin: 8px 0px 0px;
+}
+main .Descripcion__titulo__name{
+  font-size: 14px;
+  margin: 8px 0px 0px;
+}
+main .Descripcion__titulo__name__precio{
+color: #69E0C9;
+font-size: 22px;
+
+}
+main .Descripcion__titulo__name__precio__caja{
+  font-size: 14px;
+  
+}
+main .Descripcion__titulo__name__precio__caja__carrito{
+  text-decoration: none;
+  margin: 8px 0px 0px;
+}
+
+main .importante{
+  
+  font-size: 14px;
+}
+main .buttom{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 13px;
+
+}
+
+main .metros2{
+  margin: 0%;
+}
+
+main .buttom_metros{
+  color: black;
+  font-size: 13px;
+}
+main .buttom_metros__num{
+text-decoration: none;
+width: 10%;
+padding: 2px;
+appearance: none;
+border-radius: 5px;
+border: 1px solid rgba(0,0,0,0.3);
+}
+main .buttom_metros__cubrir{
+  color: black;
+  font-size: 13px;
+  
+}
+main .buttom_metros__cubrir__num{
+text-decoration: none;
+width: 10%;
+padding: 2px;
+margin: 0px 5px;
+appearance: none;
+border-radius: 5px;
+border: 1px solid rgba(0,0,0,0.3);
+}
+main .buttom_metros__cubrir__carrito{
+  background-color: #69E0C9;;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  font-weight: bold;
+}
+main .buttom_metros__cubrir__carrito a{
+  text-decoration: none;
+  color: white;
+}
+main .calcular__cajas{
+  background-color: #69E0C9;;
+  border: none;
+  color: white;
+  padding: 12px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+main #cantidad{
+  height: 17px;
+  width: 10%;
+  text-decoration: none;
+width: 10%;
+padding: 2px;
+appearance: none;
+border-radius: 5px;
+border: 1px solid rgba(0,0,0,0.3);
+}
+main #disminuir{
+  background-color: rgb(235, 230, 230);
+  border: none;
+  color: black;
+  padding: 1px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+  height: 22px;
+
+}
+main #aumentar{
+  background-color: rgb(235, 230, 230);
+  border: none;
+  color: black;
+  padding: 1px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+  height: 22px;
+}
+
+main .Descripcion__articulo p{
+  margin: 0%;
+}
+
+
+main .nav h3{
+  margin-bottom: 0px;
+}
+main .nav__ul{
+  text-decoration: none;
+  color: black;
+  padding: 0%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 20px;
+  border:rgb(235, 230, 230)
+}
+main .nav__ul li{
+margin: 0px;
+
+border-bottom: #eee 5px solid;
+}
+
+
+
+
+/*ESTRELLITAS*/
+main #form {
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+main .clasificacion {
+    text-align: center;
+    margin: 0%;
+  }
+  
+main #form label {
+    font-size: 20px;
+  }
+  
+main input[type="radio"] {
+    display: none;
+  }
+  
+main label {
+    color: grey;
+  }
+  
+main .clasificacion {
+    direction: ltr;
+    unicode-bidi: bidi-override;
+  }
+  
+main label:hover,
+  label:hover ~ label {
+    color: black;
+  }
+  
+main input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+main .buttom_metros__cubrir{
+color: black;
+
+  }
+  
+
+/*FOOTER*/
+.footer__padre{
+  border: 1px solid black;
+}
+  .productCart__footer__section {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+   
+     
+  }
+  
+
+
+  .footer__logo1 {
+    display: flex;
+    height: 30px;
+    padding-left: 6px;
+  }
+  
+  .footer__logo2 {
+    display: flex;
+    height: 23px;
+    padding-left: 0px;
+    margin-bottom: 5px;
+  }
+  
+  .footer__h1 {
+    
+    font-size: 18px;
+    color: #2E6157;
+    width: 20%;
+  
+  }
+  
+  .productCart__footer__div-iconRedes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 8%;
+  }
+  
+  .productCart__footer__div-Location {
+    display: flex;
+    width: 5%;
+    color: red;
+  }
+  .productCart__footer__div-busqueda-input {
+    font-size: 14px;
+    width: 100px;;
+  }
+  
+  .productCart__footer__section2 {
+    background-color: #69E0C9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+  }
+  .footer__3{
+    margin-left: 12px;
+  }
+  .footer__3 p{
+    margin:0%
+  }
+  .footer__3 h4{
+    margin-bottom: 0%;
+  }
+
+  .footer__retiro__horario{
+    margin-top: 0%;
+  }
+  .footer__copy{
+    margin-top: 12px;
+    font-size: 11px;
+    margin-left: 12px;
+  }
+  
+  @media (min-width:460px) {
+    .productCart__header__div-iconRedes{
+      display: flex;
+    }
+    .productCart__header__div-Location{
+display: flex;
+    }
+  }
+  
+
+
+
+
+
+ 
+  @media (min-width:768px){
+    .productCart__header__div-Location {
+      display: flex;
+      width: 5%;
+      color: red;
+    }
+    .productCart__header__div-iconRedes {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 8%;
+    }
+    .detail__main {
+      padding: 20px;
+  }
+
+  .detail__main__section{
+    display: flex;
+      justify-content: center;
+      padding: 0%;
+    
+          
+  }
+  .contenedor__1{
+    display: flex;
+      justify-content: center;
+  }
+  .contenedor__2{
+    display: flex;
+      justify-content: center;
+  }
+
+  .Descripcion{
+    width: 170%;
+    margin-left: 10px;
+    ;
+    
+  }
+  
+  .buttom{
+    flex-direction: column;
+    
+  }
+  .buttom_metros{
+    margin-bottom: 0px;
+  }
+  
+  .nav{
+    width: 200%;
+    
+  }
+  main .Descripcion__articulo p{
+    margin: 0%;
+    padding-left: 20px;
+  }
+  main .Descripcion__articulo h3{
+    padding-left: 20px;
+  }
+  .footer__3{
+    display: flex;
+  }
+  .footer__3 h4{
+    margin-top: 0%;
+  }
+  .footer__contacto{
+    margin-left: 0%;
+    margin-right: 15px;
+  }
+  }
+
+
+
+  @media (min-width:1024px){
+.nav{
+  width: 100%;
+ 
+}
+
+
+main .Descripcion__articulo p{
+  margin: 0%;
+  padding-left: 20px;
+}
+main .Descripcion__articulo h3{
+  padding-left: 20px;
+}
+.footer__locales{
+  margin-right: 20px;
+}
+.footer__contacto{
+  margin-left: 0%;
+  margin-right: 20px;
+}
+
+  }
+
+@media (min-width:1140px) {
+  .footer__3{
+    justify-content: space-around;
+  }
+  .importante{
+    margin-top: 46px;
+  }
+}

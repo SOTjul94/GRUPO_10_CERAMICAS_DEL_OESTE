@@ -1,0 +1,103 @@
+@import "./general.css";
+
+.footer__padre{
+    border: 1px solid var(--colorNegro);
+  }
+    .productCart__footer__section {
+      background-color: var(--colorBlanco);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+     
+       
+    }
+    
+  
+  
+    .footer__logo1 {
+      display: flex;
+      height: 30px;
+      padding-left: 6px;
+    }
+    
+    .footer__logo2 {
+      display: flex;
+      height: 23px;
+      padding-left: 0px;
+      margin-bottom: 5px;
+    }
+    
+    .footer__h1 {
+      
+      font-size: 18px;
+      color: vat(--colorVerdeAlto);
+      width: 20%;
+    
+    }
+    
+    .productCart__footer__div-iconRedes {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 8%;
+    }
+    
+    .productCart__footer__div-Location {
+      display: flex;
+      width: 5%;
+      color: var(--colorRojo);
+    }
+    .productCart__footer__div-busqueda-input {
+      font-size: 14px;
+      width: 100px;
+    }
+    
+    .productCart__footer__section2 {
+      background-color: var(--colorVerdeCasiMedio);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      border: solid 1px var(--colorNegro);
+    }
+    .footer__3{
+      margin-left: 12px;
+    }
+    .footer__3 p{
+      margin:0%
+    }
+    .footer__3 h4{
+      margin-bottom: 0%;
+    }
+  
+    .footer__retiro__horario{
+      margin-top: 0%;
+    }
+    .footer__copy{
+      margin-top: 12px;
+      font-size: 11px;
+      margin-left: 12px;
+    }
+    @media (min-width: 1024px) {
+        .footer__locales{
+            margin-right: 20px;
+          }
+          .footer__contacto{
+            margin-left: 0%;
+            margin-right: 20px;
+          }
+       }
+       @media (min-width: 768px) {
+        .footer__3{
+            display: flex;
+          }
+          .footer__3 h4{
+            margin-top: 0%;
+          }
+          .footer__contacto{
+            margin-left: 0%;
+            margin-right: 15px;
+          }
+       }
+      
