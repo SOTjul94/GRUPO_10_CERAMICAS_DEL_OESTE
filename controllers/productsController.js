@@ -8,5 +8,10 @@ module.exports = {
         return res.render('productDetail', {
             title : 'ProductDetail'
         })
+    },
+    editionProduct : (req, res) => {
+        return res.render('editionProduct', {
+            title : 'editionProduct'
+        })
     }
 }

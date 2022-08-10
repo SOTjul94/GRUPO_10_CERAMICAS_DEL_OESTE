@@ -1,0 +1,55 @@
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header',) %>
+</body>
+<main>
+<div class="">
+    <form>
+       <div class="input-field">
+          <input type="text" required>
+          <label>Nombre del producto</label>
+       </div>
+       <div class="input-field">
+          <input class="pswrd" type="text" required>
+          
+          <label>Descripcion</label>
+       </div>
+       
+       
+       <div class="input-field">
+        <input type="text" required>
+        <label>Datos tecnicos</label>
+     </div>
+     <div class="input-field">
+        <input type="number" required>
+        <label>Precio</label>
+     </div>
+     <div class="input-field">
+        <input type="number" required>
+        <label>Precio x caja</label>
+     </div>
+    
+    
+     <div class="input-field">
+        <input type="text" required>
+        <label>Codigo del producto</label>
+     </div>
+     <div class="clasificacion">
+        <h4>Clasificacion</h4>
+                <form action=""><label><input type="checkbox" name="Pescar" value="Pescar"> Exterior</form>
+                <form action=""><label><input type="checkbox" name="Pescar" value="Pescar"> Interior</label></form>
+                <form action=""><label><input type="checkbox" name="Pescar" value="Pescar"> Baños</label></form>
+       </div>
+       <div class="fotos">
+        <h4>Fotos del producto</h4>
+        <form name="imgAdd" type="POST" enctype="multipart/form-data" >
+         <input type="file" name="imgAdd" class="importar__img"/>
+       </div>
+      
+        
+        </form>
+       <div class="">
+          <div class=""></div>
+          <button>Guardar Cambios</button>
+       </div>
+    </main>
