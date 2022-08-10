@@ -4,7 +4,8 @@ const {login, register} = require('../controllers/userController');
 
 
 /* Users */
-router.get('/login', login);
-router.get('/register', register);
+router
+      .get('/login', login)
+      .get('/register', register);
 
 module.exports = router;
