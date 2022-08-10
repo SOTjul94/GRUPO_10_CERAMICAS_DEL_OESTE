@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head') %>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ceramicas del oeste | <%- title %> </title >
+ 
+        <link   href="/stylesheets/productDetail.css" rel="stylesheet">
+        <link   href="/stylesheets/header.css" rel="stylesheet">
+
+     <a>   <script src="https://kit.fontawesome.com/ae1423e40e.js" crossorigin="anonymous"></script></a>
+    </head>
 <body>
     <%- include('./partials/header',) %>
     <main class="detail__main">
@@ -92,76 +102,7 @@
 
 
     </main>
-    <footer>
-        <section class="productCart__footer__section2">
-            <nav>
-                <ul>
-
-                </ul>
-            </nav>
-        </section>
-    <div class="footer__padre">
-        <section class="productCart__footer__section">
-            <div id="productCart__footer__div-img">
-                <img class="footer__logo1" src="/img/Cerámicas_img2.png" alt="logo">
-                <img class="footer__logo2" src="/img/Cerámicas_img.png" alt="logo">
-            </div>
-            <h1 class="footer__h1">Céramicas Del Oeste</h1>
-            <div class="productCart__footer__div-iconRedes">
-                
-            </div>
-            <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-whatsapp"></i>
-            <div class="productCart__footer__div-Location">
-                <i class="fa-solid fa-location-dot"></i>
-            </div> 
-        
-        </section>
-        <div class="footer__3">
-    <div class="footer__retiro">
-        <h4 class="footer__retiro__horario">Horarios de retiro</h4>
-        <p>Lunes a Viernes: 9:00 a 12:00 y de 14:00 a 17:00hs</p>
-        <p>Sábados: 9:00 a 12:00hs</p>
-        
-    </div>
-    <div class="footer__locales">
-        <h4>Locales</h4>
-        <p>Colectora panamericana Este 28851 (El Talar)</p>
-        <p>Av. Constituyentes Ex Ruta 9 2368 (Outlet)</p>
-        <p>Austria norte 1521 (Tigre)</p> 
-        
-    </div>
-    <div class="footer__contacto">
-        
-             <h4>Contactanos</h4>
-             <p>11 5467-6001</p>
-             <p>11 6585-6102</p>
-             <p>ventas@ideko.ar</p>
-        
-    </div>
-    <div class="footer__atencion__cliente"> 
-        
-             <h4>Atencion al cliente:</h4>
-             <p>Lunes a Viernes: 09:00 a 18:00hs</p>
-             <p>Sábados: 09:00 a 16:00hs</p>
-        
-    </div> 
-    
-</div> 
-<div class="footer__copy">
-    <p>Copyright Ceramicas del Oeste  S.A. - 2022. Todos los derechos reservados.</p>
-    </div>
-    </div>
-        <section class="productCart__footer__section2">
-            <nav>
-                <ul>
-
-                </ul>
-            </nav>
-        </section>
-
-    </footer>
+    <%- include("./partials/footer") %> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 

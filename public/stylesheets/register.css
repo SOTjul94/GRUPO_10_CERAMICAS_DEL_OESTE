@@ -1,5 +1,6 @@
 @import './general.css';
 
+/*
 .index__header__menu--nav{
     background-color: #69E0C9;
     border: solid 1px black;
@@ -49,6 +50,7 @@
     margin-left: 0px;
     margin-right: 98%;
   }
+  */
 body{
     font-family: var(--tipografiaGeneral);
 }
