@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ceramicas del oeste | <%- title %> </title >
  
-        <link   href="/stylesheets/productDetail.css" rel="stylesheet">
+        <link   href="/stylesheets/totalProducts.css" rel="stylesheet">
         <link   href="/stylesheets/header.css" rel="stylesheet">
 
      <a>   <script src="https://kit.fontawesome.com/ae1423e40e.js" crossorigin="anonymous"></script></a>
@@ -15,26 +15,15 @@
     <%- include('./partials/header',) %>
 <main>
     <article class="ofertas">
-        <div class="caja__oferta">
-         <img src="/images/ceramica1.jpg" alt="">
-         <p>S.lorenzo porc. 57x57 urban  </p>
-         <a href="/products/productDetail"><p>ver mas</p></a>
-        </div>
-        <div class="caja__oferta">
-        <img src="/images/ceramica1.jpg" alt="">
-        <p>S.lorenzo porc. 57x57 urban </p>
-        <a href="/products/productDetail"><p>ver mas</p></a>
-        </div>
-        <div class="caja__oferta">
-        <img src="/images/ceramica1.jpg" alt="">
-        <p>S.lorenzo porc. 57x57 urban  </p>
-        <a href="/products/productDetail"><p>ver mas</p></a>
-        </div>
-        <div class="caja__oferta">
-        <img src="/images/ceramica1.jpg" alt="">
-        <p>S.lorenzo porc. 57x57 urban </p>
-        <a href="/products/productDetail"><p>ver mas</p></a>
-        </div>
+        
+        <% products.forEach(({id,name,price,image,discount,description })  => { %>
+            <div class="caja__oferta">
+            <img src="/images/<%= image %>" alt="">
+            <p><%= name %>   </p>
+            <a href="/products/productDetail/<%= id %> "><p>ver mas</p></a>
+           </div>
+        <% }) %>
+
       </article>
 </main>
     <%- include("./partials/footer") %> 

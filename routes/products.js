@@ -10,7 +10,7 @@ router
       .get('/creationProduct', creationProduct)
       .get('/totalProducts', totalProducts)
       .get('/products/creationProduct', totalProducts)
-      .get('/productDetail/:id', productDetail)
+      .get('/productDetail/:id/', productDetail)
       .post('/store', store)
       .get('/editionProduct/:id/', editionProduct)
       .put('/editionProduct/:id', editionProduct)

@@ -72,8 +72,10 @@ li{
   .ofertas{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     text-align: center;
     margin-bottom: 2%;
+    margin-top: 2%;
   }
   .caja__oferta{
     width: 20%;

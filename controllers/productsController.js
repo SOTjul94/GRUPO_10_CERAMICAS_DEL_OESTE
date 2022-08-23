@@ -16,13 +16,19 @@ const controller = {
 		})
 	},
     creationProduct : (req, res) => {
+		const products = loadProducts();
+		
         return res.render('creationProduct', {
-            title : 'creationProduct'
+            title : 'creationProduct',
+			products,
+			toThousand
         })
     },
     totalProducts : (req, res) => {
+		const products = loadProducts();
         return res.render('totalProducts', {
-            title : 'totalProducts'
+            title : 'totalProducts',
+			products
         })
     },
     editionProduct: (req, res) => {
@@ -30,48 +36,73 @@ const controller = {
 		const products = loadProducts();
 		const product = products.find(product => product.id === +req.params.id);
 		res.render('editionProduct',{
-			product
+			product,
+			toThousand
 		})
 	},
 	update: (req, res) => {
-		// Do the magic
+		
 		const products = loadProducts();
-		const {name, price, discount, category, description} = req.body;
+		const {name, price, code, color, description,caja, finish, style, dimensions, pei, transit, recomendation, espesor, model, form, origin} = req.body;
 		const productModify = products.map(product => {
 			if(product.id === +req.params.id){
 				return{
 					...product,
-					name : name.trim(),
+					name : name?.trim(),
 					price : +price,
-					discount : +discount,
-					description : description.trim(),
-					category
+					code : +code,
+					caja: +caja,
+					color: color?.trim(),
+					finish: +finish,
+					style: style?.trim(),
+					dimensions : +dimensions,
+					pei: +pei,
+					transit: transit?.trim(),
+					recomendation: recomendation?.trim(),
+					espesor: +espesor,
+					model: model?.trim(),
+					form: form?.trim(),
+					origin: origin?.trim(),
+					description : description?.trim(),
+					
 				}
 			}
 			return product
 		})
 		storeProducts(productModify)
-		return res.redirect('/');
+		return res.redirect('/products/totalProducts');
 	},
     store: (req, res) => {
-		// Do the magic
-		const {name, price, discount,description, category} = req.body
+		
+		const {name, price, code, color, description,caja, finish, style, dimensions, pei, transit, recomendation, espesor, model, form, origin} = req.body
 		const products = loadProducts();
 
 		const newProduct ={
 			id : (products[products.length - 1].id + 1),
-			name : name.trim(),
-			description : description.trim(),
+			name : name?.trim(),
+			description : description?.trim(),
 			price : +price,
-			discount : +discount,
-			image : 'default-image.png',
-			category
+			code : +code,
+			caja: +caja,
+			color: color?.trim(),
+			finish: +finish,
+			style: style?.trim(),
+			dimensions : +dimensions,
+			pei: +pei,
+			transit: transit?.trim(),
+			recomendation: recomendation?.trim(),
+			espesor: +espesor,
+			model: model?.trim(),
+			form: form?.trim(),
+			origin: origin?.trim(),
+			image : 'ceramica1.jpg',
+			
 		}
 		const productsModify = [...products, newProduct];
 
 		storeProducts(productsModify);
 
-		return res.redirect('/products')
+		return res.redirect('/products/totalProducts')
 	},
     destroy : (req, res) => {
 		
@@ -81,7 +112,7 @@ const controller = {
 		const productModify = products.filter(product => product.id !== +id);
 
 		storeProducts(productModify);
-		return res.redirect('/products')
+		return res.redirect('/products/totalProducts')
 
 	}
 };
