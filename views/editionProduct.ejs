@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ceramicas del oeste | <%- title %> </title >
+        <title>Ceramicas del oeste | Edicion de Producto </title >
  
         <link   href="/stylesheets/login.css" rel="stylesheet">
         <link   href="/stylesheets/header.css" rel="stylesheet">
@@ -17,54 +17,112 @@
 </body>
 <main>
 <div class="">
-    <form>
+   <h4>Edicion de Producto</h4>
+    <form action="/products/update/<%= product.id %>?_method=PUT " method="POST">
        <div class="input-field">
-          <input type="text" required>
-          <label>Nombre del producto</label>
+        <label for="name" class="">Nombre del producto:</label>
+        <input type="text" id="name" name="name" class="" value="<%= product.name %> ">
+          
        </div>
        <div class="input-field">
-          <input class="pswrd" type="text" required>
+          <input class="pswrd" type="text" name="description required value="<%= product.description %> ">
           
           <label>Descripcion</label>
        </div>
        
        
-       <div class="input-field">
-        <input type="text" required>
-        <label>Datos tecnicos</label>
-     </div>
+       <h4>Datos tecnicos</h4>
+                  <div class="input-field">
+                     <input type="text" name="color" class="form-input" value="<%= product.color %> ">
+                     <label> Gama de color </label>
+                     
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" name="finish" class="form-input" value="<%= product.finish %> ">
+                     <label> Acabado </label>
+                     
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" name="style" class="form-input" value="<%= product.style %> ">
+                     <label> Estilo </label>
+                     
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" name="dimensions" class="form-input" value="<%= product.dimensions %> ">
+                     <label> Dimensiones </label>
+
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" required name="recomendation" class="form-input" value="<%= product.recomendation %> ">
+                     <label> Recomendaciones de uso </label>
+                 
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" required name="pei" class="form-input" value="<%= product.pei %> ">>
+                     <label> Tipo de transito(Pei) </label>
+                     
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" required name="transit" class="form-input" value="<%= product.transit %> ">>
+                     <label> Tipo de transito  </label>
+                     
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" required name="espesor" class="form-input" value="<%= product.espesor %> ">
+                     <label> Espesor </label>
+                     
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" required name="model" class="form-input" value="<%= product.model %> ">
+                     <label> Modelo </label>
+                    
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" required name="form" class="form-input" value="<%= product.form %> ">
+                     <label> Forma de venta </label>
+                     
+                   </div> 
+                   <div class="input-field">
+                     <input type="text" required name="origin" class="form-input" value="<%= product.origin %> ">
+                     <label> Origen </label>
+                     
+                   </div>   
      <div class="input-field">
-        <input type="number" required>
+        <input type="number" required name="price"  class="form-input" value="<%= product.price %> ">
         <label>Precio</label>
+        
      </div>
      <div class="input-field">
-        <input type="number" required>
+        <input type="number" required name="caja"  class="form-input" value="<%= product.caja %> ">
         <label>Precio x caja</label>
+        
      </div>
     
     
      <div class="input-field">
-        <input type="text" required>
+        <input type="text" required name="code" class="form-input" value="<%= product.code %> ">
         <label>Codigo del producto</label>
+       
      </div>
      <div class="clasificacion">
         <h4>Clasificacion</h4>
-                <form action=""><label><input type="checkbox" name="Pescar" value="Pescar"> Exterior</form>
-                <form action=""><label><input type="checkbox" name="Pescar" value="Pescar"> Interior</label></form>
-                <form action=""><label><input type="checkbox" name="Pescar" value="Pescar"> Baños</label></form>
+                 <label><input type="checkbox" name="Pescar" value="Pescar"> Exterior
+                 <label><input type="checkbox" name="Pescar" value="Pescar"> Interior</label>
+                 <label><input type="checkbox" name="Pescar" value="Pescar"> Baños</label>
        </div>
        <div class="fotos">
         <h4>Fotos del producto</h4>
-        <form name="imgAdd" type="POST" enctype="multipart/form-data" >
+        <!-- <form name="imgAdd" type="POST" enctype="multipart/form-data"> -->
          <input type="file" name="imgAdd" class="importar__img"/>
        </div>
       
         
-        </form>
        <div class="button">
-          <div class=""></div>
-          <a href="/products/productDetail"><button>Guardar Cambios</button></a>
+          
+          <a href="/products/productDetail/<%= product.id %> "><button type="submit">Guardar Cambios</button></a>
        </div>
+      </form>
+
     </main>
     <%- include("./partials/footer") %> 
    </body>

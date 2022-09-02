@@ -1,76 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ceramicas del oeste | <%- title %> </title >
- 
-        <link   href="/stylesheets/login.css" rel="stylesheet">
-        <link   href="/stylesheets/header.css" rel="stylesheet">
-        <link   href="/stylesheets/editionProduct.css" rel="stylesheet">
-        <link   href="/stylesheets/creationProduct.css" rel="stylesheet">
 
-     <a>   <script src="https://kit.fontawesome.com/ae1423e40e.js" crossorigin="anonymous"></script></a>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceramicas del oeste | Creacion de Producto </title>
+
+  <link href="/stylesheets/login.css" rel="stylesheet">
+  <link href="/stylesheets/header.css" rel="stylesheet">
+  <link href="/stylesheets/editionProduct.css" rel="stylesheet">
+  <link href="/stylesheets/creationProduct.css" rel="stylesheet">
+
+  <a>
+    <script src="https://kit.fontawesome.com/ae1423e40e.js" crossorigin="anonymous"></script>
+  </a>
+</head>
+
 <body>
-    
-        <%- include('./partials/header',) %>
-    
+
+  <%- include('./partials/header',) %>
+
     <main>
-        <div class="">
-            <form>
-               <div class="input-field">
-                  <input type="text" required>
-                  <label>Nombre del producto</label>
-               </div>
-               <div class="input-field">
-                  <input class="pswrd" type="text" required>
-                  
-                  <label>Descripcion</label>
-               </div>
-               
-               
-               <div class="input-field">
-                <input type="text" required>
-                <label>Datos tecnicos</label>
-             </div>
-             <div class="input-field">
-                <input type="number" required>
-                <label>Precio</label>
-             </div>
-             <div class="input-field">
-                <input type="number" required>
-                <label>Precio x caja</label>
-             </div>
-            
-            
-             <div class="input-field">
-                <input type="text" required>
-                <label>Codigo del producto</label>
-             </div>
-             <div class="clasificacion">
-                <h4>Clasificacion</h4>
-                        <form action=""><label><input type="checkbox" name="Pescar" value="Pescar"> Exterior</form>
-                        <form action=""><label><input type="checkbox" name="Pescar" value="Pescar"> Interior</label></form>
-                        <form action=""><label><input type="checkbox" name="Pescar" value="Pescar"> Baños</label></form>
-               </div>
-               <div class="fotos">
-                <h4>Fotos del producto</h4>
-                <form name="imgAdd" type="POST" enctype="multipart/form-data" >
-                 <input type="file" name="imgAdd" class="importar__img"/>
-               </div>
-              
-                
-                </form>
-               <div class="button">
-                  <div class=""></div>
-                  <a href="/products/productDetail"><button>Crear nuevo producto</button></a>
-               </div>
+      <h4>Creacion de Producto</h4>
+      <form action="/products/store" method="POST">
+        <div class="input-field">
+          <input type="text" required id="name" name="name">
+          <label> Nombre </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="color">
+          <label> Gama de color </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="finish">
+          <label> Acabado </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="style">
+          <label> Estilo </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="dimensions">
+          <label> Dimensiones </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="recomendation">
+          <label> Recomendaciones de uso </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="pei">
+          <label> Tipo de transito(Pei) </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="transit">
+          <label> Tipo de transito </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="espesor">
+          <label> Espesor </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="model">
+          <label> Modelo </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="form" name="form">
+          <label for="form"> Forma de venta </label>
+
+        </div>
+        <div class="input-field">
+          <input type="text" required id="name" name="origin">
+          <label> Origen </label>
+
+        </div>
+        <div class="input-field">
+          <input type="number" required id="name" name="price" class="form-input">
+          <label>Precio</label>
+
+        </div>
+        <div class="input-field">
+          <input type="number" required id="name" name="caja" class="form-input">
+          <label>Precio x caja</label>
+
+        </div>
+
+
+        <div class="input-field">
+          <input type="text" required id="name" name="code" class="form-input">
+          <label>Codigo del producto</label>
+
+        </div>
+        <div class="input-field">
+          <textarea type="text" required id="name" name="description" class="form-input"></textarea>
+          <label>Descripción</label>
+        </div>
+        <div class="clasificacion">
+          <h4>Clasificacion</h4>
+          <!--  <form action=""> --><label><input type="checkbox" name="Pescar" value="Pescar"> Exterior</label>
+          <!-- </form> -->
+          <!--  <form action=""> --><label><input type="checkbox" name="Pescar" value="Pescar"> Interior</label>
+          <!-- </form> -->
+          <!--  <form action=""> --><label><input type="checkbox" name="Pescar" value="Pescar"> Baños</label>
+          <!-- </form> -->
+        </div>
+        <div class="fotos">
+          <h4>Fotos del producto</h4>
+          <!-- <form name="imgAdd" type="POST" enctype="multipart/form-data"> -->
+          <input type="file" name="imgAdd" class="importar__img" />
+        </div>
+
+
+        <!-- </form> -->
+        <div class="button">
+          <!-- <div class=""></div> -->
+          <!-- <a href="/products/productDetail/<%= products.id %> "></a> -->
+            <button type="submit">Crear nuevo producto</button>
+        </div>
+      </form>
     </main>
-    
-<%- include("./partials/footer") %> 
-    
+
+    <%- include("./partials/footer") %>
+
 
 </body>
+
 </html>
