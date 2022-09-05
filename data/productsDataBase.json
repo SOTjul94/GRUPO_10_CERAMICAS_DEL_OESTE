@@ -1,16 +1,15 @@
 [
    {
       "id": 1,
-      "name": "sed tincidunt eu felis fusce",
-      "description": "Ut at dolor quis odio consequat varius. Integer ac leo.",
+      "name": "Ceramica uml",
       "code": 62,
-      "price": "$361.04",
-      "caja": "$2184.99",
+      "price": 850,
+      "caja": 450,
       "discount": 1,
       "category": "Interior",
       "image": "ceramica1.jpg",
       "color": "Khaki",
-      "finish": "#988",
+      "finish": "gris",
       "style": "Brass",
       "dimensions": 1,
       "pei": 2,
@@ -44,7 +43,7 @@
    },
    {
       "id": 3,
-      "name": "magna ac consequat metus",
+      "name": "magna ac consequat",
       "description": "Nulla mollis molestie lorem. Quisque ut erat.",
       "code": 8,
       "price": "$2597.28",
@@ -66,7 +65,7 @@
    },
    {
       "id": 4,
-      "name": "arcu libero rutrum ac lobortis",
+      "name": "arcu libero rutrum",
       "description": "Morbi quis tortor id nulla ultrices aliquet.",
       "code": 14,
       "price": "$7535.62",
@@ -88,7 +87,7 @@
    },
    {
       "id": 5,
-      "name": "pede ac diam cras pellentesque",
+      "name": "pede ac diam cras pell",
       "description": "Ut at dolor quis odio consequat varius.",
       "code": 61,
       "price": "$3815.10",
@@ -110,7 +109,7 @@
    },
    {
       "id": 6,
-      "name": "eu mi nulla ac enim",
+      "name": "eu mi nulla ac en",
       "description": "Aliquam erat volutpat. In congue.",
       "code": 17,
       "price": "$1576.90",
@@ -132,7 +131,7 @@
    },
    {
       "id": 7,
-      "name": "vel augue vestibulum rutrum",
+      "name": "vel augue vestibul",
       "description": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
       "code": 91,
       "price": "$5686.33",
@@ -176,7 +175,7 @@
    },
    {
       "id": 9,
-      "name": "curae duis faucibus accumsan odio",
+      "name": "curae duis faucibus",
       "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
       "code": 80,
       "price": "$8272.06",
@@ -198,7 +197,7 @@
    },
    {
       "id": 10,
-      "name": "luctus et ultrices posuere cubilia",
+      "name": "luctus et ultrices",
       "description": "Curabitur in libero ut massa volutpat convallis.",
       "code": 23,
       "price": "$7147.94",
@@ -242,7 +241,7 @@
    },
    {
       "id": 12,
-      "name": "odio in hac habitasse",
+      "name": "odio in hac habi",
       "description": "Nullam molestie nibh in lectus. Pellentesque at nulla.",
       "code": 71,
       "price": "$6875.42",
@@ -264,7 +263,7 @@
    },
    {
       "id": 13,
-      "name": "in felis eu sapien",
+      "name": "in felis eu sapi",
       "description": "Nulla ut erat id mauris vulputate elementum.",
       "code": 67,
       "price": "$9556.23",
@@ -286,7 +285,7 @@
    },
    {
       "id": 14,
-      "name": "cursus id turpis integer",
+      "name": "cursus id turpis inte",
       "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
       "code": 42,
       "price": "$6116.21",
@@ -352,7 +351,7 @@
    },
    {
       "id": 17,
-      "name": "nec nisi vulputate",
+      "name": "nec nisi vulput",
       "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
       "code": 79,
       "price": "$7720.40",
@@ -374,11 +373,10 @@
    },
    {
       "id": 18,
-      "name": "adipiscing elit proin interdum mauris",
-      "description": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+      "name": "adipiscing elit ",
       "code": 79,
-      "price": "$1746.02",
-      "caja": "$6429.88",
+      "price": 85000,
+      "caja": 488,
       "discount": 18,
       "category": "Exterior",
       "image": "ceramica1.jpg",
@@ -396,7 +394,7 @@
    },
    {
       "id": 19,
-      "name": "ligula sit amet eleifend pede",
+      "name": "ligula sit amet ele",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum.",
       "code": 68,
       "price": "$409.28",
@@ -418,7 +416,7 @@
    },
    {
       "id": 20,
-      "name": "elementum eu interdum eu",
+      "name": "elementum eu inter",
       "description": "In sagittis dui vel nisl. Duis ac nibh.",
       "code": 84,
       "price": "$597.58",
@@ -440,7 +438,7 @@
    },
    {
       "id": 21,
-      "name": "phasellus in felis",
+      "name": "phasellus in fel",
       "description": "Suspendisse potenti. Nullam porttitor lacus at turpis.",
       "code": 34,
       "price": "$2345.68",
@@ -462,11 +460,10 @@
    },
    {
       "id": 22,
-      "name": "erat fermentum justo nec condimentum",
-      "description": "Sed ante. Vivamus tortor.",
+      "name": "erat fermentum",
       "code": 40,
-      "price": "$6943.44",
-      "caja": "$8993.71",
+      "price": 5000,
+      "caja": 4599,
       "discount": 22,
       "category": "Interior",
       "image": "ceramica1.jpg",
@@ -484,7 +481,7 @@
    },
    {
       "id": 23,
-      "name": "nisl nunc rhoncus dui",
+      "name": "nisl nunc rhoncus",
       "description": "In quis justo. Maecenas rhoncus aliquam lacus.",
       "code": 45,
       "price": "$5865.52",
@@ -506,7 +503,7 @@
    },
    {
       "id": 24,
-      "name": "lacinia nisi venenatis",
+      "name": "lacinia nisi venen",
       "description": "Pellentesque eget nunc.",
       "code": 27,
       "price": "$3034.60",
@@ -550,7 +547,7 @@
    },
    {
       "id": 26,
-      "name": "rhoncus aliquet pulvinar sed nisl",
+      "name": "rhoncus aliquet pulvinar",
       "description": "Cras pellentesque volutpat dui.",
       "code": 47,
       "price": "$5906.85",
@@ -572,7 +569,7 @@
    },
    {
       "id": 27,
-      "name": "posuere felis sed lacus morbi",
+      "name": "posuere felis sed lacus ",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique.",
       "code": 90,
       "price": "$1674.40",
@@ -594,7 +591,7 @@
    },
    {
       "id": 28,
-      "name": "turpis enim blandit mi",
+      "name": "turpis enim blandit",
       "description": "Duis aliquam convallis nunc.",
       "code": 6,
       "price": "$9959.11",
@@ -616,7 +613,7 @@
    },
    {
       "id": 29,
-      "name": "ante ipsum primis in faucibus",
+      "name": "ante ipsum primis in",
       "description": "Praesent blandit lacinia erat.",
       "code": 48,
       "price": "$8310.62",
@@ -638,7 +635,7 @@
    },
    {
       "id": 30,
-      "name": "augue vel accumsan tellus nisi",
+      "name": "augue vel accumsan ",
       "description": "In sagittis dui vel nisl. Duis ac nibh.",
       "code": 8,
       "price": "$605.58",
