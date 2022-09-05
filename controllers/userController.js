@@ -8,5 +8,9 @@ module.exports = {
         return res.render('register', {
             title : 'Register'
         })
+    },
+    logout : (req,res) => {
+        res.session.destroy();
+        return res.redirect('/')
     }
 }
