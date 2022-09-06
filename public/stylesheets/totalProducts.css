@@ -1,3 +1,9 @@
+@import './general.css';
+
+
+body{
+  font-family: 'ABeeZee', sans-serif;
+}
 li{
     list-style: none;
   }
@@ -78,7 +84,6 @@ li{
     margin-top: 2%;
   }
   .caja__oferta{
-    width: 20%;
     height: 30%;
   }
   .caja__oferta:hover{
@@ -179,14 +184,43 @@ li{
     align-items: center;
     border: solid 1px black;
   }
+  .footer__logo1 {
+    display: flex;
+    height: 30px;
+    padding-left: 6px;
+  }
+  .footer__logo2 {
+    display: flex;
+    height: 23px;
+    padding-left: 0px;
+    margin-bottom: 5px;
+  }
+  .productCart__footer__section2 {
+    background-color: #69E0C9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+  }
+  .footer__padre {
+    border: 1px solid black;
+  }
+  .productCart__footer__section{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
   @media (min-width:320px) {
     .productCart__header__div-iconRedes{
       display: none;
     }
     .productCart__header__div-Location{
   display: none;
-    } }
-  
+    } 
+  }
   @media (min-width:425px) {
     .productCart__header__div-iconRedes {
       display: none;
@@ -196,6 +230,7 @@ li{
       display: none;
     }
   }
+  
   
   @media (min-width: 600px) {
   
@@ -257,33 +292,21 @@ li{
       align-items: center;
       border: solid 1px black;
     }
-  
-  @media (min-width:425px) {
-      .productCart__header__div-iconRedes{
-        display: flex;
-      }
-    }
+  }
+  @media (min-width: 768px) {
     .footer__3 {
-      margin-left: 12px;
+      display: flex;
     }
-  
-    .footer__3 p {
-      margin: 0%
-    }
-  
+
     .footer__3 h4 {
-      margin-bottom: 0%;
-    }
-  
-    .footer__retiro__horario {
       margin-top: 0%;
     }
-  
-    .footer__copy {
-      margin-top: 12px;
-      font-size: 11px;
-      margin-left: 12px;
+
+    .footer__contacto {
+      margin-left: 0%;
+      margin-right: 15px;
     }
+  }
   
     @media (min-width: 1024px) {
   
@@ -295,20 +318,10 @@ li{
         margin-left: 0%;
         margin-right: 20px;
       }
-    }
-  
-    @media (min-width: 768px) {
-      .footer__3 {
-        display: flex;
-      }
-  
-      .footer__3 h4 {
-        margin-top: 0%;
-      }
-  
-      .footer__contacto {
-        margin-left: 0%;
-        margin-right: 15px;
+      .caja__oferta{
+        margin: 1%;
+        height: 30%;
       }
     }
-  }
+  
+    
