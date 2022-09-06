@@ -1,12 +1,18 @@
-<a><header class="productCart__header"></a>
+<link href="/stylesheets/header.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<header class="productCart__header">
    
    
-    <a><section class="productCart__heater__section"></a>
-       <a> <div id="productCart__header__div-img"></a>
-           <a> <img class="header__logo1" src="/img/Cerámicas_img2.png" alt="logo"></a>
-           <a> <img class="header__logo2" src="/img/Cerámicas_img.png" alt="logo"></a>
+    <section class="productCart__heater__section">
+        <div id="productCart__header__div-img">
+            <a href="/"><img class="header__logo1" src="/img/Cerámicas_img2.png" alt="logo"></a>
+            <a href="/"><img class="header__logo2" src="/img/Cerámicas_img.png" alt="logo"></a>
+           
+            
+           
         </div>
-        <h1 class="header__h1">Céramicas Del Oeste</h1>
+        <a href="/"><h1 class="header__h1">Céramicas Del Oeste</h1></a>
+        
       <a> <div class="productCart__header__div-iconRedes"></a>
            <a> <i class="fa-brands fa-facebook"></i></a>
             <i class="fa-brands fa-instagram"></i>
@@ -15,38 +21,73 @@
         <a><div class="productCart__header__div-Location"></a>
             <a><i class="fa-solid fa-location-dot"></i></a>
         </div>
-        <div productCart__header__div-busqueda>
-            <form action="">
-                <a><input class="productCart__header__div-busqueda-input" type="text" placeholder="Buscar"></a>
-                <button type="submit"><i class="fa-solid fa-search"></i></button>
+        <div id='search-box1'>
+            <form action='/search' id='search-form' method='get' target='_top'>
+            <input id='search-text' name='q' placeholder='Escribe lo que buscas' type='text'/>
+            <button id='search-button' type='submit'><span>Buscar</span></button>
             </form>
-        </div>
-        <div>
+            </div>
+        <div class="icons">
             <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
-        <div>
+        <div class="icons">
             <a href="/users/login"><i class="fa-solid fa-user"></i></a>
 
         </div>
-
+        <div id='search-box'>
+            <form action='/search' id='search-form' method='get' target='_top'>
+            <input id='search-text' name='q' placeholder='Escribe lo que buscas' type='text'/>
+            <button id='search-button' type='submit'><span>Busca!</span></button>
+            </form>
+            </div>
     </section>
-    <a><section class="productCart__heater__section2"></a>
+    <div class="index__header__menu--nav">
         
-        <nav class="index__header__menu--nav">
-            <ul>
-                    <li><a href="">para modificar productos entrar -->></a></li>
-                    <li><a href="/products/totalProducts">Productos</a></li>
-                     <li><a href="">Adhesivos</a></li>
-                     <li><a href="">Pastinas</a></li>
-                     <li><a href="">Decorados</a></li>
-            </ul>
-            </nav>
-            <nav class="index__header__menu--nav">
-                <ul>
-                         <li><a href="">Quienes somos?</a></li>
-                         <li><a href="">Medios de pago</a></li>
-                         <li><a href="/products/creationProduct">Crear Producto</a></li>
-                </ul>
+            
+            <div>
+                <nav>
+                    <ul>
+                        <li><a class="" href="/products/totalProducts">Productos</a></li>
+                        <li><a href="">Adhesivos</a></li>
+                        <li><a href="#">Pastinas</a></li>
+                        <li><a href="#">Decorados</a></li>
+                    </ul>
+                    
                 </nav>
-    </section>
+                
+            </div>
+            <div class="">
+                <nav>
+                    <ul>
+                        <li><a class="" href="">Quienes somos?</a></li>
+                        <li><a href="">Medios de pago</a></li>
+                        <li><a href="/products/creationProduct">Crear Producto</a></li>
+                        
+                    </ul>
+                </nav>
+                <div class="icons2">
+                    <nav>
+                        <ul>
+                            <li><a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i> Carrito de Compras</a></li>
+                            <li><a href="/users/login"><i class="fa-solid fa-user"></i> Inicia Sesion</a></li>
+                        </ul>
+                    </nav>
+                    
+                    
+                    
+                </div>
+            </div>
+            
+               
+       
+    </div>
+    <div class="hide">
+        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+      </div> 
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(".hide").on('click', function() {
+      $("nav ul").toggle('slow');
+    })
+  </script>
 </header>
