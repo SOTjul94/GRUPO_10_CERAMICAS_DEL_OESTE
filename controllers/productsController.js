@@ -1,4 +1,4 @@
-const {loadProducts,storeProducts} = require('../data/productsModule')
+const {loadProducts,storeProducts} = require('../../GRUPO_10_CERAMICAS_DEL_OESTE/data/productsModule')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
@@ -53,7 +53,7 @@ const controller = {
 					code : +code,
 					caja: +caja,
 					color: color?.trim(),
-					finish: +finish,
+					finish: finish?.trim(),
 					style: style?.trim(),
 					dimensions : +dimensions,
 					pei: +pei,
@@ -85,7 +85,7 @@ const controller = {
 			code : +code,
 			caja: +caja,
 			color: color?.trim(),
-			finish: +finish,
+			finish: finish?.trim(),
 			style: style?.trim(),
 			dimensions : +dimensions,
 			pei: +pei,

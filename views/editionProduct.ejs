@@ -6,9 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ceramicas del oeste | Edicion de Producto </title >
  
-        <link   href="/stylesheets/login.css" rel="stylesheet">
+        
         <link   href="/stylesheets/header.css" rel="stylesheet">
         <link   href="/stylesheets/editionProduct.css" rel="stylesheet">
+        <link   href="/stylesheets/footer.css" rel="stylesheet">
 
      <a>   <script src="https://kit.fontawesome.com/ae1423e40e.js" crossorigin="anonymous"></script></a>
     </head>
@@ -20,12 +21,11 @@
    <h4>Edicion de Producto</h4>
     <form action="/products/update/<%= product.id %>?_method=PUT " method="POST">
        <div class="input-field">
+        <input type="text" id="name" name="name"  value="<%= product.name %> ">
         <label for="name" class="">Nombre del producto:</label>
-        <input type="text" id="name" name="name" class="" value="<%= product.name %> ">
-          
        </div>
        <div class="input-field">
-          <input class="pswrd" type="text" name="description required value="<%= product.description %> ">
+          <input class="pswrd" type="text" name="description"  value="<%= product.description %> ">
           
           <label>Descripcion</label>
        </div>
@@ -33,82 +33,82 @@
        
        <h4>Datos tecnicos</h4>
                   <div class="input-field">
-                     <input type="text" name="color" class="form-input" value="<%= product.color %> ">
+                     <input type="text" name="color"  value="<%= product.color %> ">
                      <label> Gama de color </label>
                      
                    </div> 
                    <div class="input-field">
-                     <input type="text" name="finish" class="form-input" value="<%= product.finish %> ">
+                     <input type="text" name="finish"  value="<%= product.finish %> ">
                      <label> Acabado </label>
                      
                    </div> 
                    <div class="input-field">
-                     <input type="text" name="style" class="form-input" value="<%= product.style %> ">
+                     <input type="text" name="style"  value="<%= product.style %> ">
                      <label> Estilo </label>
                      
                    </div> 
                    <div class="input-field">
-                     <input type="text" name="dimensions" class="form-input" value="<%= product.dimensions %> ">
+                     <input type="text" name="dimensions"  value="<%= product.dimensions %> ">
                      <label> Dimensiones </label>
 
                    </div> 
                    <div class="input-field">
-                     <input type="text" required name="recomendation" class="form-input" value="<%= product.recomendation %> ">
+                     <input type="text" required name="recomendation"  value="<%= product.recomendation %> ">
                      <label> Recomendaciones de uso </label>
                  
                    </div> 
                    <div class="input-field">
-                     <input type="text" required name="pei" class="form-input" value="<%= product.pei %> ">>
+                     <input type="text" required name="pei"  value="<%= product.pei %> ">
                      <label> Tipo de transito(Pei) </label>
                      
                    </div> 
                    <div class="input-field">
-                     <input type="text" required name="transit" class="form-input" value="<%= product.transit %> ">>
+                     <input type="text" required name="transit"  value="<%= product.transit %> ">
                      <label> Tipo de transito  </label>
                      
                    </div> 
                    <div class="input-field">
-                     <input type="text" required name="espesor" class="form-input" value="<%= product.espesor %> ">
+                     <input type="text" required name="espesor"  value="<%= product.espesor %> ">
                      <label> Espesor </label>
                      
                    </div> 
                    <div class="input-field">
-                     <input type="text" required name="model" class="form-input" value="<%= product.model %> ">
+                     <input type="text" required name="model"  value="<%= product.model %> ">
                      <label> Modelo </label>
                     
                    </div> 
                    <div class="input-field">
-                     <input type="text" required name="form" class="form-input" value="<%= product.form %> ">
+                     <input type="text" required name="form"  value="<%= product.form %> ">
                      <label> Forma de venta </label>
                      
                    </div> 
                    <div class="input-field">
-                     <input type="text" required name="origin" class="form-input" value="<%= product.origin %> ">
+                     <input type="text" required name="origin"  value="<%= product.origin %> ">
                      <label> Origen </label>
                      
                    </div>   
      <div class="input-field">
-        <input type="number" required name="price"  class="form-input" value="<%= product.price %> ">
+        <input type="number" required name="price"   value="<%= product.price %> ">
         <label>Precio</label>
         
      </div>
      <div class="input-field">
-        <input type="number" required name="caja"  class="form-input" value="<%= product.caja %> ">
+        <input type="number" required name="caja"   value="<%= product.caja %> ">
         <label>Precio x caja</label>
         
      </div>
     
     
      <div class="input-field">
-        <input type="text" required name="code" class="form-input" value="<%= product.code %> ">
+        <input type="text" required name="code"  value="<%= product.code %> ">
         <label>Codigo del producto</label>
        
      </div>
      <div class="clasificacion">
         <h4>Clasificacion</h4>
-                 <label><input type="checkbox" name="Pescar" value="Pescar"> Exterior
-                 <label><input type="checkbox" name="Pescar" value="Pescar"> Interior</label>
-                 <label><input type="checkbox" name="Pescar" value="Pescar"> Baños</label>
+                 <input type="checkbox" name="Pescar" value="Pescar"> Exterior
+                 <input type="checkbox" name="Pescar" value="Pescar"> Interior
+                 <input type="checkbox" name="Pescar" value="Pescar"> Baños
        </div>
        <div class="fotos">
         <h4>Fotos del producto</h4>
@@ -122,7 +122,7 @@
           <a href="/products/productDetail/<%= product.id %> "><button type="submit">Guardar Cambios</button></a>
        </div>
       </form>
-
+</div>
     </main>
     <%- include("./partials/footer") %> 
    </body>

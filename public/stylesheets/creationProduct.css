@@ -1,3 +1,7 @@
+@import  './general.css';
+body{
+  font-family: 'ABeeZee', sans-serif;
+}
 .container{
     position: relative;
     padding: 60px 40px;
@@ -107,7 +111,36 @@
       margin-bottom: 1%;
       }
     
-
+      .productCart__footer__section {
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .footer__logo1 {
+        display: flex;
+        height: 30px;
+        padding-left: 6px;
+      }
+      .footer__logo2 {
+        display: flex;
+        height: 23px;
+        padding-left: 0px;
+        margin-bottom: 5px;
+      }
+      .productCart__footer__section2 {
+        background-color: #69E0C9;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border: solid 1px black;
+      }
+      .footer__padre {
+        border: 1px solid black;
+      }
+      
 
 
 
