@@ -25,6 +25,7 @@ var bcryptjs = require('bcryptjs');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(localUserCheck);
 
 app.use(methodOverride('_method'));         
 app.use(logger('dev'));

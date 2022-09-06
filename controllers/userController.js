@@ -35,13 +35,12 @@ module.exports = {
             return res.send(req.body) 
                
             },
-       
-   
-   
-   
+    logout : (req,res) => {
+        res.session.destroy();
+        return res.redirect('/')
     }
 
 
-
+}
 
 
