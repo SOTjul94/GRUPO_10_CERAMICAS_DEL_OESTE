@@ -24,5 +24,18 @@ module.exports = {
         return res.render('register', {
             title : 'Register'
         })
+    },
+    processRegister : (req, res) => {
+            return res.send(req.body) 
+               
+            },
+       
+   
+   
+   
     }
-}
+
+
+
+
+

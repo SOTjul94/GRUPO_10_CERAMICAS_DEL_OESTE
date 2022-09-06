@@ -4,6 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const fs = require('fs');
+const multer = require('multer');
+const upload = multer({dest: 'public/images'});
+
+
+
 const methodOverride = require('method-override');
 const session = require('express-session');
 
@@ -14,7 +20,7 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 
 var app = express();
-
+var bcryptjs = require('bcryptjs');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -42,6 +48,29 @@ app.use('/products', productsRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+      
+
+app.post('/upload',upload.single('imagen'), (req,res)=>{
+  fs.renameSync(req.file.path, req.file.path +'.'+ req.file.mimetype.split('/'[1]));
+  res.send('check Imagen');
+})
+
+app.post('/login', async (req,res)=>{
+ var user = req.body.user;
+ var password = req.body.password;
+ if(user == 'admin' && password == '1234'){
+  let passwordHash = await bcryptjs.hash(password, 8);
+  res.json({
+    message :'¡AUTENTIFICACIÓN EXITOSA!',
+    passwordHash : passwordHash
+  });
+}else{
+  res.json({
+    message : '¡INGRESE CORRECTAMENTE SUS  DATOS!'
+  })
+};
+
+
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -53,5 +82,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+})
+
 
 module.exports = app;
