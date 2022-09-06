@@ -1,4 +1,4 @@
-## La retrospectiva  del sprint 4
+## La retrospectiva  del sprint 5
 - Comenzar a hacer: Videollamadas y reuniones previas que duren 15 min.
 - Hacer más: revisiones previas  del tp en grupo.
 - Continuar haciendo: Comunicación tanto por zoom y por whasap.
