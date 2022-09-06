@@ -11,7 +11,13 @@ module.exports = {
             req.session.userLogin = {
                 id,
                 username,
-            }
+                name,
+            };
+        if(req.body.remember){
+            res.cookie('ceramicas10', req.session.userLogin,{
+                maxAge : 1000 * 60
+            })
+        };
             return res.redirect('/users/profile')
         }else {
             return res.render('login', {
