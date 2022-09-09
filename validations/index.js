@@ -1,3 +1,3 @@
-module.exports = {
-    loginValidator : require('./loginValidator')
-}
+// module.exports = {
+//     loginValidator : require('./loginValidator')
+// }

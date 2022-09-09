@@ -13,7 +13,8 @@ const upload = multer({dest: 'public/images'});
 const methodOverride = require('method-override');
 const session = require('express-session');
 
-const localsUserCheck = require('./middlewares/localsUserCheck')
+const localsUserCheck = require('./middlewares/localsUserCheck');
+const cookieCheck = require('./middlewares/cookieCheck')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -24,6 +25,7 @@ var bcryptjs = require('bcryptjs');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(localUserCheck);
 
 app.use(methodOverride('_method'));         
 app.use(logger('dev'));
@@ -38,6 +40,7 @@ app.use(session({
   saveUninitialized : true
 }));
 
+app.use(cookieCheck);
 app.use(localsUserCheck);
 
 app.use('/', indexRouter);
