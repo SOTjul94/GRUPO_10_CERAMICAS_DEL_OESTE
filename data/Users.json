@@ -5,7 +5,9 @@
         "lastname": "Kingswood",
         "email": "mkingswood0@newsvine.com",
         "password": "C8IqmA",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "admin"
+
     },
     {
         "id": 2,
@@ -13,7 +15,9 @@
         "lastname": "Ruddlesden",
         "email": "lruddlesden1@sciencedirect.com",
         "password": "mOFdLzxe",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "admin"
+
     },
     {
         "id": 3,
@@ -21,7 +25,10 @@
         "lastname": "Carthew",
         "email": "fcarthew2@ezinearticles.com",
         "password": "z3zGbUgj",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
+
     },
     {
         "id": 4,
@@ -29,7 +36,9 @@
         "lastname": "Adolf",
         "email": "ladolf3@prlog.org",
         "password": "LCHHQAhw",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 5,
@@ -37,7 +46,9 @@
         "lastname": "Hudspeth",
         "email": "ohudspeth4@shinystat.com",
         "password": "YX9HqL",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "user"
+
     },
     {
         "id": 6,
@@ -45,7 +56,9 @@
         "lastname": "Cranstoun",
         "email": "mcranstoun5@ow.ly",
         "password": "pEj0207Q",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "user"
+
     },
     {
         "id": 7,
@@ -53,7 +66,9 @@
         "lastname": "Sigfrid",
         "email": "psigfrid6@seattletimes.com",
         "password": "XpfVV0EQw",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 8,
@@ -61,7 +76,9 @@
         "lastname": "Ibell",
         "email": "jibell7@webmd.com",
         "password": "PCnIoMfB",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 9,
@@ -69,7 +86,9 @@
         "lastname": "Longley",
         "email": "olongley8@a8.net",
         "password": "6GYg7XxR",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 10,
@@ -77,7 +96,9 @@
         "lastname": "Featenby",
         "email": "afeatenby9@disqus.com",
         "password": "sPILtPbBwA",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 11,
@@ -85,7 +106,9 @@
         "lastname": "McCaighey",
         "email": "gmccaigheya@ftc.gov",
         "password": "klHdXIOaidzs",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "user"
+
     },
     {
         "id": 12,
@@ -93,7 +116,7 @@
         "lastname": "Larcher",
         "email": "elarcherb@kickstarter.com",
         "password": "912KDav",
-        "imagen": "Male"
+        "imagen": "user"
     },
     {
         "id": 13,
@@ -101,7 +124,9 @@
         "lastname": "Tonkinson",
         "email": "ctonkinsonc@ebay.com",
         "password": "NOJbbL",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "user"
+
     },
     {
         "id": 14,
@@ -109,7 +134,9 @@
         "lastname": "Dumblton",
         "email": "gdumbltond@walmart.com",
         "password": "J3QQZicUB8Ko",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "admin"
+
     },
     {
         "id": 15,
@@ -117,7 +144,11 @@
         "lastname": "Mifflin",
         "email": "wmiffline@archive.org",
         "password": "lE7WVjcy",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
+    
+    
     },
     {
         "id": 16,
@@ -125,7 +156,12 @@
         "lastname": "McFadyen",
         "email": "ymcfadyenf@cbsnews.com",
         "password": "G44fq1",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+        
+
+
+    
     },
     {
         "id": 17,
@@ -133,7 +169,9 @@
         "lastname": "Castagnasso",
         "email": "scastagnassog@studiopress.com",
         "password": "jnaEnmijQxC",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 18,
@@ -141,7 +179,9 @@
         "lastname": "Schulze",
         "email": "lschulzeh@globo.com",
         "password": "dFqWIEl75exE",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 19,
@@ -149,7 +189,9 @@
         "lastname": "Winsom",
         "email": "lwinsomi@forbes.com",
         "password": "N6e5mdUCiY",
-        "imagen": "Genderfluid"
+        "imagen": "Genderfluid",
+        "rol" : "user"
+
     },
     {
         "id": 20,
@@ -157,7 +199,9 @@
         "lastname": "Welchman",
         "email": "owelchmanj@umn.edu",
         "password": "PJRrHM",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 21,
@@ -165,7 +209,9 @@
         "lastname": "Regi",
         "email": "qregik@uol.com.br",
         "password": "xr1tv9rD4Bvw",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "user"
+
     },
     {
         "id": 22,
@@ -173,7 +219,9 @@
         "lastname": "Pettko",
         "email": "ipettkol@msn.com",
         "password": "vpaxgd5vJ",
-        "imagen": "Polygender"
+        "imagen": "Polygender",
+        "rol" : "user"
+
     },
     {
         "id": 23,
@@ -181,15 +229,20 @@
         "lastname": "Casey",
         "email": "ccaseym@stanford.edu",
         "password": "GKB9YFYzQbCV",
-        "imagen": "Non-binary"
-    },
+        "imagen": "Non-binary",
+        "rol" : "user"
+
+    },  
+
     {
         "id": 24,
         "firstname": "Adella",
         "lastname": "Damper",
         "email": "adampern@google.es",
         "password": "Hji1WFWN1iH",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "user"
+
     },
     {
         "id": 25,
@@ -197,7 +250,9 @@
         "lastname": "Lory",
         "email": "floryo@hud.gov",
         "password": "UBnl04dkQwn",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "user"
+
     },
     {
         "id": 26,
@@ -205,7 +260,9 @@
         "lastname": "Oakes",
         "email": "moakesp@angelfire.com",
         "password": "f3WdJeVci",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 27,
@@ -213,7 +270,9 @@
         "lastname": "Caiger",
         "email": "tcaigerq@creativecommons.org",
         "password": "wbaj6uw",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "user"
+
     },
     {
         "id": 28,
@@ -221,7 +280,9 @@
         "lastname": "Cejka",
         "email": "scejkar@typepad.com",
         "password": "tGNoWLWMQgWF",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     },
     {
         "id": 29,
@@ -229,7 +290,9 @@
         "lastname": "Stanlake",
         "email": "rstanlakes@examiner.com",
         "password": "pU0dEaDzr",
-        "imagen": "Female"
+        "imagen": "Female",
+        "rol" : "user"
+
     },
     {
         "id": 30,
@@ -237,6 +300,8 @@
         "lastname": "Trematick",
         "email": "gtrematickt@bloglovin.com",
         "password": "Nbylbc",
-        "imagen": "Male"
+        "imagen": "Male",
+        "rol" : "user"
+
     }
 ]

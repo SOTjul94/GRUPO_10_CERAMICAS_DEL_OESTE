@@ -1,4 +1,4 @@
-const {loadProducts,storeProducts} = require('../../GRUPO_10_CERAMICAS_DEL_OESTE/data/productsModule')
+const {loadProducts,storeProducts} = require('../data/productsModule')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {

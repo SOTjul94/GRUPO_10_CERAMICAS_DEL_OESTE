@@ -30,14 +30,14 @@
         <div class="icons">
             <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
-        <% if (local.userLogin) { %>
+        <% if (locals.userLogin) { %>
          <div class="icons">
             <a href="/users/profile"><%= userLogin.username %> </a>
          </div>
          <div class="icons">
             <a href="/users/logout">Salir</a>
          </div>
-         <% if (local.userLogin.rol === admin) { %>
+         <% if (locals.userLogin.rol === "admin") { %>
             <li><a href="/products/creationProduct">Crear Producto</a></li>
          <% } %>
         <% } else { %>
