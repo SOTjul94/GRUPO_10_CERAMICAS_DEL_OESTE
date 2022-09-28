@@ -44,11 +44,11 @@ module.exports = {
 
         let newUser = {
             id : users.length > 0 ? users[users.length - 1].id + 1 : 1,
-            name : name.trim(),
-            surname : surname.trim(),
-            email : email.trim(),
+            name : name?.trim(),
+            surname : surname?.trim(),
+            email : email?.trim(),
             password : bcryptjs.hashSync(password, 12),
-            username : username.trim(),
+            username : username?.trim(),
         }
         let usersModify = [...users, newUser];
             storeUsers(usersModify)

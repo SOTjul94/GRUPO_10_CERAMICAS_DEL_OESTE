@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 const {login, register, processLogin, processRegister, logout, profile} = require('../controllers/userController');
-const {loginValidator,} = require('../validations');
 const userSessionCheck = require('../middlewares/userSessionCheck');
 
 
@@ -12,7 +11,7 @@ router
 .get('/register', register)
 .post('/register', processRegister)
 .get('/login', login )
-.post('/login',loginValidator,processLogin)
+.post('/login',processLogin)
 .get('/profile',userSessionCheck, profile)
 .get('/logout',logout)
 
