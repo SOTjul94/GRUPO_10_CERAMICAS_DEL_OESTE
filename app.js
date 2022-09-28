@@ -47,7 +47,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handler//////prueba///////
 app.use(function(req, res, next) {
   next(createError(404));
 });
@@ -72,7 +72,7 @@ app.post('/login', async (req,res)=>{
     message : '¡INGRESE CORRECTAMENTE SUS  DATOS!'
   })
 };
-
+///////////////////////prueba//////////////////////////
 
 
 // error handler
