@@ -44,11 +44,11 @@ module.exports = {
 
         let newUser = {
             id : users.length > 0 ? users[users.length - 1].id + 1 : 1,
-            name : name.trim(),
-            surname : surname.trim(),
-            email : email.trim(),
+            name : name?.trim(),
+            surname : surname?.trim(),
+            email : email?.trim(),
             password : bcryptjs.hashSync(password, 12),
-            username : username.trim(),
+            username : username?.trim(),
         }
         let usersModify = [...users, newUser];
             storeUsers(usersModify)
@@ -65,7 +65,14 @@ module.exports = {
     logout : (req,res) => {
         res.session.destroy();
         return res.redirect('/')
-    }
+    },
+    profile : (req,res) => {
+        let user = loadUsers().find(user => user.id === req.session.userLogin.id)
+        return res.render('profile',{
+            title: 'Profile',
+            user
+        })
+    },
 }
 
 

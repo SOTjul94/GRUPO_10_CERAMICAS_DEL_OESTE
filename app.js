@@ -13,7 +13,7 @@ const upload = multer({dest: 'public/images'});
 const methodOverride = require('method-override');
 const session = require('express-session');
 
-const localsUserCheck = require('./middlewares/localsUserCheck');
+const localsUserCheck = require('./middlewares/localUserCheck');
 const cookieCheck = require('./middlewares/cookieCheck')
 
 var indexRouter = require('./routes/index');
