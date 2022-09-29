@@ -270,7 +270,10 @@
    },
    {
       "id": 31,
+      "firstname": "Marcela",
+      "lastname": "Liliana Guerrero",
       "email": "Uridevj@outlook.com",
-      "password": "$2a$12$B.0JJgwV2wLz/f3OXFu.ku7O6Ot5xz4pJRIoH2hBSTWhWf5sn8qwW"
+      "password": "$2a$12$3vaBrPyQbeqkWziO6tnKxeGYFMF3iT5.a8qwWy3xk8FYCsB4ADuSm",
+      "rol": "user"
    }
 ]

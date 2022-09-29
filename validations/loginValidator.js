@@ -5,13 +5,13 @@ const bcryptjs =require('bcryptjs');
 module.exports = [
     body('email')
         .notEmpty().withMessage('Obligatorio completar el email').bail()
-        .isEmail().withMessege('Email válido').bail(),
+        .isEmail().withMessage('Email válido'),
 
     body('password')
-             .notEmpty().withMessege('Contraseña obligatoria').bail()
+             .notEmpty().withMessage('Contraseña obligatoria').bail()
              .custom((value, {req}) => {
                 let user = users.find(user => user.email === req.email.trim() && bcryptjs.compareSync(value, user.password));
-                console.log(user);
+                console.log('++++++++++++++++++', user);
                 return !!user   
-            }).withMessage('Datos incorrectos'),
+            }).withMessage('Datos incorrectos!!'),
 ]
