@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ceramicas del oeste | <%- title %> </title >
+ 
+        <link   href="/stylesheets/register.css" rel="stylesheet">
+        <link   href="/stylesheets/header.css" rel="stylesheet">
+        <link   href="/stylesheets/footer.css" rel="stylesheet">
+
+     <a>   <script src="https://kit.fontawesome.com/ae1423e40e.js" crossorigin="anonymous"></script></a>
+    </head>
+<body class="registro">
+    <%- include('./partials/header',) %>
+    <main class="registro__main">
+        <section class="registro__main__section">
+            <h1>Perfil de Usuario</h1>
+            <form action="/users/update/<%= user.id %>?_method=PUT " class="form_row" method="post">
+                <div class="form__box">
+                    <label class="form__label" for="nombre">Nombre*</label>
+                    <input class="form__input" type="text" placeholder="nombre" id="nombre" name="firstname" value="<%= user.firstname %>">
+                </div>
+                <div class="form__box">
+                    <label class="form__label" for="apellido">Apellido*</label>
+                    <input class="form__input" type="text" placeholder="apellido" id="apellido" name="lastname" value="<%= user.lastname %>">
+                </div>
+                <div class="form__box">
+                    <label class="form__label" for="nacionalidad">Nacionalidad</label>
+                    <input class="form__input" type="text" placeholder="Seleccionar" id="nacionalidad" name="nationality" value="<%= user.nationality %>">
+                </div>
+                <div class="form__box">
+                    <label class="form__label" for="numero de documento">Número de documento</label>
+                    <input class="form__input" type="text" placeholder="(sin puntos)" id="numero de documento" name="document" value="<%= user.document %>">
+                </div>
+                <div class="form__box">
+                    <label class="form__label" for="genero">Género</label>
+                    <input class="form__input" type="text" placeholder="Seleccionar" id="genero" name="gender" value="<%= user.gender %>">
+                </div>
+                <div class="form__box">
+                    <label class="form__label" for="fecha">Fecha de nacimiento</label>
+                    <input class="form__input" type="date" name="birthday" value="<%= user.birthday %>" min="1985-01-01" max="2022-12-31">
+                </div>
+                <div class="form__box--caja">
+                    <button class="form__box--button" type="submit">Guardar cambios</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <%- include("./partials/footer") %> 
+</body>
+</html>

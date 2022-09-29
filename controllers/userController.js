@@ -10,7 +10,6 @@ module.exports = {
     },
     processLogin : (req, res) => {
         let errors = validationResult(req);
-        return res.send(errors)
         if(errors.isEmpty()){
             let {id, name, username, rol} = loadUsers().find(user => user.email === req.body.email);
             req.session.userLogin = {
@@ -76,6 +75,9 @@ module.exports = {
             user
         })
     },
+    update : (req,res) => {
+        return res.send(req.body)
+    }
 }
 
 
