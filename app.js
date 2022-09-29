@@ -58,7 +58,7 @@ app.post('/upload',upload.single('imagen'), (req,res)=>{
   res.send('check Imagen');
 })
 
-app.post('/login', async (req,res)=>{
+/*app.post('/login', async (req,res)=>{
  var user = req.body.user;
  var password = req.body.password;
  if(user == 'admin' && password == '1234'){
@@ -71,7 +71,8 @@ app.post('/login', async (req,res)=>{
   res.json({
     message : '¡INGRESE CORRECTAMENTE SUS  DATOS!'
   })
-};
+};*/
+
 ///////////////////////prueba//////////////////////////
 
 
@@ -85,7 +86,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });  
-})
+
 
 
 module.exports = app;
