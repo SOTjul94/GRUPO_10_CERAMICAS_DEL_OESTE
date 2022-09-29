@@ -9,7 +9,7 @@ const {loginValidator} = require('../validations');
 
 // const {login, register, logout} = require('../controllers/userController');
 
-const userSessionCheck = require('../middlewares/userSessionCheck');
+const {userSessionCheck} = require('../middlewares/userSessionCheck');
 
 
 
@@ -21,7 +21,7 @@ router
 
       .get('/register', register)
       .get('/logout', logout)
-      .get('/profile', userSessionCheck, profile)
+      //  .get('/profile', userSessionCheck, profile)
 
 
       .get('/register', register)
