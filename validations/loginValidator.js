@@ -10,7 +10,7 @@ module.exports = [
     body('password')
              .notEmpty().withMessage('Contraseña obligatoria').bail()
              .custom((value, {req}) => {
-                let user = users.find(user => user.email === req.email.trim() && bcryptjs.compareSync(value, user.password));
+                let user = users.find(user => user.email === req.body.email.trim() && bcryptjs.compareSync(value, user.password));
                 console.log('++++++++++++++++++', user);
                 return !!user   
             }).withMessage('Datos incorrectos!!'),

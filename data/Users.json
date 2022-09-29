@@ -275,5 +275,13 @@
       "email": "Uridevj@outlook.com",
       "password": "$2a$12$3vaBrPyQbeqkWziO6tnKxeGYFMF3iT5.a8qwWy3xk8FYCsB4ADuSm",
       "rol": "user"
+   },
+   {
+      "id": 32,
+      "firstname": "Eric",
+      "lastname": "Mena",
+      "email": "menaericdaniel@gmail.com",
+      "password": "$2a$12$WnpgR0qQEfRLzPUB8dO0MOI/0xioXwI0Ot7g3LT3ldaieLCvFjCIK",
+      "rol": "user"
    }
 ]
