@@ -16,6 +16,7 @@
     <%- include('./partials/header',) %>
     <main class="registro__main">
         <section class="registro__main__section">
+            <img src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %> " alt="" class="">
             <h1>Perfil de Usuario</h1>
             <form action="/users/update/<%= user.id %>?_method=PUT " class="form_row" method="post">
                 <div class="form__box">
@@ -42,6 +43,8 @@
                     <label class="form__label" for="fecha">Fecha de nacimiento</label>
                     <input class="form__input" type="date" name="birthday" value="<%= user.birthday %>" min="1985-01-01" max="2022-12-31">
                 </div>
+                <label class="form__button form__button--cancel pointer" for="avatar">Subir imagen de perfil</label>
+                    <input hidden type="file" id="avatar">
                 <div class="form__box--caja">
                     <button class="form__box--button" type="submit">Guardar cambios</button>
                 </div>

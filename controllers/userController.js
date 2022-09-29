@@ -11,12 +11,13 @@ module.exports = {
     processLogin : (req, res) => {
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            let {id, name, username, rol} = loadUsers().find(user => user.email === req.body.email);
+            let {id, name, username, rol, avatar} = loadUsers().find(user => user.email === req.body.email);
             req.session.userLogin = {
                 id,
                 username,
                 name,
-                rol
+                rol,
+                avatar
             };
         if(req.body.remember){
             res.cookie('ceramicas10', req.session.userLogin,{
@@ -41,7 +42,7 @@ module.exports = {
         
 
         if(errors.isEmpty()){
-        const {firstname, lastname, email, password, username} = req.body;
+        const {firstname, lastname, email, password} = req.body;
         let users = loadUsers()
 
         let newUser = {
@@ -50,7 +51,8 @@ module.exports = {
             lastname: lastname?.trim(),
             email : email?.trim(),
             password : bcryptjs.hashSync(password, 12),
-            rol : 'user'
+            rol : 'user',
+            avatar : null
         }
         let usersModify = [...users, newUser];
             storeUsers(usersModify)
@@ -70,7 +72,7 @@ module.exports = {
     },
     profile : (req,res) => {
         let user = loadUsers().find(user => user.id === req.session.userLogin.id)
-        return res.render('profile',{
+        return res.render('/',{
             title: 'Profile',
             user
         })
