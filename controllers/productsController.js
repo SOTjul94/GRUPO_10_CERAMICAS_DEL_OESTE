@@ -74,9 +74,11 @@ const controller = {
 	},
     store: (req, res) => {
 		
+		//return res.send(req.file)
+		
 		const {name, price, code, color, description,caja, finish, style, dimensions, pei, transit, recomendation, espesor, model, form, origin} = req.body
 		const products = loadProducts();
-
+        
 		const newProduct ={
 			id : (products[products.length - 1].id + 1),
 			name : name?.trim(),
@@ -95,7 +97,7 @@ const controller = {
 			model: model?.trim(),
 			form: form?.trim(),
 			origin: origin?.trim(),
-			image : 'ceramica1.jpg',
+			image : req.file ? req.file.filename: 'ceramica1.jpg',
 			
 		}
 		const productsModify = [...products, newProduct];
