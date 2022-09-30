@@ -5,8 +5,12 @@
       "lastname": "Kingswood",
       "email": "mkingswood0@newsvine.com",
       "password": "C8IqmA",
-      "imagen": "Female",
-      "rol": "admin"
+      "gender": "Female",
+      "rol": "admin",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 2,
@@ -14,8 +18,12 @@
       "lastname": "Ruddlesden",
       "email": "lruddlesden1@sciencedirect.com",
       "password": "mOFdLzxe",
-      "imagen": "Female",
-      "rol": "admin"
+      "gender": "Female",
+      "rol": "admin",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 3,
@@ -23,8 +31,12 @@
       "lastname": "Carthew",
       "email": "fcarthew2@ezinearticles.com",
       "password": "z3zGbUgj",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 4,
@@ -32,8 +44,12 @@
       "lastname": "Adolf",
       "email": "ladolf3@prlog.org",
       "password": "LCHHQAhw",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 5,
@@ -41,8 +57,12 @@
       "lastname": "Hudspeth",
       "email": "ohudspeth4@shinystat.com",
       "password": "YX9HqL",
-      "imagen": "Female",
-      "rol": "user"
+      "gender": "Female",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 6,
@@ -50,8 +70,12 @@
       "lastname": "Cranstoun",
       "email": "mcranstoun5@ow.ly",
       "password": "pEj0207Q",
-      "imagen": "Female",
-      "rol": "user"
+      "gender": "Female",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 7,
@@ -59,8 +83,12 @@
       "lastname": "Sigfrid",
       "email": "psigfrid6@seattletimes.com",
       "password": "XpfVV0EQw",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 8,
@@ -68,8 +96,12 @@
       "lastname": "Ibell",
       "email": "jibell7@webmd.com",
       "password": "PCnIoMfB",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 9,
@@ -77,8 +109,12 @@
       "lastname": "Longley",
       "email": "olongley8@a8.net",
       "password": "6GYg7XxR",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 10,
@@ -86,8 +122,12 @@
       "lastname": "Featenby",
       "email": "afeatenby9@disqus.com",
       "password": "sPILtPbBwA",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 11,
@@ -95,8 +135,12 @@
       "lastname": "McCaighey",
       "email": "gmccaigheya@ftc.gov",
       "password": "klHdXIOaidzs",
-      "imagen": "Female",
-      "rol": "user"
+      "gender": "Female",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 12,
@@ -104,7 +148,7 @@
       "lastname": "Larcher",
       "email": "elarcherb@kickstarter.com",
       "password": "912KDav",
-      "imagen": "user"
+      "gender": "user"
    },
    {
       "id": 13,
@@ -112,8 +156,12 @@
       "lastname": "Tonkinson",
       "email": "ctonkinsonc@ebay.com",
       "password": "NOJbbL",
-      "imagen": "Female",
-      "rol": "user"
+      "gender": "Female",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 14,
@@ -121,8 +169,12 @@
       "lastname": "Dumblton",
       "email": "gdumbltond@walmart.com",
       "password": "J3QQZicUB8Ko",
-      "imagen": "Male",
-      "rol": "admin"
+      "gender": "Male",
+      "rol": "admin",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 15,
@@ -130,8 +182,12 @@
       "lastname": "Mifflin",
       "email": "wmiffline@archive.org",
       "password": "lE7WVjcy",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 16,
@@ -139,8 +195,12 @@
       "lastname": "McFadyen",
       "email": "ymcfadyenf@cbsnews.com",
       "password": "G44fq1",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 17,
@@ -148,8 +208,12 @@
       "lastname": "Castagnasso",
       "email": "scastagnassog@studiopress.com",
       "password": "jnaEnmijQxC",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 18,
@@ -157,8 +221,12 @@
       "lastname": "Schulze",
       "email": "lschulzeh@globo.com",
       "password": "dFqWIEl75exE",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 19,
@@ -166,8 +234,12 @@
       "lastname": "Winsom",
       "email": "lwinsomi@forbes.com",
       "password": "N6e5mdUCiY",
-      "imagen": "Genderfluid",
-      "rol": "user"
+      "gender": "Genderfluid",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 20,
@@ -175,8 +247,12 @@
       "lastname": "Welchman",
       "email": "owelchmanj@umn.edu",
       "password": "PJRrHM",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 21,
@@ -184,8 +260,12 @@
       "lastname": "Regi",
       "email": "qregik@uol.com.br",
       "password": "xr1tv9rD4Bvw",
-      "imagen": "Female",
-      "rol": "user"
+      "gender": "Female",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 22,
@@ -193,8 +273,12 @@
       "lastname": "Pettko",
       "email": "ipettkol@msn.com",
       "password": "vpaxgd5vJ",
-      "imagen": "Polygender",
-      "rol": "user"
+      "gender": "Polygender",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 23,
@@ -202,8 +286,12 @@
       "lastname": "Casey",
       "email": "ccaseym@stanford.edu",
       "password": "GKB9YFYzQbCV",
-      "imagen": "Non-binary",
-      "rol": "user"
+      "gender": "Non-binary",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 24,
@@ -211,8 +299,12 @@
       "lastname": "Damper",
       "email": "adampern@google.es",
       "password": "Hji1WFWN1iH",
-      "imagen": "Female",
-      "rol": "user"
+      "gender": "Female",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 25,
@@ -220,8 +312,12 @@
       "lastname": "Lory",
       "email": "floryo@hud.gov",
       "password": "UBnl04dkQwn",
-      "imagen": "Female",
-      "rol": "user"
+      "gender": "Female",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 26,
@@ -229,8 +325,12 @@
       "lastname": "Oakes",
       "email": "moakesp@angelfire.com",
       "password": "f3WdJeVci",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 27,
@@ -238,8 +338,12 @@
       "lastname": "Caiger",
       "email": "tcaigerq@creativecommons.org",
       "password": "wbaj6uw",
-      "imagen": "Female",
-      "rol": "user"
+      "gender": "Female",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 28,
@@ -247,8 +351,12 @@
       "lastname": "Cejka",
       "email": "scejkar@typepad.com",
       "password": "tGNoWLWMQgWF",
-      "imagen": "Male",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 29,
@@ -256,8 +364,12 @@
       "lastname": "Stanlake",
       "email": "rstanlakes@examiner.com",
       "password": "pU0dEaDzr",
-      "imagen": "Female",
-      "rol": "user"
+      "gender": "Female",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 30,
@@ -265,23 +377,37 @@
       "lastname": "Trematick",
       "email": "gtrematickt@bloglovin.com",
       "password": "Nbylbc",
-      "imagen": "Male",
-      "rol": "user"
-   },
-   {
-      "id": 31,
-      "firstname": "Marcela",
-      "lastname": "Liliana Guerrero",
-      "email": "Uridevj@outlook.com",
-      "password": "$2a$12$3vaBrPyQbeqkWziO6tnKxeGYFMF3iT5.a8qwWy3xk8FYCsB4ADuSm",
-      "rol": "user"
+      "gender": "Male",
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
    },
    {
       "id": 32,
       "firstname": "Eric",
       "lastname": "Mena",
       "email": "menaericdaniel@gmail.com",
+      "gender": "Male",
       "password": "$2a$12$WnpgR0qQEfRLzPUB8dO0MOI/0xioXwI0Ot7g3LT3ldaieLCvFjCIK",
-      "rol": "user"
+      "rol": "user",
+      "document": 37648593,
+      "nationality": "argentina",
+      "birthday": "",
+      "avatar": null
+   },
+   {
+      "id": 33,
+      "firstname": "ema",
+      "lastname": "arr",
+      "email": "ema@ema.com",
+      "password": "$2a$12$e.Pp/LpfPCJXi8/E1CKtu.AZjSJgjuh9Ifb8jHaunr3yY0RNBGhnO",
+      "rol": "user",
+      "avatar": null,
+      "gender": "femenino",
+      "document": "45075655",
+      "nationality": "Argentina",
+      "birthday": "2022-09-23"
    }
 ]
