@@ -4,7 +4,7 @@ const path = require('path');
 const adminUsers = require('../data/users-admin')
 const userLogs = (req, res, next)=>{
 
-    fs.appendFileSync('./logs/logs.txt', `El usuario ingresó a la ruta: ${req.url}\n`)
+      fs.appendFileSync('./logs/logs.txt', `El usuario ingresó a la ruta: ${req.url}\n`)
     next();
 }
 const validaAdmin = (req, res, next)=>{
