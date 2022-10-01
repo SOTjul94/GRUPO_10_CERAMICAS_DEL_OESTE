@@ -27,12 +27,13 @@
             <button id='search-button' type='submit'><span>Buscar</span></button>
             </form>
             </div>
+        
         <div class="icons">
             <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         <% if (locals.userLogin) { %>
          <div class="icons">
-            <a href="/users/profile"><%= userLogin.username %> </a>
+            <a href="/users/profile"><%= userLogin.firstname %> </a>
          </div>
          <div class="icons">
             <a href="/users/logout">Salir</a>

@@ -409,5 +409,18 @@
       "document": "45075655",
       "nationality": "Argentina",
       "birthday": "2022-09-23"
+   },
+   {
+      "id": 34,
+      "firstname": "Abril",
+      "lastname": "Nuñez",
+      "email": "abrilbrilnu@gmail.com",
+      "password": "$2a$12$kTQ6JATF1Y63G7aBX.BwremhvGJcQfI9qfZPrH4NpO6WpJxQsgxRa",
+      "rol": "admin",
+      "avatar": null,
+      "gender": "female",
+      "document": "45205011",
+      "nationality": "Argentina",
+      "birthday": "2003-09-23"
    }
 ]
