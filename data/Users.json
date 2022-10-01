@@ -552,5 +552,18 @@
       "document": null,
       "nationality": null,
       "birthday": null
+   },
+   {
+      "id": 45,
+      "firstname": "leonardo",
+      "lastname": "luna",
+      "email": "lyweonardo@hotmail.com",
+      "password": "$2a$12$bw7JaB7mOxv9pcybe2.2beaPKA9bnmWlgeH33uTYMl8Sq.adBJW4G",
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "document": null,
+      "nationality": null,
+      "birthday": null
    }
 ]
