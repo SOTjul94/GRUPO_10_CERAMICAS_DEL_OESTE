@@ -409,5 +409,18 @@
       "document": "45075655",
       "nationality": "Argentina",
       "birthday": "2022-09-23"
+   },
+   {
+      "id": 34,
+      "firstname": "Marcela",
+      "lastname": "Liliana Guerrero",
+      "email": "Uridevj@outlook.com",
+      "password": "$2a$12$FvhzYT20MOc8C62bR7oGqe87AOg2SydGZrvgc2UnP4KjMMzgJVDxS",
+      "rol": "user",
+      "avatar": null,
+      "gender": "femenino",
+      "document": "45075655",
+      "nationality": "ingles",
+      "birthday": "2003-08-17"
    }
 ]
