@@ -1,21 +1,21 @@
 const path = require('path');
 const multer = require('multer');
 
-const storageImageProduct = multer.diskStorage({
+const storageImageAvatar = multer.diskStorage({
     destination: (req, file, callback) => {
-        callback(null, './public/images/products' )
+        callback(null, './public/images/avatars' )
     
     },
     filename : (req,file,callback) => {
-        callback(null,'product-' + Date.now() + path.extname(file.originalname))
+        callback(null,'avatar-' + Date.now() + path.extname(file.originalname))
         /* callback(null,`product-${Date.now()}${path.extname(file.originalname)}`) */
     }
 });
 
-const uploadImageProduct = multer({
-    storage : storageImageProduct
+const uploadImageAvatar = multer({
+    storage : storageImageAvatar
 });
 
 module.exports = {
-    uploadImageProduct
+    uploadImageAvatar
 }

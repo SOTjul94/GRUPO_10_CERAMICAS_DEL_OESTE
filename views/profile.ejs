@@ -18,11 +18,11 @@
         <section class="registro__main__section">
             <img src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %> " alt="" class="">
             <h1>Perfil de Usuario</h1>
-            <form action="/users/update/<%= user.id %>?_method=PUT" class="form_row" method="post">
+            <!-- <form action="/users/update/<%# user.id %>?_method=PUT" class="form_row" method="post">
             <div class="nb-3 col-12 col-md-6" >
-            <imput type="file" accept="image/*" name="image"></imput>
-            <form action="" method="POST" enctype="multipart/form-data"></form>
-            </div> 
+            <imput type="file" accept="image/*" name="image"></imput> -->
+            <form action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data">
+          
                 
                 
                 <div class="form__box">
@@ -53,6 +53,7 @@
                     <input hidden type="file" id="avatar" name="avatar">
                 <div class="form__box--caja">
                     <button class="form__box--button" type="submit">Guardar cambios</button>
+                    
                     <input hidden type="file" id="avatar" name="avatar">
                     <div class="form__box--caja">
                 </div>

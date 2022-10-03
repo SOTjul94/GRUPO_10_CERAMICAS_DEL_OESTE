@@ -417,11 +417,11 @@
       "email": "lyweonardo@hotmail.com",
       "password": "$2a$12$DVNacifwTxwNmMeYPZDUTODldu2gp6rZzAVhs/HYKD.CILTrMJOn.",
       "rol": "user",
-      "avatar": null,
-      "gender": null,
-      "document": null,
-      "nationality": null,
-      "birthday": null
+      "avatar": "avatar-1664825812857.jpg",
+      "gender": "Masculino",
+      "document": "123123123",
+      "nationality": "argentino",
+      "birthday": "2022-10-05"
    },
    {
       "id": 35,
