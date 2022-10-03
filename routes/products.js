@@ -3,7 +3,7 @@ var router = express.Router();
 const {productCart, productDetail, editionProduct, creationProduct, totalProducts, destroy, update, store} = require('../controllers/productsController');
 
 const adminUserCheck = require('../middlewares/adminUserCheck');
-const {uploadImageProduct } = require('../middlewares/uploadFiles');
+const {uploadImageProduct } = require('../middlewares/userLoadFiles');
 /* products*/
 router
       .get('/productCart', productCart)
