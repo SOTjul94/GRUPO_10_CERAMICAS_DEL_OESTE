@@ -565,5 +565,18 @@
       "document": null,
       "nationality": null,
       "birthday": null
+   },
+   {
+      "id": 46,
+      "firstname": "nestor",
+      "lastname": "fleitas",
+      "email": "lyweonardo@hotmail.com",
+      "password": "$2a$12$IO/CCX.mDpnSXV3qwGJSb.ztgoc9dBOZHgXjnin7drSqvTmTHdKUW",
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "document": null,
+      "nationality": null,
+      "birthday": null
    }
 ]
