@@ -54,7 +54,7 @@ app.use(function(req, res, next) {
       
 
 app.post('/upload',upload.single('imagen'), (req,res)=>{
-  fs.renameSync(req.file.path, req.file.path +'.'+ req.file.mimetype.split('/'[1]));
+ fs.renameSync(req.file.path, req.file.path +'.'+ req.file.mimetype.split('/'[1]));
   res.send('check Imagen');
 })
 
