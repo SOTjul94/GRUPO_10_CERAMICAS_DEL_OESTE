@@ -52,9 +52,17 @@ module.exports = (sequelize, dataTypes) => {
 
     User.associate = (models) => {
 
-        User.hasMany(models.CeramicasDelOeste, {
+        User.belongsTo(models.CeramicasDelOeste, {
             as : 'ceramicasDelOeste',
             foreignKey : 'user_id'
+        }),
+        User.hasMany(models.Avatar, {
+            as : 'avatar',
+            foreignKey : 'avatar_id'
+        }),
+        User.hasMany(models.Rol, {
+            as : 'rol',
+            foreignKey : 'rol_id'
         })
     }
 

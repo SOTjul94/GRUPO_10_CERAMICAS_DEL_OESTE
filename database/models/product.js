@@ -82,11 +82,14 @@ module.exports = (sequelize, dataTypes) => {
     //Relaciones 
     Product.associate = (models) => {
 
-        Product.hasMany(models.CeramicasDelOeste, {
+        Product.belongsTo(models.CeramicasDelOeste, {
             as : 'ceramicasDelOeste',
-            through : 'ceramicas_products',
-            foreignKey : 'product_id',
-            otherKey : 'ceramica_id'
+            foreignKey : 'product_id'
+        }),
+        Product.belongsTo(models.ProductCart, {
+            as : 'productCarts',
+            trough : 'carrito_products',
+            foreignKey : 'products_id'
         })
     }
 

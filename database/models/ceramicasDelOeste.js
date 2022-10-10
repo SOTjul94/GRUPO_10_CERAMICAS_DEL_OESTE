@@ -17,19 +17,17 @@ module.exports = (sequelize, dataTypes) => {
     //Relaciones 
     CeramicasDelOeste.associate = (models) => {
 
-        CeramicasDelOeste.belongsToMany(models.Product, {
+        CeramicasDelOeste.hasMany(models.Product, {
             as : 'products',
-            through : 'ceramicas_products',
-            foreignKey : 'ceramica_id',
-            otherKey : 'products_id'
+            foreignKey : 'products_id',
         });
 
-        CeramicasDelOeste.belongsTo(models.User, {
+        CeramicasDelOeste.hasMany(models.User, {
             as : 'user',
             foreignKey : 'users_id'
         });
 
-        CeramicasDelOeste.belongsTo(models.Admin, {
+        CeramicasDelOeste.hasMany(models.Admin, {
             as : 'admin',
             foreignKey : 'admin_id'
         })
