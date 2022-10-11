@@ -385,7 +385,7 @@
       "avatar": null
    },
    {
-      "id": 32,
+      "id": 31,
       "firstname": "Eric",
       "lastname": "Mena",
       "email": "menaericdaniel@gmail.com",
@@ -398,7 +398,7 @@
       "avatar": null
    },
    {
-      "id": 33,
+      "id": 32,
       "firstname": "ema",
       "lastname": "arr",
       "email": "ema@ema.com",
@@ -422,5 +422,18 @@
       "document": "45075655",
       "nationality": "ingles",
       "birthday": "2003-08-17"
+   },
+   {
+      "id": 33,
+      "firstname": "uriel",
+      "lastname": "aguirre",
+      "email": "Uridevj@outlook.com",
+      "password": "$2a$12$INqPSRFldHXPTGp/9h9Wi.CpBDrKJKt7oUJHWzfRfR7m6f4uy9kIa",
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "document": null,
+      "nationality": null,
+      "birthday": null
    }
 ]

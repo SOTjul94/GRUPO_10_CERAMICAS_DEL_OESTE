@@ -57,6 +57,10 @@ body{
 h1{
     text-align: center;
 }
+.registro__main__section_image{
+
+  width: 10%;
+}
 .registro__header{
     background: linear-gradient(180deg, #69E0C9, #C0FAEE, #fff);
     border: none;

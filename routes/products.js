@@ -3,7 +3,7 @@ var router = express.Router();
 const {productCart, productDetail, editionProduct, creationProduct, totalProducts, destroy, update, store} = require('../controllers/productsController');
 
 const adminUserCheck = require('../middlewares/adminUserCheck');
-
+const {uploadImageProduct } = require('../middlewares/userLoadFiles');
 /* products*/
 router
       .get('/productCart', productCart)
@@ -13,7 +13,7 @@ router
       .get('/totalProducts', totalProducts)
       .get('/products/creationProduct', adminUserCheck, totalProducts)
       .get('/productDetail/:id/', productDetail)
-      .post('/store', store)
+      .post('/store',uploadImageProduct.single('image') ,store)
       .get('/editionProduct/:id/', adminUserCheck, editionProduct)
       .put('/editionProduct/:id', adminUserCheck, editionProduct)
       .delete('/delete/:id', adminUserCheck, destroy)
