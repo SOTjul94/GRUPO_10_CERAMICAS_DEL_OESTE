@@ -31,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull:false
         },
         birthday : {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
             allowNull: false
         },
         rol_id : {

@@ -21,4 +21,6 @@ module.exports = (sequelize, dataTypes) => {
             foreingKey : 'admin_id'
         })
     }
+
+    return Admin
 }

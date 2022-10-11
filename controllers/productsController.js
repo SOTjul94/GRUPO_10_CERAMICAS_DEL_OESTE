@@ -1,3 +1,5 @@
+const db = require('../database/models');
+
 const {loadProducts,storeProducts} = require('../data/productsModule')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -39,7 +41,7 @@ const controller = {
 			product,
 			toThousand
 		})
-	},
+	},	
 	update: (req, res) => {
 		
 		const products = loadProducts();
@@ -71,7 +73,7 @@ const controller = {
 		})
 		storeProducts(productModify)
 		return res.redirect('/products/totalProducts');
-	},
+	},	
     store: (req, res) => {
 		
 		//return res.send(req.file)

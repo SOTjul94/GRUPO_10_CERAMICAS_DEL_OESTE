@@ -3,7 +3,8 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         id : {
             type: dataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            primaryKey: true
         },
         products_id : dataTypes.INTEGER,
         users_id : dataTypes.INTEGER,
