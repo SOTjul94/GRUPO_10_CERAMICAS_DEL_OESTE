@@ -416,20 +416,22 @@
       "lastname": "Liliana Guerrero",
       "email": "Uridevj@outlook.com",
       "password": "$2a$12$FvhzYT20MOc8C62bR7oGqe87AOg2SydGZrvgc2UnP4KjMMzgJVDxS",
-      "rol": "user",
-<<<<<<< HEAD
+      "rol": "user"
+   },
+      {
       "avatar": "avatar-1664825812857.jpg",
       "gender": "Masculino",
       "document": "123123123",
       "nationality": "argentino",
       "birthday": "2022-10-05"
-=======
-      "avatar": null,
+},
+{     
+   "avatar": null,
       "gender": "femenino",
       "document": "45075655",
       "nationality": "ingles",
       "birthday": "2003-08-17"
->>>>>>> 6f3f715c59681f55552fcacf764440e29929ecda
+
    },
    {
       "id": 33,
