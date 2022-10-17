@@ -16,9 +16,13 @@
     <%- include('./partials/header',) %>
     <main class="registro__main">
         <section class="registro__main__section">
-            <img src="/images/users/<%= user.avatar ? user.avatar : 'default.png' %> " alt="" class="">
             <h1>Perfil de Usuario</h1>
+<<<<<<< HEAD
             <!-- <form action="/users/update/<%# user.id %>?_method=PUT" class="form_row" method="post">
+=======
+            <img src="/images/<%= user.avatar ? user.avatar : 'defautlUser.png' %>" alt="" class="registro__main__section_image">
+            <form action="/users/update/<%= user.id %>?_method=PUT" class="form_row" method="post">
+>>>>>>> 6f3f715c59681f55552fcacf764440e29929ecda
             <div class="nb-3 col-12 col-md-6" >
             <imput type="file" accept="image/*" name="image"></imput> -->
             <form action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data">
