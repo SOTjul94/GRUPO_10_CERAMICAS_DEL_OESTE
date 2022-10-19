@@ -8,6 +8,7 @@ const loginValidator = require('../validations/loginValidator');
 
 
 
+
 /* Users */
 router
 .get('/register', register)
