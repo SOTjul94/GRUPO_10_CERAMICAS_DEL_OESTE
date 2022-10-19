@@ -71,10 +71,19 @@ module.exports = {
       });
     }
   },
-  logout: (req, res) => {
+  /*logout: (req, res) => {
     res.session.destroy();
     return res.redirect("/");
-  },
+  },*/
+  logout : (req,res) => {
+    req.session.destroy();
+    res.cookie('ceramicas_del_oeste',null,{maxAge: -1});
+    return res.redirect("/")
+  }
+}
+ 
+ 
+ 
   profile: (req, res) => {
     let user = loadUsers().find((user) => user.id === req.session.userLogin.id);
     return res.render("profile", {
