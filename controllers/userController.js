@@ -90,7 +90,7 @@ module.exports = {
       title: "Profile",
       user,
     });
-  },
+  }
   update: (req, res) => {
     /* OBTENEMOS LOS USUARIOS */
     const users = loadUsers();
@@ -120,5 +120,5 @@ module.exports = {
     });
     storeUsers(usersModify);
     res.redirect("/users/profile");
-  },
-};
+  }
+
