@@ -77,7 +77,7 @@ module.exports = {
   },*/
   logout : (req,res) => {
     req.session.destroy();
-    res.cookie('ceramicas_del_oeste',null,{maxAge: -1});
+    res.cookie("CERAMICAS_DEL_OESTE",null,{maxAge: -1});
     return res.redirect("/")
   }
 }
