@@ -84,14 +84,14 @@ module.exports = {
  
  
  
-  profile: (req, res) => {
+  profile : (req, res) => {
     let user = loadUsers().find((user) => user.id === req.session.userLogin.id);
     return res.render("profile", {
       title: "Profile",
       user,
     });
   }
-  update: (req, res) => {
+  update : (req, res) => {
     /* OBTENEMOS LOS USUARIOS */
     const users = loadUsers();
     const avatar = req.file;
