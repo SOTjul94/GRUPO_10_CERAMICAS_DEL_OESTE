@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module.exports = (sequelize, dataTypes) => {
     let alias = 'User';
     let cols = {
@@ -45,26 +46,36 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         timestamps : true
+=======
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class User extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+>>>>>>> Abril
     }
-    const User = sequelize.define(alias,cols,config);
-
-    //Relaciones 
-
-    User.associate = (models) => {
-
-        User.belongsTo(models.CeramicasDelOeste, {
-            as : 'ceramicasDelOeste',
-            foreignKey : 'user_id'
-        }),
-        User.hasMany(models.Avatar, {
-            as : 'avatar',
-            foreignKey : 'avatar_id'
-        }),
-        User.hasMany(models.Rol, {
-            as : 'rol',
-            foreignKey : 'rol_id'
-        })
-    }
-
-    return User
-}
+  }
+  User.init({
+    firstname: DataTypes.STRING,
+    lastname: DataTypes.STRING,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING,
+    avatar: DataTypes.STRING,
+    document: DataTypes.STRING,
+    birthday: DataTypes.DATE,
+    nacionality_id: DataTypes.INTEGER,
+    rol_id: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'User',
+  });
+  return User;
+};

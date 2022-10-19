@@ -1,97 +1,38 @@
-module.exports = (sequelize, dataTypes) => {
-    let alias = 'Product';
-    let cols = {
-        id : {
-            type: dataTypes.INTEGER,
-            primaryKey : true,
-            allowNull: false,
-            autoIncrement : true
-        },
-        name: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        price: {
-            type: dataTypes.DECIMAL(),
-            allowNull: false
-        },
-        code: {
-            type: dataTypes.DECIMAL(),
-            allowNull: false
-        },
-        caja: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        color: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        finish: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        style: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        dimensions: {
-            type: dataTypes.DECIMAL(),
-            allowNull: false
-        },
-        pei: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        transit: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        recomendation: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        espesor: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        model: {
-            type: dataTypes.DECIMAL(),
-            allowNull: false
-        },
-        form: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        origin: {
-            type: dataTypes.STRING(45),
-            allowNull: false
-        },
-        description: {
-            type: dataTypes.STRING(255),
-            allowNull: false
-        },
-    };
-
-    let config = {
-        timestamps : true
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Product extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      
     }
-    
-    const Product = sequelize.define(alias,cols,config);
-
-    //Relaciones 
-    Product.associate = (models) => {
-
-        Product.belongsTo(models.CeramicasDelOeste, {
-            as : 'ceramicasDelOeste',
-            foreignKey : 'product_id'
-        }),
-        Product.belongsTo(models.ProductCart, {
-            as : 'productCarts',
-            trough : 'carrito_products',
-            foreignKey : 'products_id'
-        })
-    }
-
-    return Product
-}
+  }
+  Product.init({
+    model: DataTypes.STRING,
+    price: DataTypes.INTEGER,
+    pieces: DataTypes.INTEGER,
+    discount: DataTypes.INTEGER,
+    description: DataTypes.STRING,
+    thickness: DataTypes.INTEGER,
+    image: DataTypes.STRING,
+    color_id: DataTypes.INTEGER,
+    salesFormat_id: DataTypes.INTEGER,
+    factorie_id: DataTypes.INTEGER,
+    style_id: DataTypes.INTEGER,
+    dimension_id: DataTypes.INTEGER,
+    endurance_id: DataTypes.INTEGER,
+    transit_id: DataTypes.INTEGER,
+    origin_id: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'Product',
+  });
+  return Product;
+};
