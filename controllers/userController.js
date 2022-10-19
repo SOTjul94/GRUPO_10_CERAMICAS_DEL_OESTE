@@ -70,28 +70,26 @@ module.exports = {
         old: req.body,
       });
     }
-  },
+  
   /*logout: (req, res) => {
     res.session.destroy();
     return res.redirect("/");
   },*/
-  logout : (req,res) => {
+  
+},
+logout : (req,res) => {
     req.session.destroy();
     res.cookie("CERAMICAS_DEL_OESTE",null,{maxAge: -1});
     return res.redirect("/")
-  }
-}
- 
- 
- 
-  profile : (req, res) => {
+},
+profile : (req, res) => {
     let user = loadUsers().find((user) => user.id === req.session.userLogin.id);
     return res.render("profile", {
       title: "Profile",
-      user,
+      user
     });
-  }
-  update : (req, res) => {
+ },
+update : (req, res) => {
     /* OBTENEMOS LOS USUARIOS */
     const users = loadUsers();
     const avatar = req.file;
@@ -120,5 +118,6 @@ module.exports = {
     });
     storeUsers(usersModify);
     res.redirect("/users/profile");
-  }
+}
 
+}
