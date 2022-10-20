@@ -116,5 +116,3 @@ module.exports = {
         res.redirect("/users/profile")
     }
 }
-
-
