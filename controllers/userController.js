@@ -1,6 +1,7 @@
-const { validationResult } = require('express-validator');
-const { loadUsers, storeUsers } = require('../data/db');
-const { compare, bcryptjs} = require("bcryptjs");
+const { validationResult } = require("express-validator");
+const { loadUsers, storeUsers } = require("../data/db");
+const {bcryptjs, compare} = require("bcryptjs");
+const path = require("path");
 const { literal } = require("sequelize");
 const db = require("../database/models");
 
@@ -189,17 +190,7 @@ module.exports = {
               },
             ],
             attributes: {
-              exclude: ["deletedAt", "password"],
-              include: [
-                [
-                  literal(
-                    `CONCAT( '${req.protocol}://${req.get(
-                      "host"
-                    )}images/',avatar )`
-                  ),
-                  "avatar",
-                ],
-              ],
+              exclude: ["deletedAt", "password"],       
             },
           };
           const user = await db.User.findByPk(id, options);
@@ -260,3 +251,5 @@ module.exports = {
         */
     }
 }
+
+

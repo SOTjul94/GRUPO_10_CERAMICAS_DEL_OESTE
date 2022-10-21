@@ -416,12 +416,22 @@
       "lastname": "Liliana Guerrero",
       "email": "Uridevj@outlook.com",
       "password": "$2a$12$FvhzYT20MOc8C62bR7oGqe87AOg2SydGZrvgc2UnP4KjMMzgJVDxS",
-      "rol": "user",
-      "avatar": null,
+      "rol": "user"
+   },
+      {
+      "avatar": "avatar-1664825812857.jpg",
+      "gender": "Masculino",
+      "document": "123123123",
+      "nationality": "argentino",
+      "birthday": "2022-10-05"
+},
+{     
+   "avatar": null,
       "gender": "femenino",
       "document": "45075655",
       "nationality": "ingles",
       "birthday": "2003-08-17"
+
    },
    {
       "id": 33,
@@ -429,6 +439,19 @@
       "lastname": "aguirre",
       "email": "Uridevj@outlook.com",
       "password": "$2a$12$INqPSRFldHXPTGp/9h9Wi.CpBDrKJKt7oUJHWzfRfR7m6f4uy9kIa",
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "document": null,
+      "nationality": null,
+      "birthday": null
+   },
+   {
+      "id": 46,
+      "firstname": "nestor",
+      "lastname": "fleitas",
+      "email": "lyweonardo@hotmail.com",
+      "password": "$2a$12$IO/CCX.mDpnSXV3qwGJSb.ztgoc9dBOZHgXjnin7drSqvTmTHdKUW",
       "rol": "user",
       "avatar": null,
       "gender": null,
