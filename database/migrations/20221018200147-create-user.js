@@ -30,16 +30,13 @@ module.exports = {
       birthday: {
         type: Sequelize.DATE
       },
-      nacionality_id: {
-        type: Sequelize.INTEGER,
-        references : {
-          model : {
-            tableName : 'Nacionalities'
-          },
-          key : 'id'
-        }
+      nacionality: {
+        type: Sequelize.STRING,
       },
-      rol_id: {
+      gender : {
+        type: Sequelize.STRING
+      },
+      rolid: {
         type: Sequelize.INTEGER,
         references : {
           model : {

@@ -10,26 +10,37 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      this.hasMany(models.Image, {
+        as: "image",
+        foreignKey: "productId",
+        onDelete: "CASCADE",
+      });
       // define association here
-      
+      this.belongsTo(models.Category, {
+        as: "category",
+        foreignKey: "categoryId",
+      });
     }
   }
   Product.init({
+    name: DataTypes.STRING,
     model: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    pieces: DataTypes.INTEGER,
-    discount: DataTypes.INTEGER,
+    price: DataTypes.STRING,
+    caja: DataTypes.STRING,
+    discount: DataTypes.STRING,
     description: DataTypes.STRING,
-    thickness: DataTypes.INTEGER,
+    thickness: DataTypes.STRING,
     image: DataTypes.STRING,
-    color_id: DataTypes.INTEGER,
-    salesFormat_id: DataTypes.INTEGER,
-    factorie_id: DataTypes.INTEGER,
-    style_id: DataTypes.INTEGER,
-    dimension_id: DataTypes.INTEGER,
-    endurance_id: DataTypes.INTEGER,
-    transit_id: DataTypes.INTEGER,
-    origin_id: DataTypes.INTEGER
+    color: DataTypes.STRING,
+    salesFormat: DataTypes.STRING,
+    finish: DataTypes.STRING,
+    style: DataTypes.STRING,
+    dimension: DataTypes.STRING,
+    endurance: DataTypes.STRING,
+    transit: DataTypes.STRING,
+    origin: DataTypes.STRING,
+    pei: DataTypes.STRING,
+    recomendation: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Product',

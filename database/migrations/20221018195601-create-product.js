@@ -9,98 +9,59 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      name: {
+        type: Sequelize.STRING
+      },
       model: {
         type: Sequelize.STRING
       },
       price: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
-      pieces: {
-        type: Sequelize.INTEGER
+      caja: {
+        type: Sequelize.STRING
       },
       discount: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       description: {
         type: Sequelize.STRING
       },
       thickness: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       image: {
         type: Sequelize.STRING
       },
-      color_id: {
-        type: Sequelize.INTEGER,
-        references : {
-          model : {
-            tableName : 'Colors'
-          },
-          key : 'id'
-        }
+      color: {
+        type: Sequelize.STRING,
       },
-      salesFormat_id: {
-        type: Sequelize.INTEGER,
-        references : {
-          model : {
-            tableName : 'SalesFormats'
-          },
-          key : 'id'
-        }
+      salesFormat: {
+        type: Sequelize.STRING,
       },
-      factorie_id: {
-        type: Sequelize.INTEGER,
-        references : {
-          model : {
-            tableName : 'Factories'
-          },
-          key : 'id'
-        }
+      finish: {
+        type: Sequelize.STRING,
       },
-      style_id: {
-        type: Sequelize.INTEGER,
-        references : {
-          model : {
-            tableName : 'Styles'
-          },
-          key : 'id'
-        }
+      style: {
+        type: Sequelize.STRING,
       },
-      dimension_id: {
-        type: Sequelize.INTEGER,
-        references : {
-          model : {
-            tableName : 'Dimensions'
-          },
-          key : 'id'
-        }
+      dimension: {
+        type: Sequelize.STRING,
       },
-      endurance_id: {
-        type: Sequelize.INTEGER,
-        references : {
-          model : {
-            tableName : 'Endurances'
-          },
-          key : 'id'
-        }
+      endurance: {
+        type: Sequelize.STRING,
       },
-      transit_id: {
-        type: Sequelize.INTEGER,
-        references : {
-          model : {
-            tableName : 'Transits'
-          },
-          key : 'id'
-        }
+      transit: {
+        type: Sequelize.STRING,
       },
-      origin_id: {
-        type: Sequelize.INTEGER,
-        references : {
-          model : {
-            tableName : 'Origins'
-          },
-          key : 'id'
-        }
+      origin: {
+        type: Sequelize.STRING,
+      },
+      pei: {
+        type: Sequelize.STRING,
+      },
+      recomendation: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,

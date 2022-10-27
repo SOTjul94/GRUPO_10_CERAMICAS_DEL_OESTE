@@ -1,6 +1,6 @@
 'use strict';
 
-const rol = [
+const rols = [
   {
     name : 'admin',
     createdAt : new Date()
@@ -14,13 +14,13 @@ const rol = [
 module.exports = {
   async up (queryInterface, Sequelize) {
     
-      await queryInterface.bulkInsert('Rol', rol, {});
+      await queryInterface.bulkInsert('Rols', rols, {});
     
   },
 
   async down (queryInterface, Sequelize) {
     
-      await queryInterface.bulkDelete('Rol', null, {});
+      await queryInterface.bulkDelete('Rols', null, {});
      
   }
 };
