@@ -4,19 +4,25 @@ const {hashSync} = require('bcryptjs')
 
 const users = [
   {
-    name : 'admin',
-    surname: 'admin',
+    firstname : 'admin',
+    lastname: 'admin',
     email : 'admin@gmail.com',
     password : hashSync("123123",10),
+    gender : null,
+    document : null,
+    birthday : null,
     avatar: null,
     rolId: 1,
     createdAt : new Date()
   },
   {
-    name : 'user',
-    surname: 'user',
+    firstname : 'user',
+    lastname: 'user',
     email : 'user@gmail.com',
     password : hashSync("123123",10),
+    gender : null,
+    document : null,
+    birthday : null,
     avatar: null,
     rolId: 2,
     createdAt : new Date()
