@@ -104,6 +104,13 @@
         <label>Codigo del producto</label>
        
      </div>
+     <div class="input-field">
+      <label for="category">Categoría</label>
+      <select name="categoryId" id="category"></select>
+      <% categories.forEach(({id, name}) => { %>
+       <option value="<%= id %>" <%= id === product.categoryId && 'selected' %><%= name %> ></option>
+      <% }) %>
+   </div>
      <div class="clasificacion">
         <h4>Clasificacion</h4>
                  <input type="checkbox" name="Pescar" value="Pescar"> Exterior

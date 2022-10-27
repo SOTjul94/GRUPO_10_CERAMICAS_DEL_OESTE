@@ -1,4 +1,4 @@
-const fs = require('fs');
+ fs = require('fs');
 const path = require('path');
 
 const loadProducts = () => {

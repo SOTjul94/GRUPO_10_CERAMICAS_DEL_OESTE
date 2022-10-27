@@ -13,7 +13,7 @@ router
       .get('/totalProducts', totalProducts)
       .get('/products/creationProduct', adminUserCheck, totalProducts)
       .get('/productDetail/:id/', productDetail)
-      .post('/store',uploadImageProduct.single('image') ,store)
+      .post('/store',uploadImageProduct.array('image') , store)
       .get('/editionProduct/:id/', adminUserCheck, editionProduct)
       .put('/editionProduct/:id', adminUserCheck, editionProduct)
       .delete('/delete/:id', adminUserCheck, destroy)

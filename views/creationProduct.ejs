@@ -105,6 +105,13 @@
           <textarea type="text" required id="name" name="description" class="form-input"></textarea>
           <label>Descripción</label>
         </div>
+        <div class="input-field">
+          <label for="categoryId">Categoría</label>
+          <select name="categoryId" id="category"></select>
+          <option value="" hidden selected>Selecciona la Categoría</option>
+          <% categories.forEach(({id, name}) => { %>
+           <option value="<%= id %> "<%= name %>></option>
+          <% }) %>
         <div class="clasificacion">
           <h4>Clasificacion</h4>
           <!--  <form action=""> --><label><input type="checkbox" name="Pescar" value="Pescar"> Exterior</label>
