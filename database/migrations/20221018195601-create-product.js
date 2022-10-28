@@ -63,6 +63,12 @@ module.exports = {
       recomendation: {
         type: Sequelize.STRING,
       },
+      code: {
+        type: Sequelize.STRING,
+      },
+      category: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
