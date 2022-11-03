@@ -10,7 +10,7 @@ module.exports = {
     getAll : async (req,res) => {
         
     try {
-      const users = await db.Users.findAll({
+      const users = await db.Users.findAndCountAll({
           attributes : {
             exclude : ['updateAt', 'createdAt'],
             include : ['firtsname', 'lastname', 'email', 'id']

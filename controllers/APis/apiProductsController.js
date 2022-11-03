@@ -4,22 +4,22 @@ const { literal } = require("sequelize");
 module.exports = {
     image: (req, res) => {
         res.sendFile(
-          path.join(__dirname, `../../public/images/avatars/${req.params.img}`)
+          path.join(__dirname, `../../public/images/${req.params.img}`)
         );
       },
-    getAll : async (req,res) => {
+    getAllProducts : async (req,res) => {
         
     try {
-      const users = await db.Users.findAll({
+      const products = await db.Products.findAndCountAll({
           attributes : {
             exclude : ['updateAt', 'createdAt'],
-            include : ['firtsname', 'lastname', 'email', 'id']
+            include : ['name', 'description', 'id']
           }
       })
-      const token = await sign({ id, rolId });
+      const token = await sign({id});
     return res.status(200).json({
         count : 12,
-        users,
+        products,
         urlData: `${req.protocol}://${req.get("host")}${req.baseUrl}/me/${token}`
     })
     } catch (error) {
@@ -30,16 +30,16 @@ module.exports = {
       }); 
 }
     },
-    getById : (req,res) => {
+    getByIdProducts : (req,res) => {
       try {
         const options = {
             attributes : {
-              exlude : ['createdAt', 'updatedAt', 'rolid', 'password'],
-              include : [[literal(`CONCAT( '${req.protocol}://${req.get("host")}/users/image/',avatar)`),'avatar']]
+              exlude : ['createdAt', 'updatedAt'],
+              include : [[literal(`CONCAT( '${req.protocol}://${req.get("host")}/products/image/',images.file)`),'urlImage']]
             }
         }
         const {id} = req.params.id
-        const data = db.User.findByPk(id,options)
+        const data = db.Products.findByPk(id,options)
   
        return res.status(200).json({
           ok:true,
