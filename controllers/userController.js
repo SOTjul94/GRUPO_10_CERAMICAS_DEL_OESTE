@@ -11,9 +11,7 @@ module.exports = {
             title: 'Login'
         })
     },processLogin: async (req, res) => {
-        try {
           const { email, password } = req.body;
-    
           if (!email || !password) {
            return res.status(401).json({
               ok: false,
@@ -34,20 +32,13 @@ module.exports = {
             }); 
           }
     
-          const isPassValid = await compare(password,passwordHash)
+          const passwordCompare = await db.User.findOne({ where: { password } });
     
-          if(!isPassValid){
+          if(!passwordCompare){
             return res.status(401).json({
               ok: false,
               status: 401,
               msg: "Credenciales invalidas",
-            }); 
-          }
-        } catch (error) {
-           res.status(500).json({
-              ok: false,
-              status: 500,
-              msg: error.message,
             }); 
           }
           return res.redirect('/users/profile')
@@ -80,30 +71,21 @@ module.exports = {
         return res.render('register', {
             title: 'Register'
         })
-    },
-    processRegister: async (req, res) =>{
-      const {firstname, lastname, email, password, rol_id, avatar, document, nationality, birthday} = req.body
-      try{ 
+    },processRegister: async (req, res) =>{
+      const {firstname, lastname, email, password, rolid, avatar, document, nationality, birthday} = req.body
+      
         const {id, rol_id} = await db.User.create({
                 firstname: firstname?.trim(),
                 lastname: lastname?.trim(),
                 email: email?.trim(),
-                password: bcryptjs.hashSync(password, 12),
-                rol_id: 'user',
+                password: password,
+                rolid: 2,
                 avatar: "defaultUser.png",
                 document: document,
                 nationality: nationality?.trim(),
                 birthday: birthday,
         })
-
-      }catch (error){
-        res.status(500).json({
-            ok: false,
-            status: 500,
-            msg: error,
-
-      });
-      return res.redirect('/users/login')
+        return res.redirect('/users/login')
     }
 
     /*processRegister: (req, res) => {
@@ -139,7 +121,7 @@ module.exports = {
         }*/
     
 
-    },logout: async (req, res) => {
+    ,logout: async (req, res) => {
         try {
           const userId = req.params.id;
           const logoutUser = await db.User.destroy({ where: { id: userId },force:true  });
@@ -250,6 +232,6 @@ module.exports = {
         res.redirect("/users/profile")
         */
     }
-}
 
 
+  }
