@@ -20,28 +20,34 @@ module.exports = {
             }); 
           }
     
-          const user = await db.User.findOne({ where: { email } });
+          //const user = await db.User.findOne({ where: { email } });
     
-          const { id, rolId, password: passwordHash } = user || { id:null, rolId:null,password:null }
+         
     
-          if (!user) {
+          /*if (!user) {
             return res.status(404).json({
               ok: false,
               status: 404,
               msg: "No existe ningún usuario con ese email",
             }); 
-          }
+          }*/
     
-          const passwordCompare = await db.User.findOne({ where: { password } });
-    
-          if(!passwordCompare){
-            return res.status(401).json({
-              ok: false,
-              status: 401,
-              msg: "Credenciales invalidas",
-            }); 
-          }
-          return res.redirect('/users/profile')
+          const userLogin = await db.User.findOne({ where: { email, password} });
+
+          if (req.body.remember) {
+            res.cookie('ceramicas10', req.session.userLogin, {
+                maxAge: 1000 * 60
+            })
+        };
+        if(!userLogin){
+          return res.status(401).json({
+            ok: false,
+            status: 401,
+            msg: "Credenciales invalidas",
+          }); 
+        }
+        return res.redirect('/users/profile')
+          
     },
     /*processLogin: (req, res) => {
         let errors = validationResult(req);
@@ -153,7 +159,7 @@ module.exports = {
         return res.redirect('/')*/
 
     profile: (req, res) => {
-        let user = loadUsers().find(user => user.id === req.session.userLogin.id)
+        let user = db.User.findOne({where : user.id === req.session.userLogin.id })
         return res.render('profile', {
             title: 'Profile',
             user
