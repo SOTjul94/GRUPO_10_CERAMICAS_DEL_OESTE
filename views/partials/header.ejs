@@ -33,12 +33,12 @@
         </div>
         <% if (locals.userLogin) { %>
          <div class="icons">
-            <a href="/users/profile"><%= userLogin.firstname %> </a>
+            <a href="/users/profile">Mi perfil </a>
          </div>
          <div class="icons">
             <a href="/users/logout">Salir</a>
          </div>
-         <% if (locals.userLogin.rol === "admin") { %>
+         <% if (locals.userLogin.rolId === 1) { %>
             <li><a href="/products/creationProduct">Crear Producto</a></li>
          <% } %>
         <% } else { %>

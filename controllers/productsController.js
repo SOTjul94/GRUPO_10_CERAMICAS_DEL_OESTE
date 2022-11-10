@@ -43,11 +43,32 @@ const controller = {
 		return res.render("creationProduct");
 	},
 	store: (req, res) => {
-		db.product
-			.create({
-				...req.body,
-				name: req.body.trim(),
-				description: req.body.description.trim(),
+
+
+		/* ************************** */
+		/* HACER VALIDACIONES BACKEND */
+		/* ************************** */
+
+		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body
+
+		db.Product.create({
+				
+				name: name.trim(),
+				description: description.trim(),
+				model: model.trim(),
+				style: style.trim(),
+				dimension: dimension.trim(),
+				transit: transit.trim(),
+				origin: origin.trim(),
+				recomendation: recomendation.trim(),
+				code: code.trim(),
+				category: category,
+				price,
+				box,
+				discount,
+				color,
+				pei
+
 			})
 			.then((product) => {
 				if (req.files.length) {
@@ -61,7 +82,7 @@ const controller = {
 						validate: true,
 					}).then((result) => console.log(result));
 				}
-				return res.redirect("/products");
+				return res.redirect("/products/totalProducts");
 			})
 			.catch((error) => console.log(error));
 	},
