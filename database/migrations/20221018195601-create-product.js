@@ -16,39 +16,24 @@ module.exports = {
         type: Sequelize.STRING
       },
       price: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
-      caja: {
-        type: Sequelize.STRING
+      box: {
+        type: Sequelize.INTEGER
       },
       discount: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.STRING
-      },
-      thickness: {
-        type: Sequelize.STRING
-      },
-      image: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       color: {
-        type: Sequelize.STRING,
-      },
-      salesFormat: {
-        type: Sequelize.STRING,
-      },
-      finish: {
         type: Sequelize.STRING,
       },
       style: {
         type: Sequelize.STRING,
       },
       dimension: {
-        type: Sequelize.STRING,
-      },
-      endurance: {
         type: Sequelize.STRING,
       },
       transit: {

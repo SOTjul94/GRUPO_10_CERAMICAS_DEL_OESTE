@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {productCart, productDetail, editionProduct, creationProduct, totalProducts, destroy, update, store} = require('../controllers/productsController');
+const {productCart, productDetail, editionProduct, creationProduct, totalProducts, destroy, update, store, filterProducts} = require('../controllers/productsController');
 
 const adminUserCheck = require('../middlewares/adminUserCheck');
 const {uploadImageProduct} = require('../middlewares/userLoadFiles');
@@ -11,6 +11,7 @@ router
       .get('/editionProduct', editionProduct)
       .get('/creationProduct', adminUserCheck, creationProduct)
       .get('/totalProducts', totalProducts)
+      .get('/filterProducts', filterProducts)
       .get('/products/creationProduct', adminUserCheck, totalProducts)
       .get('/productDetail/:id/', productDetail)
       .post('/store',uploadImageProduct.array('image') , store)

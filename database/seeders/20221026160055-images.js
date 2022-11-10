@@ -1,11 +1,11 @@
 'use strict';
 
-const imagesDB =  require('../../data/images.json')
+const imagesDB =  require('../../data/imagesDB.json')
 
-const images = imagesDB.map(({image}, index) => {
+const images = imagesDB.map(({file,id}) => {
   return{
-    file : image,
-    productId : index + 1,
+    file,
+    productId : id,
     createdAt : new Date()
   }
 })
