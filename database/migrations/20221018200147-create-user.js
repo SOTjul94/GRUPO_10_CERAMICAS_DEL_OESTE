@@ -36,7 +36,7 @@ module.exports = {
       gender : {
         type: Sequelize.STRING
       },
-      rolid: {
+      rolId: {
         type: Sequelize.INTEGER,
         references : {
           model : {
