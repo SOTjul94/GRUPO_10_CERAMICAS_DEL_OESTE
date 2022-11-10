@@ -16,10 +16,11 @@
 <main>
     <article class="ofertas">
         
-        <% products.forEach(({id,name,price,image,discount,description })  => { %>
+        <% products.forEach(({id,name,price,images,discount,description,category })  => { %>
             <div class="caja__oferta">
-            <img src="/images/<%= image %>" alt="">
-            <p><%= name %>   </p>
+            <img src="/images/<%= images[0].file %>" alt="" width="200px">
+            <h4><%= name %></h4>
+            <p><%= category %> </p>
             <a href="/products/productDetail/<%= id %> "><p>ver mas</p></a>
            </div>
         <% }) %>
