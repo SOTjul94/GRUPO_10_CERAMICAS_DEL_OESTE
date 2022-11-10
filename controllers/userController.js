@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const { bcryptjs, compare } = require("bcryptjs");
+const { hashSync } = require("bcryptjs");
 const path = require("path");
 const db = require("../database/models");
 
@@ -10,29 +10,35 @@ module.exports = {
     });
   },
   processRegister: async (req, res) => {
+    /* ******************** */
+    /* FALTA VALIDAR EN BACKEND!!!!! */
+    /* ******************** */
+
+    /* recibo los datos del formulario */
     const {
       firstname,
       lastname,
       email,
       password,
-      rolid,
-      avatar,
       document,
-      nationality,
+      nacionality,
       birthday,
     } = req.body;
 
-    const { id, rol_id } = await db.User.create({
+    /* creo el registro en la base de datos */
+    await db.User.create({
       firstname: firstname?.trim(),
       lastname: lastname?.trim(),
       email: email?.trim(),
-      password: password,
-      rolid: 2,
+      password: hashSync(password, 10),
+      rolId: 2,
       avatar: "defaultUser.png",
       document: document,
-      nationality: nationality?.trim(),
+      nacionality: nacionality?.trim(),
       birthday: birthday,
     });
+
+    /* redirecciono al login */
     return res.redirect("/users/login");
   },
   login: (req, res) => {
@@ -40,107 +46,107 @@ module.exports = {
       title: "Login",
     });
   },
-  processLogin: async (req, res) => {
-    const { email, password } = req.body;
-    if (!email || !password) {
-      return res.status(401).json({
-        ok: false,
-        status: 401,
-        msg: "El email y password son requeridos",
-      });
-    }
+  processLogin: (req, res) => {
+    /* recibo las validaciones del backend */
+    let errors = validationResult(req);
 
-    const userLogin = await db.User.findOne({ where: { email, password } });
+    /* recibo los datos del formulario */
+    const { email } = req.body;
 
-    if (req.body.remember) {
-      res.cookie("ceramicas10", req.session.userLogin, {
-        maxAge: 1000 * 60,
+    if (errors.isEmpty()) {
+      /* si no hay errores, busco a la segura el usuario que se está loguenado */
+      db.User.findOne({ where: { email } })
+        .then(({ id, firstname, lastname, rolId, avatar }) => {
+          /* levanto sesión */
+          req.session.userLogin = {
+            id,
+            name: `${firstname} ${lastname}`,
+            avatar,
+            rolId,
+          };
+
+          /* guardo la cookie */
+          if (req.body.remember) {
+            res.cookie("ceramicas10", req.session.userLogin, {
+              maxAge: 1000 * 60,
+            });
+          }
+
+          /* redirecciono al profile */
+          return res.redirect("/users/profile");
+        })
+        .catch((error) => console.log(error));
+    } else {
+      /* si hay errores, los devuelvo a la vista de login */
+
+      return res.render("login", {
+        title: "Login",
+        errors: errors.mapped(),
       });
     }
-    if (!userLogin) {
-      return res.status(401).json({
-        ok: false,
-        status: 401,
-        msg: "Credenciales invalidas",
-      });
-    }
-    return res.redirect("/users/profile");
   },
-  logout: async (req, res) => {
-    try {
-      const userId = req.params.id;
-      const logoutUser = await db.User.destroy({
-        where: { id: userId },
-        force: true,
-      });
+  profile: (req, res) => {
+    /* busco el usuario con el ID que está en session */
+    db.User.findByPk(req.session.userLogin.id)
+      .then((user) => {
+        return res.render("profile", {
+          title: "Profile",
+          user,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
+  update: async (req, res) => {
+    /* ******************** */
+    /* FALTA VALIDAR EN BACKEND!!!!! */
+    /* ******************** */
 
-      if (!logoutUser) {
-        return res.status(404).json({
-          ok: false,
-          status: 404,
-          msg: "Es probable que el usuario no existe",
+    /* recibo los datos del formulario */
+    const { firstname, lastname, document, nacionality, gender, birthday } =
+      req.body;
+
+    /* actualizo el registro en la base de datos */
+    db.User.update(
+      {
+        firstname: firstname?.trim(),
+        lastname: lastname?.trim(),
+        avatar: req.file ? req.file.filename : req.session.userLogin.avatar,
+        document: document,
+        nacionality: nacionality?.trim(),
+        birthday: birthday ? birthday : null,
+        gender: gender?.trim(),
+      },
+      {
+        where: {
+          id: req.session.userLogin.id,
+        },
+      }
+    ).then( async() => {
+      /* busco al usuario y actualizo los datos en session */
+
+      let {firstname, lastname, avatar} = await db.User.findByPk(req.session.userLogin.id)
+
+      req.session.userLogin = {
+        ...req.session.userLogin,
+        name: `${firstname} ${lastname}`,
+        avatar : req.file,
+      };
+
+      /* redireciono al profile */
+
+      return res.redirect('/users/profile')
+    }).catch(error => console.log(error))
+  },
+  logout: (req, res) => {
+      
+      req.session.destroy()
+
+      if(req.cookies.ceramicas10){
+        res.cookie("ceramicas10", null, {
+          maxAge: -1,
         });
       }
 
-      return res.status(200).json({
-        ok: true,
-        status: 200,
-      });
-    } catch (error) {
-      res.status(500).json({
-        ok: false,
-        status: 500,
-        msg: error.message || "Server error",
-      });
-    }
     return res.redirect("/");
-  },
-  profile: (req, res) => {
-    let user = db.User.findOne({ where: user.id === req.session.userLogin.id });
-    return res.render("profile", {
-      title: "Profile",
-      user,
-    });
-  },
-  update: async (req, res) => {
-    const { id } = req.params.id;
-    const { firstname, lastname, avatar, document, nationality, birthday } =
-      req.body;
-    try {
-      const options = {
-        include: [
-          {
-            attributes: {
-              exclude: ["userId", "deletedAt"],
-            },
-          },
-        ],
-        attributes: {
-          exclude: ["deletedAt", "password"],
-        },
-      };
-      const user = await db.User.findByPk(id, options);
-
-      user.firstname = firstname?.trim() || user.firstname;
-      user.lastname = lastname?.trim() || user.lastname;
-      user.avatar = req.file?.filename || user.avatar;
-      user.document = document?.trim() || user.document;
-      user.nationality = nationality?.trim() || user.nationality;
-      user.birthday = birthday?.trim() || user.birthday;
-
-      await user.save();
-
-      return res.status(200).json({
-        ok: true,
-        status: 200,
-        data: user,
-      });
-    } catch (error) {
-      res.status(500).json({
-        ok: false,
-        status: 500,
-        msg: error.message || "Ocurrió un error",
-      });
-    }
   },
 };

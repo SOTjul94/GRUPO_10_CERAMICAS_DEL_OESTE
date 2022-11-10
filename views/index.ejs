@@ -88,10 +88,10 @@
   </article> 
   <h2>Ofertas</h2>
   <article class="ofertas">
-    <% productsDiscount.forEach((product,i) => { %>
+    <% productsDiscount.forEach(({images, model, name}) => { %>
       <div class="caja__oferta">
-        <img src="/images/ceramica<%= i %>.jpg" alt="" width="200px">
-        <p><%= product.name %> <%= product.model %> </p>
+        <img src="/images/<%= images[0] ? images[0].file : 'default.jpg' %>" alt="" width="200px">
+        <p><%= name %> <%= model %> </p>
         <a href="/products/productDetail"><p>ver mas</p></a>
        </div>
     <% }) %>
@@ -101,10 +101,10 @@
   <h2>Nuevos Productos</h2>
   <article class="ofertas">
 
-    <% productsNewest.forEach((product,i) => { %>
+    <% productsNewest.forEach(({images, name, model}) => { %>
       <div class="caja__oferta">
-        <img src="/images/ceramica<%= i %>.jpg" alt="" width="200px">
-        <p><%= product.name %> <%= product.model %> </p>
+        <img src="/images/<%= images[0] ? images[0].file : 'default.jpg' %>" alt="" width="200px">
+        <p><%= name %> <%= model %> </p>
         <a href="/products/productDetail"><p>ver mas</p></a>
        </div>
     <% }) %>

@@ -14,7 +14,7 @@ router
       .get('/filterProducts', filterProducts)
       .get('/products/creationProduct', adminUserCheck, totalProducts)
       .get('/productDetail/:id/', productDetail)
-      .post('/store',uploadImageProduct.array('image') , store)
+      .post('/store',uploadImageProduct.array('images') , store)
       .get('/editionProduct/:id/', adminUserCheck, editionProduct)
       .put('/editionProduct/:id', adminUserCheck, editionProduct)
       .delete('/delete/:id', adminUserCheck, destroy)

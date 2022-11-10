@@ -10,12 +10,14 @@ module.exports = {
                     [Op.gte] : 25
                 }
             },
-            limit : 4
+            limit : 4,
+            include : ['images']
         })
 
         let productsNewest = db.Product.findAll({
             order : [['createdAt','DESC']],
-            limit : 4
+            limit : 4,
+            include : ['images']
         });
 
         Promise.all([productsDiscount, productsNewest])

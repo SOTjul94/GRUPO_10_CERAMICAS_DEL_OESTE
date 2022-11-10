@@ -18,7 +18,7 @@
         
         <% products.forEach(({id,name,price,images,discount,description,category })  => { %>
             <div class="caja__oferta">
-            <img src="/images/<%= images[0].file %>" alt="" width="200px">
+            <img src="/images/<%= images[0] ? images[0].file : 'default.jpg' %>" alt="" width="200px">
             <h4><%= name %></h4>
             <p><%= category %> </p>
             <a href="/products/productDetail/<%= id %> "><p>ver mas</p></a>
