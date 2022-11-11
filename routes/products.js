@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
-const {productCart, productDetail, editionProduct, creationProduct, totalProducts, destroy, update, store, filterProducts} = require('../controllers/productsController');
+const {productCart, productDetail, editionProduct, creationProduct, totalProducts, destroy, update, store, filterProducts, search} = require('../controllers/productsController');
 
 const adminUserCheck = require('../middlewares/adminUserCheck');
 const {uploadImageProduct} = require('../middlewares/userLoadFiles');
 /* products*/
 router
       .get('/productCart', productCart)
+      .get('/search', search)
       .get('/productDetail', productDetail)
       .get('/editionProduct', editionProduct)
       .get('/creationProduct', adminUserCheck, creationProduct)
