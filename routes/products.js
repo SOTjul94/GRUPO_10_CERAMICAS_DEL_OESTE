@@ -8,7 +8,6 @@ const {uploadImageProduct} = require('../middlewares/userLoadFiles');
 router
       .get('/productCart', productCart)
       .get('/search', search)
-      .get('/productDetail', productDetail)
       .get('/editionProduct', editionProduct)
       .get('/creationProduct', adminUserCheck, creationProduct)
       .get('/totalProducts', totalProducts)
