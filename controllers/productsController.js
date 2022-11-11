@@ -1,3 +1,4 @@
+const { Op } = require("sequelize");
 const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -96,6 +97,11 @@ const controller = {
 			.catch((error) => console.log(error));
 	},
 	update: (req, res) => {
+
+		/* ************************** */
+		/* HACER VALIDACIONES BACKEND */
+		/* ************************** */
+
 		db.Product.update(
 			{
 				...req.body,
@@ -123,29 +129,29 @@ const controller = {
 			.catch((error) => console.log(error));
 	},
 	search: (req, res) => {
-		const { keywords } = req.query;
+		const { q } = req.query;
 		db.Product.findAll({
 			where: {
 				[Op.or]: [
 					{
 						name: {
-							[Op.substring]: keywords,
+							[Op.substring]: q,
 						},
 					},
 					{
 						description: {
-							[Op.substring]: keywords,
+							[Op.substring]: q,
 						},
 					},
 				],
 			},
-			include: ["image"],
+			include: ["images"],
 		})
 			.then((products) => {
-				returnres.render("results", {
+				return res.render("totalProducts", {
 					products,
-					keywords,
-					toThousand,
+					q,
+					title : 'Resultado de la búsqueda'
 				});
 			})
 			.catch((error) => console.log(error));
