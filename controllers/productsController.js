@@ -3,6 +3,48 @@ const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
+	
+	// Create - Form to create
+	create: (req, res) => {
+		// Do the magic
+		db.Category.findAll({
+			attributes : ['id','name'],
+			order : ['name']
+		})
+			.then(categories => {
+				return res.render('product-create-form', {
+					categories
+				})
+			})
+			.catch(error => console.log(error))
+	},
+	///////////////  ////////////////////////////
+	// Create - store
+	store: (req, res) => {
+		// Do the magic
+		db.Product.create({
+			...req.body,
+			name : req.body.name.trim(),
+			description : req.body.description.trim()
+		})
+			.then(product => {
+				if(req.files.length){
+					let images = req.files.map(({filename}) => {
+						return {
+							file : filename,
+							productId: product.id
+						}
+					})
+					db.Image.bulkCreate(images,{
+						validate : true
+					}).then( (result) => console.log(result) )
+				}
+				return res.redirect('/products')
+			})
+			.catch(error => console(error))
+	},
+	/////////////////create-store///////////////
+	
 	totalProducts: (req, res) => {
 		db.Product.findAll({
 			include: ["images"],
@@ -45,6 +87,7 @@ const controller = {
 	},
 	store: (req, res) => {
 
+/////////
 
 		/* ************************** */
 		/* HACER VALIDACIONES BACKEND */
