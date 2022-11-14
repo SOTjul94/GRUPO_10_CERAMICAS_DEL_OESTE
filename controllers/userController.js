@@ -14,7 +14,9 @@ module.exports = {
     /* FALTA VALIDAR EN BACKEND!!!!! */
     /* ******************** */
 
-    /* recibo los datos del formulario */
+    let errors = validationResult(req);
+    if(errors.isEmpty()){
+      /* recibo los datos del formulario */
     const {
       firstname,
       lastname,
@@ -40,6 +42,15 @@ module.exports = {
 
     /* redirecciono al login */
     return res.redirect("/users/login");
+
+    }else{
+      return res.render('register',{
+        title : 'Register',
+        errors : errors.mapped(),
+        old : req.body
+      })
+    }
+
   },
   login: (req, res) => {
     return res.render("login", {
