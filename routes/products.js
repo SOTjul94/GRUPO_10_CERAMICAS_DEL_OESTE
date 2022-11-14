@@ -4,6 +4,20 @@ const {productCart, productDetail, editionProduct, creationProduct, totalProduct
 
 const adminUserCheck = require('../middlewares/adminUserCheck');
 const {uploadImageProduct} = require('../middlewares/userLoadFiles');
+
+
+
+/* products*/
+/*** CREATE ONE PRODUCT ***/ 
+router.get('/create', productsController.create); 
+router.post('/store',uploadImageProduct.fields([{name : 'image1'},{name : 'image2'}]), productsController.store); 
+	
+/*** EDIT ONE PRODUCT ***/ 
+router.get('/edit/:id', productsController.edit); 
+router.put('/update/:id', productsController.update); 
+	
+	
+
 /* products*/
 router
       .get('/productCart', productCart)

@@ -5,7 +5,7 @@ const db = require("../database/models");
 
 module.exports = {
   register: (req, res) => {
-    return res.render("register", {
+    return res.render("userRegister", {
       title: "Register",
     });
   },

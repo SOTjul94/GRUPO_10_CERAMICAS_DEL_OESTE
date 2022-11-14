@@ -18,7 +18,7 @@ const controller = {
 			})
 			.catch(error => console.log(error))
 	},
-	///////////////  ////////////////////////////
+	/////////////// leo ////////////////////////////
 	// Create - store
 	store: (req, res) => {
 		// Do the magic
@@ -43,7 +43,9 @@ const controller = {
 			})
 			.catch(error => console(error))
 	},
-	/////////////////create-store///////////////
+	/////////////////create-store ////leo///////////////
+
+	
 	
 	totalProducts: (req, res) => {
 		db.Product.findAll({
