@@ -31,8 +31,15 @@ module.exports = [
             max : 15
         }).withMessage('La contraseña debe tener entre 8 y 15 carácteres'),
     check('document')
-        .isInt('on').withMessage('Solo debe escribir los números, sin guiones ni espacios'),
+        .isInt('on').withMessage('Solo debe escribir los números, sin guiones ni espacios').bail()
+        .isLength({
+            min : 7,
+            max : 8
+        }),
     check('nacionality')
-        .isString('on').withMessage('No está permitido utilizar carácteres numéricos')
+        .isString('on').withMessage('No está permitido utilizar carácteres numéricos'),
+    check('birthday')
+        .isISO8601().bail()
+        .toDate().withMessage('Debe llenar este campo')
 
  ]

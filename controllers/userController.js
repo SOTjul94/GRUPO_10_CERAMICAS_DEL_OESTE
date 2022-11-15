@@ -111,8 +111,9 @@ module.exports = {
     /* ******************** */
     /* FALTA VALIDAR EN BACKEND!!!!! */
     /* ******************** */
-
-    /* recibo los datos del formulario */
+    let errors = validationResult(req);
+    if(errors.isEmpty()){
+     /* recibo los datos del formulario */
     const { firstname, lastname, document, nacionality, gender, birthday } =
       req.body;
 
@@ -146,7 +147,16 @@ module.exports = {
       /* redireciono al profile */
 
       return res.redirect('/users/profile')
-    }).catch(error => console.log(error))
+    }).catch(error => console.log(error)) 
+    }else{
+      return res.render('profile',{
+        title : 'Profile',
+        errors : errors.mapped(),
+        old : req.body
+      })
+    }
+
+    
   },
   logout: (req, res) => {
       

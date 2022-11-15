@@ -5,7 +5,8 @@ const {login, register, processLogin, processRegister, logout, profile, update} 
 const { uploadImageAvatar } = require('../middlewares/uploadFileAvatar');
 const userSessionCheck = require('../middlewares/userSessionCheck');
 const loginValidator = require('../validations/loginValidator');
-const registerValidator = require('../validations/registerValidator')
+const registerValidator = require('../validations/registerValidator');
+const profileValidator = require('../validations/profileValidator');
 
 
 
@@ -18,5 +19,4 @@ router
 .get('/profile',userSessionCheck, profile)
 .put('/update',uploadImageAvatar.single('avatar'), update)
 .get('/logout',logout)
-
 module.exports = router;
