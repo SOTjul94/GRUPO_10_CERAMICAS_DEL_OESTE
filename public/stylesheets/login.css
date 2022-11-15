@@ -1,5 +1,11 @@
 @import  './general.css';
 /**/
+.is-invalid{
+  background-color:red;
+}
+.is-valid{
+background-color: green;
+}
 li{
   text-decoration: none;
 }

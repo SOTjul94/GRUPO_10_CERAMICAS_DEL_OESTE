@@ -2,6 +2,12 @@
 body{
   font-family: 'ABeeZee', sans-serif;
 }
+.is-invalid{
+  background-color:red;
+}
+.is-valid{
+background-color: green;
+}
 .container{
     position: relative;
     padding: 60px 40px;
@@ -14,11 +20,10 @@ body{
   .input-field, form .button{
       margin: 25px 0;
       position: relative;
-      height: 50px;
       width: 100%;
     }
     .input-field input{
-      height: 100%;
+      
       width: 100%;
       border: none;
       border-bottom: 1px solid silver;
@@ -27,6 +32,7 @@ body{
       font-size: 19px;
       transition: .4s;
       text-align: center;
+      margin-bottom: 3%;
     }
     input:focus{
       border: 1px solid #1DA1F2;

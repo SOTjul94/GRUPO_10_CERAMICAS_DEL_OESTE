@@ -2,6 +2,12 @@
 body{
   font-family: 'ABeeZee', sans-serif;
 }
+.is-invalid{
+  background-color: red;
+  }
+  .is-valid{
+  background-color: green;
+  }
 .container{
     position: relative;
     padding: 60px 40px;

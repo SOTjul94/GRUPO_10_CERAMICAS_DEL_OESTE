@@ -19,53 +19,50 @@
 <main>
 <div class="">
    <h4>Edicion de Producto</h4>
-    <form action="/products/update/<%= product.id %>?_method=PUT " method="POST">
+    <form action="/products/update/<%= product.id %>?_method=PUT " method="POST" id="editionProduct">
        <div class="input-field">
         <input type="text" id="name" name="name"  value="<%= product.name %> ">
         <label for="name" class="">Nombre del producto:</label>
+        <p id="nameMsg"></p>
        </div>
        <div class="input-field">
-          <input class="pswrd" type="text" name="description"  value="<%= product.description %> ">
+          <input class="pswrd" type="text" name="description" id="description"  value="<%= product.description %> ">
           
           <label>Descripcion</label>
+          <p id="descriptionMsg"></p>
        </div>
        
        
        <h4>Datos tecnicos</h4>
                   <div class="input-field">
-                     <input type="text" name="color"  value="<%= product.color %> ">
+                     <input type="text" name="color" id="color" value="<%= product.color %> ">
                      <label> Gama de color </label>
-                     
-                   </div> 
-                   <div class="input-field">
-                     <input type="text" name="finish"  value="<%= product.finish %> ">
-                     <label> Acabado </label>
-                     
+                     <p id="colorMsg"></p>
                    </div> 
                    <div class="input-field">
                      <input type="text" name="style"  value="<%= product.style %> ">
                      <label> Estilo </label>
-                     
+                     <p id="styleMsg"></p>
                    </div> 
                    <div class="input-field">
                      <input type="text" name="dimensions"  value="<%= product.dimensions %> ">
                      <label> Dimensiones </label>
-
+                     <p id="dimensionMsg"></p>
                    </div> 
                    <div class="input-field">
                      <input type="text" required name="recomendation"  value="<%= product.recomendation %> ">
                      <label> Recomendaciones de uso </label>
-                 
+                     <p id="recomendationMsg"></p>
                    </div> 
                    <div class="input-field">
                      <input type="text" required name="pei"  value="<%= product.pei %> ">
                      <label> Tipo de transito(Pei) </label>
-                     
+                     <p id="peiMsg"></p>
                    </div> 
                    <div class="input-field">
                      <input type="text" required name="transit"  value="<%= product.transit %> ">
                      <label> Tipo de transito  </label>
-                     
+                     <p id="transitMsg"></p>
                    </div> 
                    <div class="input-field">
                      <input type="text" required name="espesor"  value="<%= product.espesor %> ">
@@ -75,7 +72,7 @@
                    <div class="input-field">
                      <input type="text" required name="model"  value="<%= product.model %> ">
                      <label> Modelo </label>
-                    
+                     <p id="modelMsg"></p>
                    </div> 
                    <div class="input-field">
                      <input type="text" required name="form"  value="<%= product.form %> ">
@@ -90,19 +87,19 @@
      <div class="input-field">
         <input type="number" required name="price"   value="<%= product.price %> ">
         <label>Precio</label>
-        
+        <p id="priceMsg"></p>
      </div>
      <div class="input-field">
         <input type="number" required name="caja"   value="<%= product.caja %> ">
         <label>Precio x caja</label>
-        
+        <p id="boxMsg"></p>
      </div>
     
     
      <div class="input-field">
         <input type="text" required name="code"  value="<%= product.code %> ">
         <label>Codigo del producto</label>
-       
+        <p id="codeMsg"></p>
      </div>
      <div class="input-field">
       <label for="category">Categoría</label>
@@ -110,27 +107,25 @@
       <% categories.forEach(({id, name}) => { %>
        <option value="<%= id %>" <%= id === product.categoryId && 'selected' %><%= name %> ></option>
       <% }) %>
+      <p id="categoryMsg"></p>
    </div>
-     <div class="clasificacion">
-        <h4>Clasificacion</h4>
-                 <input type="checkbox" name="Pescar" value="Pescar"> Exterior
-                 <input type="checkbox" name="Pescar" value="Pescar"> Interior
-                 <input type="checkbox" name="Pescar" value="Pescar"> Baños
-       </div>
        <div class="fotos">
         <h4>Fotos del producto</h4>
         <!-- <form name="imgAdd" type="POST" enctype="multipart/form-data"> -->
          <input type="file" name="imgAdd" class="importar__img"/>
+         <p id="imagePrev"></p>
        </div>
       
         
        <div class="button">
           
-          <a href="/products/productDetail/<%= product.id %> "><button type="submit">Guardar Cambios</button></a>
-       </div>
+          <a href="/products/productDetail/<%= product.id %> "><button type="submit" id="editionProductButton" disabled>Guardar Cambios</button></a>
+          
+        </div>
       </form>
 </div>
     </main>
     <%- include("./partials/footer") %> 
+    <script src="/javascripts/editionProduct.js"></script>
    </body>
 </html>
