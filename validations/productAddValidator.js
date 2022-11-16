@@ -8,7 +8,7 @@ module.exports = [
     body('product').custom((value, {req}) => {
         return db.User.findOne({
             where : {
-                email : req.body.productAdd
+                product : req.body.productAdd
             }
         }).then(user => {
             if(!user || !compareSync(value,user.product)){
