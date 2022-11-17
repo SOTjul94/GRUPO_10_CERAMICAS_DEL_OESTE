@@ -26,9 +26,11 @@
        </div>
        <div class="input-field">
           <input class="pswrd" type="text" name="description"  value="<%= product.description %> ">
-          
           <label>Descripcion</label>
-       </div>
+          <textarea class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>" name="description" id="description" cols="30" rows="5" style="resize: none;"><%= product.description %></textarea>
+          <p class="text-danger"><%= locals.errors && errors.description ? errors.description.msg : null %></p>
+
+        </div>
        
        
        <h4>Datos tecnicos</h4>
@@ -90,19 +92,20 @@
      <div class="input-field">
         <input type="number" required name="price"   value="<%= product.price %> ">
         <label>Precio</label>
-        
-     </div>
+        <input class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>" id="price" type="number" name="price" value="<%= product.price %>">
+        <p class="text-danger"><%= locals.errors && errors.price ? errors.price.msg : null %></p>
+      </div>
      <div class="input-field">
         <input type="number" required name="caja"   value="<%= product.caja %> ">
         <label>Precio x caja</label>
-        
-     </div>
+        <p class="text-danger"><%= locals.errors && errors.price? errors.price.msg : null %></p>
+       </div>
     
     
      <div class="input-field">
         <input type="text" required name="code"  value="<%= product.code %> ">
         <label>Codigo del producto</label>
-       
+        <p class="text-danger"><%= locals.errors && errors.code? errors.code.msg : null %></p> 
      </div>
      <div class="input-field">
       <label for="category">Categoría</label>
@@ -110,7 +113,9 @@
       <% categories.forEach(({id, name}) => { %>
        <option value="<%= id %>" <%= id === product.categoryId && 'selected' %><%= name %> ></option>
       <% }) %>
-   </div>
+      <p class="text-danger"><%= locals.errors && errors.category ? errors.category.msg : null %></p>
+   
+    </div>
      <div class="clasificacion">
         <h4>Clasificacion</h4>
                  <input type="checkbox" name="Pescar" value="Pescar"> Exterior
@@ -121,7 +126,8 @@
         <h4>Fotos del producto</h4>
         <!-- <form name="imgAdd" type="POST" enctype="multipart/form-data"> -->
          <input type="file" name="imgAdd" class="importar__img"/>
-       </div>
+         <p class="text-danger"><%= locals.errors && errors.imgAdd ? errors.imgAdd.msg : null %></p>
+        </div>
       
         
        <div class="button">
