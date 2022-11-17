@@ -18,13 +18,11 @@
         <section class="registro__main__section">
             <h1>Perfil de Usuario</h1>
 
-            <!-- <form action="/users/update/<%# user.id %>?_method=PUT" class="form_row" method="post">
+           
 
-            <img src="/images/<%= user.avatar ? user.avatar : 'defautlUser.png' %>" alt="" class="registro__main__section_image">
-            <form action="/users/update/<%= user.id %>?_method=PUT" class="form_row" method="post">
+            <img src="/images/avatars/<%= user.avatar %>" alt="avatar" class="registro__main__section_image">
 
-            <div class="nb-3 col-12 col-md-6" >
-            <imput type="file" accept="image/*" name="image"></imput> -->
+   
             <form action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data">
           
                 
@@ -32,26 +30,32 @@
                 <div class="form__box">
                     <label class="form__label" for="nombre">Nombre*</label>
                     <input class="form__input" type="text" placeholder="nombre" id="nombre" name="firstname" value="<%= user.firstname %>">
+                    <p class="form_error_msg"><%= locals.errors && errors.firstname? errors.firstname.msg : null%> </p>
                 </div>
                 <div class="form__box">
                     <label class="form__label" for="apellido">Apellido*</label>
                     <input class="form__input" type="text" placeholder="apellido" id="apellido" name="lastname" value="<%= user.lastname %>">
+                    <p class="form_error_msg"><%= locals.errors && errors.lastname? errors.lastname.msg : null%> </p>
                 </div>
                 <div class="form__box">
                     <label class="form__label" for="nacionalidad">Nacionalidad</label>
                     <input class="form__input" type="text" placeholder="Seleccionar" id="nacionalidad" name="nacionality" value="<%= user.nacionality %>">
+                    <p class="form_error_msg"><%= locals.errors && errors.nacionality? errors.nacionality.msg : null%> </p>
                 </div>
                 <div class="form__box">
                     <label class="form__label" for="numero de documento">Número de documento</label>
                     <input class="form__input" type="text" placeholder="(sin puntos)" id="numero de documento" name="document" value="<%= user.document %>">
+                    <p class="form_error_msg"><%= locals.errors && errors.document? errors.document.msg : null%> </p>
                 </div>
                 <div class="form__box">
                     <label class="form__label" for="genero">Género</label>
                     <input class="form__input" type="text" placeholder="Seleccionar" id="genero" name="gender" value="<%= user.gender %>">
+                    <p class="form_error_msg"><%= locals.errors && errors.gender? errors.gender.msg : null%> </p>
                 </div>
                 <div class="form__box">
                     <label class="form__label" for="fecha">Fecha de nacimiento</label>
-                    <input class="form__input" type="date" name="birthday" value="<%= user.birthday %>" min="1985-01-01" max="2022-12-31">
+                    <input class="form__input" type="date" name="birthday" value="<%= moment(user.birthday).format('YYYY-MM-DD') %>" min="1985-01-01" max="2022-12-31">
+                    <p class="form_error_msg"><%= locals.errors && errors.birthday? errors.birthday.msg : null%> </p>
                 </div>
                 <label class="form__button form__button--cancel pointer" for="avatar">Subir imagen de perfil</label>
                     <input hidden type="file" id="avatar" name="avatar">
@@ -65,5 +69,7 @@
         </section>
     </main>
     <%- include("./partials/footer") %> 
+
+    <script src="/javascripts/profile.js"></script>
 </body>
 </html>
