@@ -1,7 +1,8 @@
 const { Op } = require("sequelize");
 const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const controller = {
+const {validationResult} = require('express-validator')
+module.exports = {
 	totalProducts: (req, res) => {
 		db.Product.findAll({
 			include: ["images"],
@@ -44,137 +45,11 @@ const controller = {
 	},
 	store: (req, res) => {
 		
-		/* ************************** */
-		/* HACER VALIDACIONES BACKEND *////
-		///////////////////////////////
-		const controller = {
-			// Root - Show all products
-			index: (req, res) => {
-				// Do the magic
-			
-				db.Product.findAll({
-					include : ['images']
-				})
-					.then(products => res.render('products', {
-						products,
-						toThousand
-					}))
-			},
-		
-			// Detail - Detail from one product
-			detail: (req, res) => {
-				// Do the magic
-				db.Product.findByPk(req.params.id,{
-					include : ['images']
-				})
-					.then(product => res. render('detail', {
-						product,
-						toThousand
-					}))
-					.catch(error => console.log(error))
-			},
-		
-			// Create - Form to create
-			create: (req, res) => {
-				// Do the magic
-				db.Category.findAll({
-					attributes : ['id','name'],
-					order : ['name']
-				})
-					.then(categories => {
-						return res.render('product-create-form', {
-							categories
-						})
-					})
-					.catch(error => console.log(error))
-			},
-			
-			// Create -  Method to store
-			store: (req, res) => {
-				// Do the magic
-				db.Product.create({
-					...req.body,
-					name : req.body.name.trim(),
-					description : req.body.description.trim()
-				})
-					.then(product => {
-						if(req.files.length){
-							let images = req.files.map(({filename}) => {
-								return {
-									file : filename,
-									productId: product.id
-								}
-							})
-							db.Image.bulkCreate(images,{
-								validate : true
-							}).then( (result) => console.log(result) )
-						}
-						return res.redirect('/products')
-					})
-					.catch(error => console(error))
-			},
-		
-			// Update - Form to edit
-			edit: (req, res) => {
-				// Do the magic
-				let categories = db.Category.findAll({
-					attributes : ['id','name'],
-					order : ['name']
-				});
-				let product = db.Product.findByPk(req.params.id);
-		
-				Promise.all([categories,product])
-					.then(([categories,product]) => {
-						return res.render('product-edit-form',{
-							product,
-							categories
-						})
-					})
-					.catch(error => console.log(error));
-			},
-			// Update - Method to update
-			update: (req, res) => {
-				// Do the magic
-				db.Product.update(
-					{
-						...req.body,
-						name : req.body.name.trim(),
-						description : req.body.description.trim()
-					},
-					{
-						where : {
-							id : req.params.id
-						}
-					}
-				)
-					.then( () => res.redirect('/products/detail/' + req.params.id) )
-					.catch(error => console.log(error))
-				 
-			},
-		
-			// Delete - Delete one product from DB
-			destroy : (req, res) => {
-				// Do the magic
-			
-				db.Product.destroy({
-					where : {
-						id : req.params.id
-					}
-				})
-					.then( () => res.redirect('/products'))
-					.catch( error => console.log(error));
-			}
-		};
-		
-	/////////HACER VALIDACIONES BACKEND///////7777
-		/* ************************** */
+		const errors = validationResult(req);
+		//return res.send(errors)
 
-		
-		
-		
-		
-		
-		
+		if(errors.isEmpty()){
+
 		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body
 
 		db.Product.create({
@@ -194,7 +69,6 @@ const controller = {
 				discount,
 				color,
 				pei
-
 			})
 			.then((product) => {
 				if (req.files.length) {
@@ -211,6 +85,12 @@ const controller = {
 				return res.redirect("/products/totalProducts");
 			})
 			.catch((error) => console.log(error));
+		}else{
+			return res.render("creationProduct",{
+				errors : errors.mapped(),
+				old : req.body
+			});
+		}
 	},
 	editionProduct: (req, res) => {
 		db.Product.findByPk(req.params.id)
@@ -223,15 +103,28 @@ const controller = {
 	},
 	update: (req, res) => {
 
-		/* ************************** */
-		/* HACER VALIDACIONES BACKEND */
-		/* ************************** */
+		const errors = validationResult(req);
+
+		if(errors.isEmpty()){
+		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body;
 
 		db.Product.update(
 			{
-				...req.body,
-				name: req.body.name.trim(),
-				description: req.body.description.trim(),
+				name: name.trim(),
+				description: description.trim(),
+				model: model.trim(),
+				style: style.trim(),
+				dimension: dimension.trim(),
+				transit: transit.trim(),
+				origin: origin.trim(),
+				recomendation: recomendation.trim(),
+				code: code.trim(),
+				category: category,
+				price,
+				box,
+				discount,
+				color,
+				pei
 			},
 			{
 				where: {
@@ -241,6 +134,16 @@ const controller = {
 		)
 			.them(() => res.redirect("/products/totalProducts"))
 			.catch((error) => console.log(error));
+		}else{
+			db.Product.findByPk(req.params.id)
+			.then((product) => {
+				return res.render("editionProduct", {
+					product,
+					errors : errors.mapped()
+				});
+			})
+			.catch((error) => console.log(error));
+		}
 	},
 	
 	destroy: (req, res) => {
@@ -288,4 +191,5 @@ const controller = {
 	},
 };
 
-module.exports = controller;
+	
+	
