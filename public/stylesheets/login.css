@@ -1,10 +1,18 @@
 @import  './general.css';
 /**/
 .is-invalid{
-  background-color:red;
+  background: rgb(167,0,0);
+  background: linear-gradient(0deg, rgba(167,0,0,1) 0%, rgba(255,0,0,0) 9%, rgba(227,9,9,0) 19%);
 }
 .is-valid{
-background-color: green;
+  background: rgb(0,167,14);
+  background: linear-gradient(0deg, rgba(0,167,14,1) 0%, rgba(31,255,0,0) 9%, rgba(10,227,9,0) 19%);
+}
+.button-invalid{
+  background-color:red;
+}
+.button-valid{
+  background-color: green;
 }
 li{
   text-decoration: none;
@@ -147,7 +155,7 @@ form .button{
   left: -100%;
   z-index: -1;
   transition: all .4s;
-  background: #69E0C9
+  background: #198d76
   
 }
 .button:hover .inner{

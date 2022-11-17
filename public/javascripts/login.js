@@ -1,7 +1,7 @@
 const $ = e => document.getElementById(e) 
 const login = $("login");
 const elements = login.elements;
-
+const emailExp =  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
 const cleanError = (element, {target}) => {
     target.classList.remove('is-invalid');
@@ -32,9 +32,11 @@ const checkFields = () => {
     }
   
     if(!error){
-      $('loginButton').disabled = false;
+      $('loginButton').disabled = false
+      
     }else {
-      $('loginButton').disabled = true;
+      $('loginButton').disabled = true
+     
     }
   }
 
@@ -47,7 +49,9 @@ $('email').addEventListener('blur', function (e) {
         case !this.value.trim():
             msgError('emailMsg', 'Email requerido', e)
             break;
-    
+        case !emailExp.test(this.value):
+            msgError('emailMsg', 'El email tiene un formato invalido', e);
+            break;
         default:
             validField('emailMsg', e)
             break;
@@ -62,7 +66,7 @@ $('password').addEventListener('focus', function(e){
 $('password').addEventListener('blur', function (e) {
     switch (true) {
         case !this.value.trim():
-            msgError('passwordMsg', 'Contraseña requerida', e)
+            msgError('passwordMsg', 'Contraseña requerida', e);
             break;
     
         default:
