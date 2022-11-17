@@ -7,7 +7,7 @@ const { rmSync } = require("fs");
 
 module.exports = {
   register: (req, res) => {
-    return res.render("register", {
+    return res.render("userRegister", {
       title: "Register",
     });
   },
