@@ -44,7 +44,7 @@
                 </div>-->
                 <div class="form__box">
                     <label class="form__label" for="fecha">Fecha de nacimiento*</label>
-                    <input class="form__input" type="date" name="birthday" id="birthday" value=<%= locals.old && old.birthday ? old.birthday : null %> min="1985-01-01" max="2022-12-31">
+                    <input class="form__input" type="date" name="birthday" id="birthday" value="<%= locals.old && old.birthday ? moment(old.birthday).format('YYYY-MM-DD') : null %>" min="1985-01-01" max="2022-12-31">
                     <p class="form_error_msg"><%= locals.errors && errors.birthday? errors.birthday.msg : null%> </p>
                 </div>
                 <div class="form__box">

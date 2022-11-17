@@ -18,13 +18,11 @@
         <section class="registro__main__section">
             <h1>Perfil de Usuario</h1>
 
-            <!-- <form action="/users/update/<%# user.id %>?_method=PUT" class="form_row" method="post">
+           
 
-            <img src="/images/<%= user.avatar ? user.avatar : 'defautlUser.png' %>" alt="" class="registro__main__section_image">
-            <form action="/users/update/<%= user.id %>?_method=PUT" class="form_row" method="post">
+            <img src="/images/avatars/<%= user.avatar %>" alt="avatar" class="registro__main__section_image">
 
-            <div class="nb-3 col-12 col-md-6" >
-            <imput type="file" accept="image/*" name="image"></imput> -->
+   
             <form action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data">
           
                 
@@ -56,7 +54,7 @@
                 </div>
                 <div class="form__box">
                     <label class="form__label" for="fecha">Fecha de nacimiento</label>
-                    <input class="form__input" type="date" name="birthday" value="<%= user.birthday %>" min="1985-01-01" max="2022-12-31">
+                    <input class="form__input" type="date" name="birthday" value="<%= moment(user.birthday).format('YYYY-MM-DD') %>" min="1985-01-01" max="2022-12-31">
                     <p class="form_error_msg"><%= locals.errors && errors.birthday? errors.birthday.msg : null%> </p>
                 </div>
                 <label class="form__button form__button--cancel pointer" for="avatar">Subir imagen de perfil</label>

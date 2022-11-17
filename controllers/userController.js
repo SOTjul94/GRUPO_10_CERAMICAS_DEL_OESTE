@@ -2,6 +2,8 @@ const { validationResult } = require("express-validator");
 const { hashSync } = require("bcryptjs");
 const path = require("path");
 const db = require("../database/models");
+const moment = require('moment');
+const { rmSync } = require("fs");
 
 module.exports = {
   register: (req, res) => {
@@ -47,7 +49,8 @@ module.exports = {
       return res.render('register',{
         title : 'Register',
         errors : errors.mapped(),
-        old : req.body
+        old : req.body,
+        moment : moment
       })
     }
 
@@ -103,6 +106,7 @@ module.exports = {
         return res.render("profile", {
           title: "Profile",
           user,
+          moment : moment
         });
       })
       .catch((error) => console.log(error));
@@ -149,11 +153,18 @@ module.exports = {
       return res.redirect('/users/profile')
     }).catch(error => console.log(error)) 
     }else{
-      return res.render('profile',{
-        title : 'Profile',
-        errors : errors.mapped(),
-        old : req.body
+
+      db.User.findByPk(req.session.userLogin.id)
+      .then((user) => {
+        return res.render("profile", {
+          title: "Profile",
+          user,
+          moment : moment,
+          errors : errors.mapped(),
+        });
       })
+      .catch((error) => console.log(error));
+  
     }
 
     

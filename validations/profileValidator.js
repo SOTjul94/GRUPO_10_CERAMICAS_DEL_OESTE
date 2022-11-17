@@ -1,15 +1,14 @@
 const { check, body } = require('express-validator');
-const users = require('../data/db').loadUsers();
 module.exports = [
     check('firstname')
         .notEmpty().withMessage('El nombre es obligatorio').bail()
-        .isAlpha('es-ES').withMessage('No se permiten carácteres númericos en el nombre').bail()
+        .isAlpha('es-ES',{ignore : " "}).withMessage('No se permiten carácteres númericos en el nombre').bail()
         .isLength({
             min : 2
         }).withMessage('Como mínimo 2 carácteres'),
     check('lastname')
         .notEmpty().withMessage('El apellido es obligatorio').bail()
-        .isAlpha('es-ES').withMessage('No se permiten carácteres númericos en el apellido').bail()
+        .isAlpha('es-ES',{ignore : " "}).withMessage('No se permiten carácteres númericos en el apellido').bail()
         .isLength({
             min : 2
         }).withMessage('Como mínimo 2 carácteres'),
