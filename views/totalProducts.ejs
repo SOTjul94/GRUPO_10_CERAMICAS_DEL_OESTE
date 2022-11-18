@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/0d327672cc.js" crossorigin="anonymous"></script>
         <title>Ceramicas del oeste | <%- title %> </title >
  
         <link   href="/stylesheets/totalProducts.css" rel="stylesheet">
@@ -21,6 +22,7 @@
             <img src="/images/<%= images[0] ? images[0].file : 'default.jpg' %>" alt="" width="200px">
             <h4><%= name %></h4>
             <p><%= category %> </p>
+            <i class="fa-solid fa-truck"></i>
             <a href="/products/productDetail/<%= id %> "><p>ver mas</p></a>
            </div>
         <% }) %>

@@ -86,6 +86,19 @@ li{
   .caja__oferta{
     height: 30%;
   }
+  .caja__oferta i{
+    display: block;
+    background-color: #fff;
+    border: 1px solid #69E0C9;
+    color: #69E0C9;
+    font-size: 16px;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 1s;
+  }
+  .caja__oferta i:hover{
+    transform: rotate(-360deg);
+  }
   .caja__oferta:hover{
     box-shadow: 10px 10px 10px 5px rgb(185, 180, 180);
   }
