@@ -3,9 +3,9 @@ const db = require('../database/models');
 
 module.exports = [
     check('name')  //chekea el campo nombre//
-    .notEmpty()   //campo no tiene que estar vacio////
-    .withMessage('El nombre del producto es obligatorio').bail() //si esta vacio tira mensaje////
-    .isLength({
+      .notEmpty()   //campo no tiene que estar vacio////
+      .withMessage('El nombre del producto es obligatorio').bail() //si esta vacio tira mensaje////
+      .isLength({
         min : 5,
         max : 50
     }).withMessage('El nombre debe tener entre 5 y 20 caracteres'),
