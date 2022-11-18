@@ -3,7 +3,7 @@ const db = require('../database/models');
 
 
 module.exports = [
-    check('title')//chekea el campo title//
+check('name')//chekea el campo title//
       .notEmpty()   //campo no tiene que estar vacio///
       .withMessage('El nombre del producto es obligatorio').bail()//si esta vacio tira mensaje//
       .isLength({
@@ -18,9 +18,14 @@ check('price')
     }).withMessage('Solo números positivos'),
     check('modelo')
     .notEmpty()
-    .withMessage('Debes indicar la modelo'),
+    .withMessage('Debes indicar el modelo'),
     check('description')
     .notEmpty()
     .withMessage('Debes dar una descripción'),
+
+
+
+
+
 ]
  

@@ -2,7 +2,7 @@ const {body, check} = require('express-validator');
 const db = require('../database/models');
 
 module.exports = [
-    check('name')  //chekea el campo nombre//
+ check('name')  //chekea el campo nombre//
       .notEmpty()   //campo no tiene que estar vacio////
       .withMessage('El nombre del producto es obligatorio').bail() //si esta vacio tira mensaje////
       .isLength({
@@ -15,7 +15,14 @@ check('price')
     .isNumeric({
         no_symbols: true
     }).withMessage('Solo números positivos'),
-check('description')
+    
+    check('code')
+    .notEmpty()
+    .withMessage('numero de codigo').bail()
+    .isNumeric({
+        no_symbols: true
+    }).withMessage('Solo números positivos'),
+check('descripcion')
     .notEmpty()
     .withMessage('Debes dar una descripción'),
 body('image')

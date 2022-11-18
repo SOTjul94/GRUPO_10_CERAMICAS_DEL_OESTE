@@ -95,16 +95,16 @@ module.exports = {
 	editionProduct: (req, res) => {
 		db.Product.findByPk(req.params.id)
 			.then((product) => {
-				return res.render("editionProduct", {
+				return res.render("product-edit-form", {
 					product,
 				});
 			})
 			.catch((error) => console.log(error));
 	},
 	update: (req, res) => {
-
+     
 		const errors = validationResult(req);
-
+          return res.send(errors)
 		if(errors.isEmpty()){
 		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body;
 
