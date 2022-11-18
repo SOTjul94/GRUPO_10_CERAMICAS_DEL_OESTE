@@ -16,16 +16,78 @@ check('price')
     .isNumeric({
         no_symbols: true
     }).withMessage('Solo números positivos'),
-    check('modelo')
+ check('modelo')
     .notEmpty()
     .withMessage('Debes indicar el modelo'),
-    check('description')
+check('description')
     .notEmpty()
     .withMessage('Debes dar una descripción'),
 
 
 
-
+    body('image')
+    .custom((value,{req}) => {
+        if(req.files[0]){
+            return true        //si existe la informacion return true///
+        }else {
+            return false      // false no paso la validacion///
+        }
+    }).withMessage('Debes agregar una imagen'),
+body('image')
+    .custom((value,{req}) => {
+        if(req.files.length > 3 ){     ///subir archivo//////
+            return false
+        }else {
+            return true
+        }
+    }).withMessage('Solo se permiten 3 imágenes')
 
 ]
- 
+body('image')
+.custom((value,{req}) => {
+    if(req.files[0]){
+        return true        //si existe la informacion return true///
+    }else {
+        return false      // false no paso la validacion///
+    }
+}).withMessage('Debes agregar una imagen'),
+body('imgAdd')
+.custom((value,{req}) => {
+    if(req.files.length > 3 ){     ///subir archivo//////
+        return false
+    }else {
+        return true
+    }
+}).withMessage('Solo se permiten 3 imágenes')
+body('imgAdd')
+.custom((value,{req}) => {
+    if(req.files[0]){
+        return true        //si existe la informacion return true///
+    }else {
+        return false      // false no paso la validacion///
+    }
+}).withMessage('Debes agregar una imagen'),
+body('image')
+.custom((value,{req}) => {
+    if(req.files.length > 3 ){     ///subir archivo//////
+        return false
+    }else {
+        return true
+    }
+}).withMessage('Solo se permiten 3 imágenes')
+   body('image')
+.custom((value,{req}) => {
+    if(req.files[0]){
+        return true        //si existe la informacion return true///
+    }else {
+        return false      // false no paso la validacion///
+    }
+}).withMessage('Debes agregar una imagen'),
+body('image')
+.custom((value,{req}) => {
+    if(req.files.length > 3 ){     ///subir archivo//////
+        return false
+    }else {
+        return true
+    }
+}).withMessage('Solo se permiten 3 imágenes')
