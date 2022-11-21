@@ -103,11 +103,12 @@ module.exports = {
 	},
 	update: (req, res) => {
      
-		const errors = validationResult(req);
-          return res.send(errors)
-		if(errors.isEmpty()){
-		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body;
-
+ const errors = validationResult(req);
+         // return res.send(errors)
+		   if(errors.isEmpty()){
+			const products = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'products.json')));
+			const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body;
+		
 		db.Product.update(
 			{
 				name: name.trim(),

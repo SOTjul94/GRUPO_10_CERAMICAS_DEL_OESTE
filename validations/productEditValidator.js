@@ -22,10 +22,12 @@ check('price')
 check('description')
     .notEmpty()
     .withMessage('Debes dar una descripción'),
+check('category')
+    .notEmpty()
+    .withMessage('Debes dar una categoria'),
+    
 
-
-
-    body('image')
+body('image')
     .custom((value,{req}) => {
         if(req.files[0]){
             return true        //si existe la informacion return true///

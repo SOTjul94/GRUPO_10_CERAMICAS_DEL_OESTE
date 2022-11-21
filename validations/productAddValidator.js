@@ -16,15 +16,24 @@ check('price')
         no_symbols: true
     }).withMessage('Solo números positivos'),
     
-    check('code')
+ check('code')
     .notEmpty()
     .withMessage('numero de codigo').bail()
     .isNumeric({
         no_symbols: true
     }).withMessage('Solo números positivos'),
+check('model')
+    .notEmpty()
+    .withMessage('Debes dar un model'),
 check('descripcion')
     .notEmpty()
     .withMessage('Debes dar una descripción'),
+check('style')
+    .notEmpty()
+    .withMessage('Debes dar un style'),
+check('origin')
+    .notEmpty()
+    .withMessage('Debes dar un origin'),
 body('image')
     .custom((value,{req}) => {
         if(req.files[0]){

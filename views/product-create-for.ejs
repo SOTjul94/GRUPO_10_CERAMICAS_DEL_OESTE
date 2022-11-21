@@ -63,10 +63,12 @@
         </div>
         <div class="input-field">
           <input type="text"  id="model" name="model">
+          <p class="text-danger"><%= locals.errors && errors.model ? errors.model.msg : null %></p>
           <label> Modelo </label>
         </div>
         <div class="input-field">
           <input type="text"  id="origin" name="origin">
+          <p class="text-danger"><%= locals.errors && errors.origin ? errors.origin.msg : null %></p>
           <label> Origen </label>
         </div>
         <div class="input-field">
