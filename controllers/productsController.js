@@ -5,7 +5,7 @@ const {validationResult} = require('express-validator')
 module.exports = {
 	totalProducts: (req, res) => {
 		db.Product.findAll({
-			include: ["images"],
+			include:["images"],
 		})
 			.then((products) => {
 				return res.render("totalProducts", {
@@ -45,11 +45,11 @@ module.exports = {
 	},
 	store: (req, res) => {
 		
-		const errors = validationResult(req);
-		//return res.send(errors)
+		let errors = validationResult(req);
+		// return res.send(errors)
 
 		if(errors.isEmpty()){
-
+		
 		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body
 
 		db.Product.create({
@@ -95,7 +95,7 @@ module.exports = {
 	editionProduct: (req, res) => {
 		db.Product.findByPk(req.params.id)
 			.then((product) => {
-				return res.render("product-edit-form", {
+				return res.render("editionProduct", {
 					product,
 				});
 			})
@@ -103,10 +103,10 @@ module.exports = {
 	},
 	update: (req, res) => {
      
- const errors = validationResult(req);
+ let errors = validationResult(req);
          // return res.send(errors)
 		   if(errors.isEmpty()){
-			const products = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'products.json')));
+			//
 			const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body;
 		
 		db.Product.update(

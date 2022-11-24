@@ -1,4 +1,4 @@
-const {body,check} = require('express-validator');
+const {check,body} = require('express-validator');
 const db = require('../database/models');
 
 
@@ -15,8 +15,7 @@ check('price')
     .withMessage('El precio es requerido').bail()
     .isNumeric({
         no_symbols: true
-    }).withMessage('Solo números positivos'),
- check('modelo')
+    }).withMessage('Solo números positivos'), check('model')
     .notEmpty()
     .withMessage('Debes indicar el modelo'),
 check('description')
@@ -25,9 +24,8 @@ check('description')
 check('category')
     .notEmpty()
     .withMessage('Debes dar una categoria'),
-    
 
-body('image')
+    body('image')
     .custom((value,{req}) => {
         if(req.files[0]){
             return true        //si existe la informacion return true///
@@ -42,54 +40,4 @@ body('image')
         }else {
             return true
         }
-    }).withMessage('Solo se permiten 3 imágenes')
-
-]
-body('image')
-.custom((value,{req}) => {
-    if(req.files[0]){
-        return true        //si existe la informacion return true///
-    }else {
-        return false      // false no paso la validacion///
-    }
-}).withMessage('Debes agregar una imagen'),
-body('imgAdd')
-.custom((value,{req}) => {
-    if(req.files.length > 3 ){     ///subir archivo//////
-        return false
-    }else {
-        return true
-    }
-}).withMessage('Solo se permiten 3 imágenes')
-body('imgAdd')
-.custom((value,{req}) => {
-    if(req.files[0]){
-        return true        //si existe la informacion return true///
-    }else {
-        return false      // false no paso la validacion///
-    }
-}).withMessage('Debes agregar una imagen'),
-body('image')
-.custom((value,{req}) => {
-    if(req.files.length > 3 ){     ///subir archivo//////
-        return false
-    }else {
-        return true
-    }
-}).withMessage('Solo se permiten 3 imágenes')
-   body('image')
-.custom((value,{req}) => {
-    if(req.files[0]){
-        return true        //si existe la informacion return true///
-    }else {
-        return false      // false no paso la validacion///
-    }
-}).withMessage('Debes agregar una imagen'),
-body('image')
-.custom((value,{req}) => {
-    if(req.files.length > 3 ){     ///subir archivo//////
-        return false
-    }else {
-        return true
-    }
-}).withMessage('Solo se permiten 3 imágenes')
+    }).withMessage('Solo se permiten 3 imágenes')]
