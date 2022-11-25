@@ -13,14 +13,14 @@ check('price')
     .notEmpty()
     .withMessage('El precio es requerido').bail()
     .isNumeric({
-        no_symbols: true
+     
     }).withMessage('Solo números positivos'),
     
  check('code')
     .notEmpty()
     .withMessage('numero de codigo').bail()
     .isNumeric({
-        no_symbols: true
+     
     }).withMessage('Solo números positivos'),
 check('model')
     .notEmpty()

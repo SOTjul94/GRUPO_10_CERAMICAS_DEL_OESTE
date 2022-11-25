@@ -2,7 +2,7 @@ const { Op } = require("sequelize");
 const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const {validationResult} = require('express-validator')
-module.exports = {
+module.exports= {
 	totalProducts: (req, res) => {
 		db.Product.findAll({
 			include:["images"],
@@ -45,8 +45,8 @@ module.exports = {
 	},
 	store: (req, res) => {
 		
-		let errors = validationResult(req);
-		// return res.send(errors)
+	const errors = validationResult(req);
+		return res.send(errors)
 
 		if(errors.isEmpty()){
 		
@@ -103,10 +103,10 @@ module.exports = {
 	},
 	update: (req, res) => {
      
- let errors = validationResult(req);
-         // return res.send(errors)
+ const errors = validationResult(req);
+          //return res.send(errors)
 		   if(errors.isEmpty()){
-			//
+			
 			const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body;
 		
 		db.Product.update(
@@ -192,5 +192,4 @@ module.exports = {
 	},
 };
 
-	
-	
+
