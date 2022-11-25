@@ -1,11 +1,11 @@
 const { Op } = require("sequelize");
 const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {validationResult} = require('express-validator')
-module.exports= {
+
+const controller = {
 	totalProducts: (req, res) => {
 		db.Product.findAll({
-			include:["images"],
+			include: ["images"],
 		})
 			.then((products) => {
 				return res.render("totalProducts", {
@@ -44,12 +44,12 @@ module.exports= {
 		return res.render("creationProduct");
 	},
 	store: (req, res) => {
-		
-	const errors = validationResult(req);
-		return res.send(errors)
 
-		if(errors.isEmpty()){
-		
+
+		/* ************************** */
+		/* HACER VALIDACIONES BACKEND */
+		/* ************************** */
+
 		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body
 
 		db.Product.create({
@@ -69,6 +69,7 @@ module.exports= {
 				discount,
 				color,
 				pei
+
 			})
 			.then((product) => {
 				if (req.files.length) {
@@ -85,12 +86,6 @@ module.exports= {
 				return res.redirect("/products/totalProducts");
 			})
 			.catch((error) => console.log(error));
-		}else{
-			return res.render("creationProduct",{
-				errors : errors.mapped(),
-				old : req.body
-			});
-		}
 	},
 	editionProduct: (req, res) => {
 		db.Product.findByPk(req.params.id)
@@ -102,30 +97,16 @@ module.exports= {
 			.catch((error) => console.log(error));
 	},
 	update: (req, res) => {
-     
- const errors = validationResult(req);
-          //return res.send(errors)
-		   if(errors.isEmpty()){
-			
-			const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body;
-		
+
+		/* ************************** */
+		/* HACER VALIDACIONES BACKEND */
+		/* ************************** */
+
 		db.Product.update(
 			{
-				name: name.trim(),
-				description: description.trim(),
-				model: model.trim(),
-				style: style.trim(),
-				dimension: dimension.trim(),
-				transit: transit.trim(),
-				origin: origin.trim(),
-				recomendation: recomendation.trim(),
-				code: code.trim(),
-				category: category,
-				price,
-				box,
-				discount,
-				color,
-				pei
+				...req.body,
+				name: req.body.name.trim(),
+				description: req.body.description.trim(),
 			},
 			{
 				where: {
@@ -135,16 +116,6 @@ module.exports= {
 		)
 			.them(() => res.redirect("/products/totalProducts"))
 			.catch((error) => console.log(error));
-		}else{
-			db.Product.findByPk(req.params.id)
-			.then((product) => {
-				return res.render("editionProduct", {
-					product,
-					errors : errors.mapped()
-				});
-			})
-			.catch((error) => console.log(error));
-		}
 	},
 	
 	destroy: (req, res) => {
@@ -192,4 +163,4 @@ module.exports= {
 	},
 };
 
-
+module.exports = controller;
