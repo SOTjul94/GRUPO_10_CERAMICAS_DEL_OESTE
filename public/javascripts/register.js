@@ -1,12 +1,14 @@
-const qs = (element) => document.querySelector(element);
-const qsa = (element) => document.querySelectorAll(element);
-const $ = (element) => document.getElementById(element);
+
+const msgError = (element, msg, {target} )  => {
+    $(element).innerText = msg;
+    target.classList.add('is-invalid');
+}
 
 
-$('nombre').addEventListener('blur', function(e)/*Buscar a qué función el profe le da parámetro e. Clase anterior a 107*/{
+$('nombre').addEventListener('blur', function(e){
     switch (true) {
         case !this.value.trim():
-            
+            msgError('errorFirstname', "El nombre es obligatorio", e)
             break;
     
         default:
