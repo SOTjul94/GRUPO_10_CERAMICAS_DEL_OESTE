@@ -4,21 +4,27 @@ const {productCart, productDetail, editionProduct, creationProduct, totalProduct
 
 const adminUserCheck = require('../middlewares/adminUserCheck');
 const {uploadImageProduct} = require('../middlewares/userLoadFiles');
+const productAddValidator = require('../validations/productAddValidator');
+const productEditValidator = require('../validations/productEditValidator');
+
 /* products*/
 router
-      .get('/productCart', productCart)
-      .get('/search', search)
-      .get('/editionProduct', editionProduct)
-      .get('/creationProduct', adminUserCheck, creationProduct)
       .get('/totalProducts', totalProducts)
       .get('/filterProducts', filterProducts)
-      .get('/products/creationProduct', adminUserCheck, totalProducts)
       .get('/productDetail/:id/', productDetail)
-      .post('/store',uploadImageProduct.array('images') , store)
-      .get('/editionProduct/:id/', adminUserCheck, editionProduct)
-      .put('/editionProduct/:id', adminUserCheck, editionProduct)
+
+      .get('/creationProduct', adminUserCheck, creationProduct)
+      .post('/store',uploadImageProduct.array('images'),productAddValidator, store)
+
+      .get('/editionProduct/:id',  editionProduct)
+      .put('/editionProduct/:id',productEditValidator, update)
+
       .delete('/delete/:id', adminUserCheck, destroy)
-      .put('/update/:id', adminUserCheck, update); 
+
+      .get('/search', search)
+      .get('/productCart', productCart)
+   
+      
 
       
 
