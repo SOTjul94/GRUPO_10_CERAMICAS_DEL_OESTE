@@ -2,6 +2,8 @@ const qs = (element) => document.querySelector(element);
 const qsa = (element) => document.querySelectorAll(element);
 const $ = (element) => document.getElementById(element);
 
+console.log('register success!');
+
 const exRegAlfa = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/
 const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
 const exRegPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}/
@@ -181,7 +183,7 @@ $('register').addEventListener('submit', (e) => {
         if(!elements[i].value || elements[i].classList.contains('is-invalid')){
             error = true;
             elements[i].classList.add('is-invalid')
-            $('msgError').innerText = "Algunos tienen errores y/o están vacíos."
+            $('msgError').innerText = "Algunos campos tienen errores y/o están vacíos."
         }
         
     }
