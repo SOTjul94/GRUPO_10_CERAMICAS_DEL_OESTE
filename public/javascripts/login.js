@@ -75,3 +75,21 @@ $('password').addEventListener('blur', function (e) {
     }
     checkFields()
 })
+
+
+$('login').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  let error = false;
+  const elements = $('login').elements;
+  for (let i = 0; i < elements.length - 2; i++) {
+        
+    if(!elements[i].value || elements[i].classList.contains('is-invalid')){
+        error = true;
+        elements[i].classList.add('is-invalid')
+        $('msgloginError').innerText = "Algunos tienen errores y/o están vacíos."
+    }
+    
+}
+
+!error &&  $('login').submit()
+})

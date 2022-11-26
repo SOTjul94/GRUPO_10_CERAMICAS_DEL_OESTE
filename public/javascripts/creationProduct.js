@@ -336,6 +336,23 @@ $('color').addEventListener('blur', function (e) {
     checkFields()
 })
 
+$('creationProduct').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    let error = false;
+    const elements = $('creationProduct').elements;
+    for (let i = 0; i < elements.length - 2; i++) {
+          
+      if(!elements[i].value || elements[i].classList.contains('is-invalid')){
+          error = true;
+          elements[i].classList.add('is-invalid')
+          $('msgCreationError').innerText = "Algunos tienen errores y/o están vacíos."
+      }
+      
+  }
+  
+  !error &&  $('creationProduct').submit()
+  })
+
 
 
 
