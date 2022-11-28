@@ -2,10 +2,12 @@ const { validationResult } = require("express-validator");
 const { hashSync } = require("bcryptjs");
 const path = require("path");
 const db = require("../database/models");
+const moment = require('moment');
+const { rmSync } = require("fs");
 
 module.exports = {
   register: (req, res) => {
-    return res.render("register", {
+    return res.render("userRegister", {
       title: "Register",
     });
   },
@@ -14,7 +16,9 @@ module.exports = {
     /* FALTA VALIDAR EN BACKEND!!!!! */
     /* ******************** */
 
-    /* recibo los datos del formulario */
+    let errors = validationResult(req);
+    if(errors.isEmpty()){
+      /* recibo los datos del formulario */
     const {
       firstname,
       lastname,
@@ -40,6 +44,16 @@ module.exports = {
 
     /* redirecciono al login */
     return res.redirect("/users/login");
+
+    }else{
+      return res.render('register',{
+        title : 'Register',
+        errors : errors.mapped(),
+        old : req.body,
+        moment : moment
+      })
+    }
+
   },
   login: (req, res) => {
     return res.render("login", {
@@ -92,6 +106,7 @@ module.exports = {
         return res.render("profile", {
           title: "Profile",
           user,
+          moment : moment
         });
       })
       .catch((error) => console.log(error));
@@ -100,8 +115,9 @@ module.exports = {
     /* ******************** */
     /* FALTA VALIDAR EN BACKEND!!!!! */
     /* ******************** */
-
-    /* recibo los datos del formulario */
+    let errors = validationResult(req);
+    if(errors.isEmpty()){
+     /* recibo los datos del formulario */
     const { firstname, lastname, document, nacionality, gender, birthday } =
       req.body;
 
@@ -135,7 +151,23 @@ module.exports = {
       /* redireciono al profile */
 
       return res.redirect('/users/profile')
-    }).catch(error => console.log(error))
+    }).catch(error => console.log(error)) 
+    }else{
+
+      db.User.findByPk(req.session.userLogin.id)
+      .then((user) => {
+        return res.render("profile", {
+          title: "Profile",
+          user,
+          moment : moment,
+          errors : errors.mapped(),
+        });
+      })
+      .catch((error) => console.log(error));
+  
+    }
+
+    
   },
   logout: (req, res) => {
       

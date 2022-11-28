@@ -1,8 +1,8 @@
 const { Op } = require("sequelize");
 const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-const controller = {
+const {validationResult} = require('express-validator')
+module.exports = {
 	totalProducts: (req, res) => {
 		db.Product.findAll({
 			include: ["images"],
@@ -44,11 +44,11 @@ const controller = {
 		return res.render("creationProduct");
 	},
 	store: (req, res) => {
+		
+		const errors = validationResult(req);
+		//return res.send(errors)
 
-
-		/* ************************** */
-		/* HACER VALIDACIONES BACKEND */
-		/* ************************** */
+		if(errors.isEmpty()){
 
 		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body
 
@@ -69,7 +69,6 @@ const controller = {
 				discount,
 				color,
 				pei
-
 			})
 			.then((product) => {
 				if (req.files.length) {
@@ -86,6 +85,12 @@ const controller = {
 				return res.redirect("/products/totalProducts");
 			})
 			.catch((error) => console.log(error));
+		}else{
+			return res.render("creationProduct",{
+				errors : errors.mapped(),
+				old : req.body
+			});
+		}
 	},
 	editionProduct: (req, res) => {
 		db.Product.findByPk(req.params.id)
@@ -98,15 +103,28 @@ const controller = {
 	},
 	update: (req, res) => {
 
-		/* ************************** */
-		/* HACER VALIDACIONES BACKEND */
-		/* ************************** */
+		const errors = validationResult(req);
+
+		if(errors.isEmpty()){
+		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body;
 
 		db.Product.update(
 			{
-				...req.body,
-				name: req.body.name.trim(),
-				description: req.body.description.trim(),
+				name: name.trim(),
+				description: description.trim(),
+				model: model.trim(),
+				style: style.trim(),
+				dimension: dimension.trim(),
+				transit: transit.trim(),
+				origin: origin.trim(),
+				recomendation: recomendation.trim(),
+				code: code.trim(),
+				category: category,
+				price,
+				box,
+				discount,
+				color,
+				pei
 			},
 			{
 				where: {
@@ -116,6 +134,16 @@ const controller = {
 		)
 			.them(() => res.redirect("/products/totalProducts"))
 			.catch((error) => console.log(error));
+		}else{
+			db.Product.findByPk(req.params.id)
+			.then((product) => {
+				return res.render("editionProduct", {
+					product,
+					errors : errors.mapped()
+				});
+			})
+			.catch((error) => console.log(error));
+		}
 	},
 	
 	destroy: (req, res) => {
@@ -163,4 +191,5 @@ const controller = {
 	},
 };
 
-module.exports = controller;
+	
+	
