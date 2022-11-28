@@ -1,6 +1,6 @@
-const db = require('../../database/models');
+const db = require('../../database/models')
 const { literal } = require("sequelize");
-
+const { sign } = require("jsonwebtoken");
 module.exports = {
     image: (req, res) => {
         res.sendFile(
@@ -10,7 +10,7 @@ module.exports = {
     getAll : async (req,res) => {
         
     try {
-      const users = await db.Users.findAndCountAll({
+      const users = await db.Users.findAll({
           attributes : {
             exclude : ['updateAt', 'createdAt'],
             include : ['firtsname', 'lastname', 'email', 'id']
