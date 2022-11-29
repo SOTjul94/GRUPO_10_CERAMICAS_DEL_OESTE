@@ -21,9 +21,6 @@
                     <article class="detail__main__section__article">
                         <img src="/images/ceramica1.jpg" alt="">
                         <div class="detail__main__section--images">
-                            <img src="/images/ceramica1.jpg" alt="">
-                            <img src="/images/ceramica1.jpg" alt="">
-                            <img src="/images/ceramica1.jpg" alt="">
                             <p class="codigo">Codigo: <%= product.code %>
                             </p>
                             <form class="estrellitas">
@@ -57,40 +54,34 @@
 
 
                     <div class="Descripcion">
-                        <h2 class="Descripcion__titulo">Ceramicas del Oeste</h2>
+                        <div class="Descripcion__caja">                        
+                            <h3 class="Descripcion__titulo__name__precio">
+                            $ <%= product.price %>
+                            </h3>
                         <p class="Descripcion__titulo__name">
                             <%= product.name %>
                         </p>
-                        <h3 class="Descripcion__titulo__name__precio">
-                            <%= product.price %> m²
-                        </h3>
+
                         <p class="Descripcion__titulo__name__precio__caja">
                             <%= product.caja %> precio por caja
                         </p>
-
-
+                        <p class="buttom_metros">
+                                    Metro por caja: 1.8</p>
+                        </p>
+                         </div>
                         <a class="Descripcion__titulo__name__precio__caja__carrito" href=""></a>
                         <div class="">
                             <form class="buttom" action="" method="POST">
-                                <p class="buttom_metros">
-                                    Metro por caja: 1.8</p>
-                                </p>
-                                <p class="metros2">
-                                    <label class="buttom_metros__cubrir" for="nombre">Metros² que necesitas
-                                        cubrir:</label>
-                                    <input class="buttom_metros__cubrir__num" type="number" name="number"
-                                        id="number"></input><button class="calcular__cajas" type="submit">Calcular
-                                        Cajas</button>
-                                </p>
+                                
                                 <p>
                                     <label for="nombre"></label>
-                                    <button id='aumentar' onclick="aumentar()">+</button>
-                                    <input type='number' id="cantidad" value="0"></input>
-                                    <button id='disminuir' onclick="disminuir()">-</button>
                                     <button class="buttom_metros__cubrir__carrito" type="submit"><a
                                             href="/products/productCart">Agregar al Carrito</a> </button>
                                 </p>
                                 <button type="submit" hidden></button>
+                            </form>
+                            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                <button  class="buttom_metros__cubrir__carrito" type="submit" class="">Eliminar producto</button>
                             </form>
                         </div>
                         <p class="importante">
@@ -145,10 +136,6 @@
 
                 </section>
             </div>
-            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                <button type="submit" class="">ELIMINAR</button>
-            </form>
-
         </main>
         <%- include("./partials/footer") %>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
