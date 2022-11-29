@@ -16,8 +16,8 @@ router
       .get('/creationProduct', adminUserCheck, creationProduct)
       .post('/store',uploadImageProduct.array('images'),productAddValidator, store)
 
-      .get('/editionProduct/:id', adminUserCheck, editionProduct)
-      .put('/editionProduct/:id', adminUserCheck,productEditValidator, editionProduct)
+      .get('/editionProduct/:id',  editionProduct)
+      .put('/editionProduct/:id',productEditValidator, update)
 
       .delete('/delete/:id', adminUserCheck, destroy)
 

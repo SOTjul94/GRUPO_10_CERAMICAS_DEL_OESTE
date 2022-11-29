@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceramicas del oeste | Creacion de Producto </title>
+
+  
+  <link href="/stylesheets/header.css" rel="stylesheet">
+  <link href="/stylesheets/footercss" rel="stylesheet">
+  <link href="/stylesheets/creationProduct.css" rel="stylesheet">
+
+  <a>
+    <script src="https://kit.fontawesome.com/ae1423e40e.js" crossorigin="anonymous"></script>
+  </a>
+</head>
+
+<body>
+
+  <%- include('./partials/header',) %>
+
+    <main>
+      <h4>Creacion de Producto</h4>
+      <form action="/products/store" method="POST" enctype="multipart/form-data" id="formAddProduct">
+        <div class="input-field">
+          <input type="text"  id="name" name="name">
+          <label> Nombre * </label>
+          <p class="text-danger"><%= locals.errors && errors.name ? errors.name.msg : null %></p>
+        </div>
+        <div class="input-field">
+          <input type="color"  id="color" name="color" value="#FFFFFF">
+          <label> Gama de color </label>
+          <p class="text-danger"><%= locals.errors && errors.color ? errors.color.msg : null %></p>
+        </div>
+
+        <div class="input-field">
+          <input type="text"  id="style" name="style">
+          <label> Estilo </label>
+          <p class="text-danger"><%= locals.errors && errors.style? errors.style.msg : null %></p>
+        </div>
+        <div class="input-field">
+          <input type="text"  id="dimension" name="dimension">
+          <label> Dimensiones </label>
+          <p class="text-danger"><%= locals.errors && errors.dimension? errors.dimension.msg : null %></p>
+
+        </div>
+        <div class="input-field">
+          <input type="text"  id="recomendation" name="recomendation">
+          <label> Recomendaciones de uso </label>
+    
+        </div>
+        <div class="input-field">
+          <input type="number"  id="pei" name="pei">
+          <label> Tipo de transito(Pei) </label>
+          <p class="text-danger"><%= locals.errors && errors.pei? errors.pei.msg : null %></p>
+        </div>
+        <div class="input-field">
+          <input type="text"  id="transit" name="transit">
+          <label> Tipo de transito </label>
+          <p class="text-danger"><%= locals.errors && errors.transit ? errors.transit.msg : null %></p>
+        </div>
+        <div class="input-field">
+          <input type="text"  id="model" name="model">
+          <p class="text-danger"><%= locals.errors && errors.model ? errors.model.msg : null %></p>
+          <label> Modelo </label>
+        </div>
+        <div class="input-field">
+          <input type="text"  id="origin" name="origin">
+          <p class="text-danger"><%= locals.errors && errors.origin ? errors.origin.msg : null %></p>
+          <label> Origen </label>
+        </div>
+        <div class="input-field">
+          <input type="number"  id="price" name="price" class="form-input">
+          <label>Precio *</label>
+          <p class="text-danger"><%= locals.errors && errors.price? errors.price.msg : null %></p>
+        </div>
+        <div class="input-field">
+          <input type="number"  id="name" name="box" class="form-input">
+          <label>Precio x caja</label>
+        </div>
+     
+        <div class="input-field">
+       <input type="text"  id="name" name="code" class="form-input">
+          <label>Codigo del producto</label>
+          <p class="text-danger"><%= locals.errors && errors.code? errors.code.msg : null %></p>
+        </div>
+        <div class="input-field">
+          <textarea type="text" id="name" name="description" class="form-input"></textarea>
+          <label>Descripción *</label>
+          <textarea class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>" name="description" id="description" cols="30" rows="5" style="resize: none;"><%= locals.old && old.description ? old.description : null %></textarea>
+          <p class="text-danger"><%= locals.errors && errors.description ? errors.description.msg : null %></p>
+
+        </div>
+        <div class="input-field">
+          <label for="category">Categoría</label>
+         
+         
+          <select name="category" id="category">  
+           <option value=""hidden selected>Selecione...</option>
+            <option value="baños">Baños</option>
+            <option value="exterior">Exterior</option>
+            <option value="interior">Iterior</option>
+          </select>
+          <p class="text-danger"><%= locals.errors && errors.category ? errors.category.msg : null %></p>
+        <div class="fotos">
+          <h4>Fotos del producto *</h4>
+          <input type="file" name="images" class="importar__img" multiple/>
+          <p class="text-danger"><%= locals.errors && errors.images ? errors.images.msg : null %></p>
+        </div>
+        <div class="button">
+            <button type="submit">Crear nuevo producto</button>
+        </div>
+      </form>
+    </main>
+
+    <%- include("./partials/footer") %>
+    <script src="/js/creationProduct.js"></script>
+
+</body>
+
+</html>

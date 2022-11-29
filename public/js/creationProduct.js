@@ -1,4 +1,4 @@
-console.log("product-create-form connected succcess!");
+console.log("creationProduct connected succcess!");
 
 const formAddProduct = $("formAddProduct");
 const elements = formAddProduct.elements;
