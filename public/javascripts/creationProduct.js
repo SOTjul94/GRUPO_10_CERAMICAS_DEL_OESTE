@@ -147,10 +147,42 @@ $('description').addEventListener('keyup', function (e){
 })
 
 $('images').addEventListener('change', (e)=>{
-    let reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = () => {
-        $('imagePrev').src = reader.result
+    const newLogos = [];
+    $('preview').innerHTML = null;
+
+    [].forEach.call(e.target.files, readAndPreview);
+    function readAndPreview(file) {
+        if(e.target.files.length > 3){
+            $("preview").innerHTML =
+            "No se permiten más de tres imágenes";
+        
+            return null;
+        }
+      // Make sure `file.name` matches our extensions criteria
+      if (!/\.(jpe?g|png|gif|webp)$/i.test(file.name)) {
+        $("preview").innerHTML =
+          "Solo imágenes con extensión jpg, jpeg, png, gif, webp";
+      
+          return null;
+      } 
+      $("preview").innerHTML = null;
+      var reader = new FileReader();
+      reader.addEventListener("load", function () {
+
+        newLogos.push({
+            name : file.name,
+            src: this.result
+        });
+
+        $('preview').innerHTML += (`
+        <div style="width: 90px;" id=${file.name}>
+        <img class='mx-2 img-fluid' src='${this.result}' alt="logo">
+        </div>
+        `);
+      });
+      
+      reader.readAsDataURL(file);
+
     }
 })
 
