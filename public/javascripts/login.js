@@ -81,7 +81,7 @@ $('login').addEventListener('submit', (e)=>{
   e.preventDefault();
   let error = false;
   const elements = $('login').elements;
-  for (let i = 0; i < elements.length - 2; i++) {
+  for (let i = 0; i < elements.length - 1; i++) {
         
     if(!elements[i].value || elements[i].classList.contains('is-invalid')){
         error = true;
