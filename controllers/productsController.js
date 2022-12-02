@@ -1,8 +1,9 @@
+const { validationResult } = require("express-validator");
 const { Op } = require("sequelize");
 const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {validationResult} = require('express-validator')
-module.exports = {
+
+const controller = {
 	totalProducts: (req, res) => {
 		db.Product.findAll({
 			include: ["images"],
@@ -31,7 +32,9 @@ module.exports = {
 			.catch(error => console.log(error))
 	},
 	productDetail: (req, res) => {
-		db.Product.findByPk(req.params.id)
+		db.Product.findByPk(req.params.id,{
+			include: ['images']
+		})
 			.then((product) =>
 				res.render("productDetail", {
 					product,
@@ -44,11 +47,11 @@ module.exports = {
 		return res.render("creationProduct");
 	},
 	store: (req, res) => {
-		
-		const errors = validationResult(req);
-		//return res.send(errors)
 
-		if(errors.isEmpty()){
+
+		/* ************************** */
+		/* HACER VALIDACIONES BACKEND */
+		/* ************************** */
 
 		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body
 
@@ -69,6 +72,7 @@ module.exports = {
 				discount,
 				color,
 				pei
+
 			})
 			.then((product) => {
 				if (req.files.length) {
@@ -85,15 +89,11 @@ module.exports = {
 				return res.redirect("/products/totalProducts");
 			})
 			.catch((error) => console.log(error));
-		}else{
-			return res.render("creationProduct",{
-				errors : errors.mapped(),
-				old : req.body
-			});
-		}
 	},
 	editionProduct: (req, res) => {
-		db.Product.findByPk(req.params.id)
+		db.Product.findByPk(req.params.id,{
+			include : ['images']
+		})
 			.then((product) => {
 				return res.render("editionProduct", {
 					product,
@@ -103,39 +103,51 @@ module.exports = {
 	},
 	update: (req, res) => {
 
+		/* ************************** */
+		/* HACER VALIDACIONES BACKEND */
+		/* ************************** */
 		const errors = validationResult(req);
 
 		if(errors.isEmpty()){
-		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body;
-
-		db.Product.update(
-			{
-				name: name.trim(),
-				description: description.trim(),
-				model: model.trim(),
-				style: style.trim(),
-				dimension: dimension.trim(),
-				transit: transit.trim(),
-				origin: origin.trim(),
-				recomendation: recomendation.trim(),
-				code: code.trim(),
-				category: category,
-				price,
-				box,
-				discount,
-				color,
-				pei
-			},
-			{
-				where: {
-					id: req.params.id,
+			db.Product.update(
+				{
+					...req.body,
 				},
-			}
-		)
-			.them(() => res.redirect("/products/totalProducts"))
-			.catch((error) => console.log(error));
+				{
+					where: {
+						id: req.params.id,
+					},
+				}
+			)
+				.then(async () => {
+				
+					if (req.files.length) {
+						await db.Image.destroy({
+							where : {
+								productId : req.params.id
+							}
+						})
+						let images = req.files.map(({ filename }) => {
+							return {
+								file: filename,
+								productId: req.params.id,
+							};
+						});
+						db.Image.bulkCreate(images, {
+							validate: true,
+						}).then((result) => console.log(result));
+					}
+
+					return res.redirect("/products/totalProducts")
+
+				})
+				
+				
+				.catch((error) => console.log(error));
 		}else{
-			db.Product.findByPk(req.params.id)
+			db.Product.findByPk(req.params.id, {
+				include : ['images']
+			})
 			.then((product) => {
 				return res.render("editionProduct", {
 					product,
@@ -144,6 +156,7 @@ module.exports = {
 			})
 			.catch((error) => console.log(error));
 		}
+	
 	},
 	
 	destroy: (req, res) => {
@@ -191,5 +204,4 @@ module.exports = {
 	},
 };
 
-	
-	
+module.exports = controller;

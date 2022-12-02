@@ -19,22 +19,6 @@ const msgError = (element, msg, event) => {
 }
 
 
-const checkFields = () => {
-    let error = false;
-    for (let i = 0; i < elements.length - 1; i++) {
-      
-      if(!elements[i].value || elements[i].classList.contains('is-invalid')) {
-        error = true
-      }
-      console.log(error)
-    }
-  
-    if(!error){
-      $('editionProductButton').disabled = false;
-    }else {
-      $('editionProductButton').disabled = true;
-    }
-  }
 
 
 
@@ -52,7 +36,6 @@ $('name').addEventListener('blur', function (e) {
             validField('nameMsg', e)
             break;
     }
-    checkFields()
 })
 
 $('price').addEventListener('focus', function(e){
@@ -71,7 +54,6 @@ $('price').addEventListener('blur', function (e) {
             validField('priceMsg', e)
             break;
     }
-    checkFields()
 })
 
 $('discount').addEventListener('focus', function(e){
@@ -90,7 +72,6 @@ $('discount').addEventListener('blur', function (e) {
             validField('discountMsg', e)
             break;
     }
-    checkFields()
 })
 
 $('category').addEventListener('blur', function (e) {
@@ -103,7 +84,6 @@ $('category').addEventListener('blur', function (e) {
             validField('categoryMsg', e)
             break;
     }
-    checkFields()
 })
 
 $('description').addEventListener('focus', function (e){
@@ -130,7 +110,6 @@ $('description').addEventListener('blur', function (e) {
             validField('descriptionMsg', e)
             break;
     }
-    checkFields()
 })
 
 $('description').addEventListener('keyup', function (e){
@@ -147,10 +126,42 @@ $('description').addEventListener('keyup', function (e){
 })
 
 $('images').addEventListener('change', (e)=>{
-    let reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = () => {
-        $('imagePrev').src = reader.result
+    const newLogos = [];
+    $('preview').innerHTML = null;
+
+    [].forEach.call(e.target.files, readAndPreview);
+    function readAndPreview(file) {
+        if(e.target.files.length > 3){
+            $("preview").innerHTML =
+            "No se permiten más de tres imágenes";
+        
+            return null;
+        }
+      // Make sure `file.name` matches our extensions criteria
+      if (!/\.(jpe?g|png|gif|webp)$/i.test(file.name)) {
+        $("preview").innerHTML =
+          "Solo imágenes con extensión jpg, jpeg, png, gif, webp";
+      
+          return null;
+      } 
+      $("preview").innerHTML = null;
+      var reader = new FileReader();
+      reader.addEventListener("load", function () {
+
+        newLogos.push({
+            name : file.name,
+            src: this.result
+        });
+
+        $('preview').innerHTML += (`
+        <div style="width: 90px;" id=${file.name}>
+        <img class='mx-2 img-fluid' src='${this.result}' alt="logo">
+        </div>
+        `);
+      });
+      
+      reader.readAsDataURL(file);
+
     }
 })
 
@@ -170,7 +181,7 @@ $('code').addEventListener('blur', function (e) {
             validField('codeMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('box').addEventListener('focus', function(e){
@@ -189,7 +200,7 @@ $('box').addEventListener('blur', function (e) {
             validField('boxMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('origin').addEventListener('focus', function(e){
@@ -205,7 +216,7 @@ $('origin').addEventListener('blur', function (e) {
             validField('originMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('style').addEventListener('focus', function(e){
@@ -221,7 +232,7 @@ $('style').addEventListener('blur', function (e) {
             validField('styleMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('origin').addEventListener('focus', function(e){
@@ -237,7 +248,7 @@ $('origin').addEventListener('blur', function (e) {
             validField('originMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('transit').addEventListener('focus', function(e){
@@ -253,7 +264,7 @@ $('transit').addEventListener('blur', function (e) {
             validField('transitMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('pei').addEventListener('focus', function(e){
@@ -269,7 +280,7 @@ $('pei').addEventListener('blur', function (e) {
             validField('peiMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('recomendation').addEventListener('focus', function(e){
@@ -285,7 +296,7 @@ $('recomendation').addEventListener('blur', function (e) {
             validField('recomendationMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('model').addEventListener('focus', function(e){
@@ -301,7 +312,7 @@ $('model').addEventListener('blur', function (e) {
             validField('modelMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('dimension').addEventListener('focus', function(e){
@@ -317,7 +328,7 @@ $('dimension').addEventListener('blur', function (e) {
             validField('dimensionMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('color').addEventListener('focus', function(e){
@@ -333,7 +344,7 @@ $('color').addEventListener('blur', function (e) {
             validField('colorMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('editionProduct').addEventListener('submit', (e)=>{
@@ -352,3 +363,6 @@ $('editionProduct').addEventListener('submit', (e)=>{
   
   !error &&  $('editionProduct').submit()
   })
+
+
+   
