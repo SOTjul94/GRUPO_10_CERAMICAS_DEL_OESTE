@@ -22,6 +22,7 @@ a{
 }
 body{
   font-family: 'ABeeZee', sans-serif;
+  background-color: #C0FAEE;
 }
 *{
   margin: 0;
@@ -220,8 +221,12 @@ form .button{
   color: #3498db;
   text-decoration: none;
 }
+footer{
+  margin: 15px;
+}
 .footer__padre{
   border: 1px solid black;
+  background-color: #fff;
 }
   .productCart__footer__section {
     background-color: white;
@@ -368,6 +373,10 @@ margin-left: 6%;
     }
     
     .foto2{
-      margin-left: 95px;
+      margin-left: 6.9%;
+    }
+    .container{
+      margin: 50px 450px;
+      box-shadow: 10px 10px 10px 5px rgb(185, 180, 180);
     }
 }
