@@ -53,6 +53,7 @@
   */
 body{
     font-family: var(--tipografiaGeneral);
+    background-color: #C0FAEE;
 }
 h1{
     text-align: center;
@@ -116,10 +117,11 @@ h1{
     border-radius: 8px;
 }
 .registro__main{
-    padding: 8px;
+    padding: 1px;
 }
 .footer__padre{
   border: 1px solid var(--colorNegro);
+  background-color: #fff;
 }
   .productCart__footer__section {
     background-color: var(--colorBlanco);
@@ -271,6 +273,8 @@ h1{
     }
     .registro__main{
       margin: 50px 450px;
+      box-shadow: 10px 10px 10px 5px rgb(185, 180, 180);
+      background-color: #fff;
     }    
 }
 }
