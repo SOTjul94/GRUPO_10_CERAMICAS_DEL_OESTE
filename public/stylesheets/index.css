@@ -17,10 +17,8 @@ body{
 	70% { transform: translateX(-300%); }
 
 	75% { transform: translateX(-400%); }
-	90% { transform: translateX(-400%); }
+	100% { transform: translateX(-400%); }
 
-	95% { transform: translateX(-500%); }
-	100% { transform: translateX(-500%); }
 }
 
 

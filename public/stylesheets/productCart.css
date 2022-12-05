@@ -143,8 +143,8 @@ width: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center
-
+    align-items: center;
+    padding: 10px;
 }
 
 .productCart__main__section-end {

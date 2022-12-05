@@ -57,8 +57,10 @@ body{
 h1{
     text-align: center;
 }
+.registro__main__section{
+  border: 1px solid black;
+}
 .registro__main__section_image{
-
   width: 10%;
 }
 .registro__header{
@@ -68,6 +70,9 @@ h1{
 .registro__header--volver I{
     padding: 12px;
     color: var(--colorRojo);
+}
+.form_error_msg{
+  color: red;
 }
 .form__box{
     margin-bottom: 30px;
@@ -100,8 +105,6 @@ h1{
     text-align: right;
     background-color: var(--colorVerdeCasiMedio);
     line-height: 45px;
-    background: linear-gradient(360deg, var(--colorVerdeCasiMedio), var(--colorVerdeBajo), var(--colorBlanco));
-    border: none;
 }
 .form__box--button{
     display: inline-block;
@@ -230,6 +233,7 @@ h1{
 
 /*Desktop*/
 @media (min-width:1024px) {
+   
     h1{
         text-align: center;
     }
@@ -259,6 +263,14 @@ h1{
     }
     .form__box{
         width: 45%;
+    }
+    .form_row{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .registro__main{
+      margin: 50px 450px;
     }    
 }
 }
