@@ -1,5 +1,12 @@
 @import './general.css';
-
+.is-invalid{
+  background: rgb(167,0,0);
+  background: linear-gradient(0deg, rgba(167,0,0,1) 0%, rgba(255,0,0,0) 9%, rgba(227,9,9,0) 19%);
+  }
+  .is-valid{
+    background: rgb(0,167,14);
+    background: linear-gradient(0deg, rgba(0,167,14,1) 0%, rgba(31,255,0,0) 9%, rgba(10,227,9,0) 19%);
+  }
 /*
 .index__header__menu--nav{
     background-color: #69E0C9;
@@ -81,6 +88,32 @@ h1{
     height: 20px;
     border: none;
     border-bottom: 1px solid var(--colorGris);
+}
+.input-field input, .input-field select, .input-field textarea{
+      
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid silver;
+  outline: none;
+  font-size: 19px;
+  transition: .4s;
+  text-align: center;
+  height: 40px;
+}
+input:focus ~ label,
+input:valid ~ label, 
+select:focus ~ label,
+select:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  transform: translateY(-33px);
+  background: white;
+  font-size: 16px;
+  color: #1DA1F2;
+}
+.colorLabek{
+  font-size: 16px;
+  color: #1DA1F2;
 }
 .foto1{
     display: flex;

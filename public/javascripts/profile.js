@@ -1,60 +1,147 @@
-console.log('Profile success! (interna)');
-const urlBase = 'https://apis.datos.gob.ar/georef/api';
+const $ = e => document.getElementById(e)
+console.log('ameifniwqenfkwqf'); 
+const profile = $("profile");
+const elements = profile.elements;
+const cleanError = (element, {target}) => {
+    target.classList.remove('is-invalid');
+    target.classList.remove('is-valid');
+};
 
-const provinceSelect = document.getElementById('province-select');
-const provinceInput = document.getElementById('province-input');
-const citySelect = document.getElementById('city-select');
-const cityInput = document.getElementById('city-input');
-
-const getProvinces = async () => {
-      try {
-
-        const response = await fetch(`${urlBase}/provincias`);
-        const {provincias} = await response.json();
-
-        provincias.sort((a,b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0)
-        provinceSelect.innerHTML = `<option value="" hidden selected>Seleccione...</option>`
-
-        provincias.forEach(({nombre}) => {
-          provinceSelect.innerHTML += `<option ${nombre === provinceInput.value && 'selected'} value="${nombre}">${nombre}</option>`
-        });
-        
-      } catch (error) {
-        console.error
-      }
+const validField = (element, {target}) => {
+    $(element).innerHTML = null;
+    target.classList.remove('is-invalid')
+    target.classList.add('is-valid');
   };
 
-const getCities = async (province) => {
-  try {
-      citySelect.innerHTML = `<option>Cargando...</option>`;
-
-      const response = await fetch(`${urlBase}/localidades?max=1000&provincia=${province}`,{
-        cache : "force-cache"
-      });
-      const {localidades} = await response.json();
-
-      localidades.sort((a,b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0);
-      citySelect.innerHTML = `<option value="" hidden selected>Seleccione...</option>`;
-
-      localidades.forEach(({nombre}) => {
-        citySelect.innerHTML += `<option ${nombre === cityInput.value && 'selected'} value="${nombre}">${nombre}</option>`
-        });
-        
-      
-    } catch (error) {
-       console.error
-    }
+const msgError = (element, msg, event) => {
+    $(element).style.color = "red";
+    $(element).innerHTML = msg;
+    event.target.classList.add('is-invalid');
 }
 
-window.addEventListener('load', () => {
-  getProvinces();
 
-  getCities(provinceInput.value)
-
-  provinceSelect.addEventListener('change', async function(e){
+const checkFields = () => {
+    let error = false;
+    for (let i = 0; i < elements.length - 1; i++) {
+      
+      if(!elements[i].value || elements[i].classList.contains('is-invalid')) {
+        error = true
+      }
+      console.log(error)
+    }
   
-    getCities(this.value)
- 
-  })
+    if(!error){
+      $('profileButton').disabled = false;
+    }else {
+      $('profileButton').disabled = true;
+    }
+  }
 
-});
+
+
+$('name').addEventListener('focus', function(e){
+    cleanError('nameMsg', e)
+})
+
+$('name').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('nameMsg', 'Minimo 10 caracteres', e)
+            break;
+    
+        default:
+            validField('nameMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+$('surname').addEventListener('focus', function(e){
+    cleanError('surnameMsg', e)
+})
+
+$('surname').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('surnameMsg', 'Apellido requerido', e)
+            break;
+         default:
+            validField('surnameMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+
+
+$('documentNumber').addEventListener('focus', function(e){
+    cleanError('documentNumberMsg', e)
+})
+
+$('documentNumber').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('documentNumberMsg', 'Documento requerido', e)
+            break;
+        case this.value < 0:
+            msgError('documentNumberMsg', 'Nose permiten numeros negativos', e)
+            break;
+         default:
+            validField('documentNumberMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+$('nacionality').addEventListener('focus', function(e){
+    cleanError('nacionalityMsg', e)
+})
+
+$('nacionality').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('nacionalityMsg', 'Nacionalidad requerida', e)
+            break;
+         default:
+            validField('nacionalityMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+$('genre').addEventListener('focus', function(e){
+    cleanError('genreMsg', e)
+})
+
+$('genre').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('genreMsg', 'Genero requerido', e)
+            break;
+         default:
+            validField('genreMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+
+
+
+
+$('profile').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    let error = false;
+    const elements = $('profile').elements;
+    for (let i = 0; i < elements.length - 2; i++) {
+          
+      if(!elements[i].value || elements[i].classList.contains('is-invalid')){
+          error = true;
+          elements[i].classList.add('is-invalid')
+          $('msgCreationError').innerText = "Algunos tienen errores y/o están vacíos."
+      }
+      
+  }
+  
+  !error &&  $('profile').submit()
+  })

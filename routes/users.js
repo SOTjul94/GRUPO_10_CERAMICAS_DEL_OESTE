@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {login, register, processLogin, processRegister, logout, profile, update} = require('../controllers/userController');
+const {login, register, processLogin, processRegister, logout, profile, update, quienesSomos, medidasDePago } = require('../controllers/userController');
 const { uploadImageAvatar } = require('../middlewares/uploadFileAvatar');
 const userSessionCheck = require('../middlewares/userSessionCheck');
 const loginValidator = require('../validations/loginValidator');
@@ -19,4 +19,6 @@ router
 .get('/profile',userSessionCheck, profile)
 .put('/update',uploadImageAvatar.single('avatar'), profileValidator, update)
 .get('/logout',logout)
+.get('/quienesSomos', quienesSomos)
+.get('/medidasDePago', medidasDePago);
 module.exports = router;
