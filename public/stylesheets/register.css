@@ -65,9 +65,7 @@ body{
 h1{
     text-align: center;
 }
-.registro__main__section{
-  border: 1px solid black;
-}
+
 .registro__main__section_image{
   width: 10%;
 }

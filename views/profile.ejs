@@ -59,7 +59,12 @@
                     <p class="form_error_msg"><%= locals.errors && errors.gender? errors.gender.msg : null%> </p>
                 </div>
                
-                
+                <div class="input-field col-12 col-md-6">
+                    <label class="colorLabek" for="fecha">Fecha de nacimiento*</label>
+                    <input class="form-control" type="date" name="birthday" id="birthday" value="<%= locals.old && old.birthday ? moment(old.birthday).format('YYYY-MM-DD') : null %>" min="1985-01-01" max="2022-12-31">
+                    <p class="errorNombre"></p>
+                    <p class="form_error_msg"><%= locals.errors && errors.birthday? errors.birthday.msg : null%> </p>
+                </div>
                 
                 <div class="row gap-1 mx-auto">
                     <h4>Imagen de Perfil</h4>
