@@ -1,191 +1,166 @@
-
-console.log('register success!');
-
-const exRegAlfa = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/
-const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/
-const exRegPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}/
-
-
-const msgError = (element, msg, {target}) => {
-    $(element).innerText = msg;
-    target.classList.add('is-invalid');
+const $ = e => document.getElementById(e) 
+const registrer = $("registrer");
+const elements = registrer.elements;
+const cleanError = (element, {target}) => {
+    target.classList.remove('is-invalid');
+    target.classList.remove('is-valid');
 };
 
-const cleanField = (element, target) => {
-    $(element).innerText = null;
-    target.classList.remove('is-invalid', 'is-valid')
-};
-
-const validField = (element,{target}) => {
-    cleanField(element, target)
+const validField = (element, {target}) => {
+    $(element).innerHTML = null;
+    target.classList.remove('is-invalid')
     target.classList.add('is-valid');
-    
-};
+  };
 
-const viewPass = function(e) {
-    document.querySelector('#viewPass i').classList.toggle('fa-eye')
-    document.querySelector('#viewPass i').classList.toggle('fa-eye-slash')
-
-   $('pass').type = $('pass').type === "text" ? 'password' : 'text';
-};
-
-const verifyEmail = async (email) => {
-    //llamado a la API
-    try {
-        let response = await fetch('/api/users/verify-email',{
-            method : 'POST',
-            body : JSON.stringify({
-                email : email
-            })
-        });
-
-        let result = await response.json();
-
-        console.log(result)
-
-        return result.data
-        
-    } catch (error) {
-        console.error
-    }
+const msgError = (element, msg, event) => {
+    $(element).style.color = "red";
+    $(element).innerHTML = msg;
+    event.target.classList.add('is-invalid');
 }
 
-$('nombre').addEventListener('blur', function(e){
-    switch (true) {
-        case !this.value.trim():
-            msgError('errorFirstname', "El nombre es obligatorio", e)
 
-            break;
-        case this.value.trim().length < 2 :
-            msgError('errorNombre',"El nombre debe tener como mínimo dos caracteres", e);
-            break
-        case !exRegAlfa.test(this.value):
-            msgError('errorNombre',"Solo se permiten caracteres alfabéticos", e);
-            break
-        default:
-            validField('errorNombre',e)
-            break;
-    }
-});
-$('name').addEventListener('focus', function({target}){
-    cleanField('errorNombre', target)
-});
-
-
-$('surname').addEventListener('blur', function(e){
-    switch (true) {
-        case !this.value.trim():
-            msgError('errorApellido',"El apellido es obligatorio", e);
-            break;
-        case this.value.trim().length < 2 :
-            msgError('errorApellido',"El apellido debe tener como mínimo dos caracteres", e);
-            break
-        case !exRegAlfa.test(this.value):
-            msgError('errorApellido',"Solo se permiten caracteres alfabéticos", e);
-            break
-        default:
-            validField('errorApellido',e)
-            break;
-    }
-});
-
-$('surname').addEventListener('focus', function({target}){
-    cleanField('errorApellido', target)
-});
-
-$('email').addEventListener('blur', function(e){
-    switch (true) {
-        case !this.value.trim():
-            msgError('errorEmail',"El email es obligatorio", e);
-            break;
-        case !exRegEmail.test(this.value):
-            msgError('errorEmail',"El email tiene un formato inválido", e);
-            break
-        case verifyEmail(this.value):
-            msgError('errorEmail',"El email ya se encuentra registrado", e);
-            break
-        default:
-            validField('errorEmail',e)
-            break;
-    }
-});
-
-$('email').addEventListener('focus', function({target}){
-    cleanField('errorEmail', target)
-});
-
-$('pass').addEventListener('blur', function(e){
-    switch (true) {
-        case !this.value.trim():
-            msgError('errorPass',"La contraseña es obligatoria", e);
-            break;
-        case !exRegPass.test(this.value):
-            msgError('errorPass',"La contraseña debe tener entre 6 y 12 caracteres, un número, una mayúscula y un caracter especial", e);
-            break
-        default:
-            validField('errorPass',e)
-            break;
-    }
-});
-
-$('pass').addEventListener('focus', function({target}){
-    cleanField('errorPass', target)
-});
-
-
-$('pass2').addEventListener('blur', function(e){
-    switch (true) {
-        case !this.value.trim():
-            msgError('errorPass2',"Debes confirmar tu contraseña", e);
-            break;
-        case this.value !== $('pass').value:
-            msgError('errorPass2',"Las contraseñas no coinciden", e);
-            break
-        default:
-            validField('errorPass2',e)
-            break;
-    }
-});
-
-$('pass2').addEventListener('focus', function({target}){
-    cleanField('errorPass2', target)
-});
-
-$('terms').addEventListener('click', (e) => {
-    $('errorTerms').innerText = null
-});
-
-$('register').addEventListener('keydown', (e) => {
-    if(e.key === "Enter" ){
-        e.preventDefault()
-    }
-});
-
-$('register').addEventListener('submit', (e) => {
-    e.preventDefault();
+const checkFields = () => {
     let error = false;
-    const elements = $('register').elements;
-
-    if(!$('terms').checked){
-        error = true;
-        $('errorTerms').innerText = "Debe aceptar las bases y condiciones"
+    for (let i = 0; i < elements.length - 1; i++) {
+      
+      if(!elements[i].value || elements[i].classList.contains('is-invalid')) {
+        error = true
+      }
+      console.log(error)
     }
-
-
-  /*   Array.from(elements).forEach(element => {
-
-    }) */
-
-    for (let i = 0; i < elements.length - 2; i++) {
-        
-        if(!elements[i].value || elements[i].classList.contains('is-invalid')){
-            error = true;
-            elements[i].classList.add('is-invalid')
-            $('msgError').innerText = "Algunos campos tienen errores y/o están vacíos."
-        }
-        
+  
+    if(!error){
+      $('registrerButton').disabled = false;
+    }else {
+      $('registrerButton').disabled = true;
     }
+  }
 
-    !error &&  $('register').submit()
+
+
+$('name').addEventListener('focus', function(e){
+    cleanError('nameMsg', e)
 })
 
+$('name').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('nameMsg', 'Minimo 10 caracteres', e)
+            break;
+    
+        default:
+            validField('nameMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+$('surname').addEventListener('focus', function(e){
+    cleanError('surnameMsg', e)
+})
+
+$('surname').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('surnameMsg', 'Precio requerido', e)
+            break;
+        case this.value < 0:
+            msgError('surnameMsg', 'Nose permiten numeros negativos', e)
+            break;
+         default:
+            validField('surnameMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+
+
+$('documentNumber').addEventListener('focus', function(e){
+    cleanError('documentNumberMsg', e)
+})
+
+$('documentNumber').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('documentNumberMsg', 'Codigo requerido', e)
+            break;
+        case this.value < 0:
+            msgError('documentNumberMsg', 'Nose permiten numeros negativos', e)
+            break;
+         default:
+            validField('documentNumberMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+$('nacionality').addEventListener('focus', function(e){
+    cleanError('nacionalityMsg', e)
+})
+
+$('nacionality').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('nacionalityMsg', 'Precio x caja requerido', e)
+            break;
+        case this.value < 0:
+            msgError('nacionalityMsg', 'Nose permiten numeros negativos', e)
+            break;
+         default:
+            validField('nacionalityMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+$('pass').addEventListener('focus', function(e){
+    cleanError('passMsg', e)
+})
+
+$('pass').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('passMsg', 'Origen requerido', e)
+            break;
+         default:
+            validField('passMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+$('email').addEventListener('focus', function(e){
+    cleanError('emailMsg', e)
+})
+
+$('email').addEventListener('blur', function (e) {
+    switch (true) {
+        case !this.value.trim():
+            msgError('emailMsg', 'Estilo requerido', e)
+            break;
+         default:
+            validField('emailMsg', e)
+            break;
+    }
+    checkFields()
+})
+
+
+
+$('registrer').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    let error = false;
+    const elements = $('registrer').elements;
+    for (let i = 0; i < elements.length - 2; i++) {
+          
+      if(!elements[i].value || elements[i].classList.contains('is-invalid')){
+          error = true;
+          elements[i].classList.add('is-invalid')
+          $('msgCreationError').innerText = "Algunos tienen errores y/o están vacíos."
+      }
+      
+  }
+  
+  !error &&  $('registrer').submit()
+  })
