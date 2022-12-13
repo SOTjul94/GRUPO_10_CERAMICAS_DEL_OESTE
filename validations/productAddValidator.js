@@ -13,22 +13,46 @@ check('price')
     .notEmpty()
     .withMessage('El precio es requerido').bail()
     .isNumeric({
-     
-    }).withMessage('Solo números positivos'),
+     }).withMessage('Solo números positivos'),
     
- check('code')
+check('box')
+    .notEmpty()
+    .withMessage('box requerido').bail()
+    .isNumeric({
+   }).withMessage('Solo números positivos'),
+    
+check('code') 
     .notEmpty()
     .withMessage('numero de codigo').bail()
     .isNumeric({
-     
-    }).withMessage('Solo números positivos'),
+   }).withMessage('Solo números positivos'),
 check('model')
     .notEmpty()
     .withMessage('Debes dar un model'),
 check('descripcion')
     .notEmpty()
     .withMessage('Debes dar una descripción'),
-check('style')
+check('transit')
+    .notEmpty()
+    .withMessage('Debes dar  transit'),
+check('dimension')
+    .notEmpty()
+    .withMessage('Debes dar dimension'),
+check('pei')
+    .notEmpty()
+    .withMessage('debes dar el pei requerido').bail()
+    .isNumeric({
+   }).withMessage('Solo números positivos'),
+check('category')
+    .notEmpty()
+    .withMessage('Debes dar una category'),
+check('color') 
+    .notEmpty()
+    .withMessage('Debes dar un color'),
+check('recomendation')
+    .notEmpty()
+    .withMessage('Debes dar una recomendation'),
+ check('style')
     .notEmpty()
     .withMessage('Debes dar un style'),
 check('origin')
@@ -51,4 +75,5 @@ body('image')
         }
     }).withMessage('Solo se permiten 3 imágenes')
 ]
-    
+    //falta transit. box=preccio de caja. discount. dimensions. category. color. recomendaiont
+

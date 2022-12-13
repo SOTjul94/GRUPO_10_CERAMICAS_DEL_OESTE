@@ -23,7 +23,7 @@ check('description')
     .withMessage('Debes dar una descripción'),
 check('category')
     .notEmpty()
-    .withMessage('Debes dar una categoria'),
+    .withMessage('Debes dar una category'),
 
     body('image')
     .custom((value,{req}) => {
@@ -41,3 +41,8 @@ body('image')
             return true
         }
     }).withMessage('Solo se permiten 3 imágenes')]
+
+
+   /* name: name?.trim(),
+				description: description.trim(),
+*/

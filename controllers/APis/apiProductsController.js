@@ -13,7 +13,7 @@ module.exports = {
       const products = await db.Products.findAndCountAll({
           attributes : {
             exclude : ['updateAt', 'createdAt'],
-            include : ['name', 'description', 'id']
+            include : ['name', 'description', 'id','price']
           }
       })
       const token = await sign({id});
@@ -52,6 +52,29 @@ module.exports = {
           status: 500,
           msg: error.message,
         }); 
+      }
     }
   }
-}
+
+
+    //////preguntar si categoria habia que scarlo????/////
+ /*countByCategory : async (req,res) => {
+         try {
+            const Category = await db.Category.countByCategory({
+                attributes : {
+                  exclude : ['updateAt', 'createdAt'],
+                  include : ['name', 'description', 'id','price','discount','description',
+    'color','style', 'dimension','transit','origin', 'pei','recomendation','code' ]
+                },
+                catch (error) {
+                  res.status(500).json({
+                    ok: false,
+                    status: 500,
+                    msg: error.message,
+                  }
+                }
+              })
+            }
+
+          }
+        }*****/

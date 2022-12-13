@@ -11,5 +11,6 @@ const {getAllProducts, getByIdProducts,image} = require('../../controllers/APis/
 router.get('/', getAllProducts)
 router.get('/:id', getByIdProducts)
 router.get("/image/:img", image);
-
+/*router.get('/', countByCategory)*/
 module.exports = router;
+ 
