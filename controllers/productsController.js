@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const { Op } = require("sequelize");
 const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -31,7 +32,9 @@ const controller = {
 			.catch(error => console.log(error))
 	},
 	productDetail: (req, res) => {
-		db.Product.findByPk(req.params.id)
+		db.Product.findByPk(req.params.id,{
+			include: ['images']
+		})
 			.then((product) =>
 				res.render("productDetail", {
 					product,
@@ -88,7 +91,9 @@ const controller = {
 			.catch((error) => console.log(error));
 	},
 	editionProduct: (req, res) => {
-		db.Product.findByPk(req.params.id)
+		db.Product.findByPk(req.params.id,{
+			include : ['images']
+		})
 			.then((product) => {
 				return res.render("editionProduct", {
 					product,
@@ -101,21 +106,57 @@ const controller = {
 		/* ************************** */
 		/* HACER VALIDACIONES BACKEND */
 		/* ************************** */
+		const errors = validationResult(req);
 
-		db.Product.update(
-			{
-				...req.body,
-				name: req.body.name.trim(),
-				description: req.body.description.trim(),
-			},
-			{
-				where: {
-					id: req.params.id,
+		if(errors.isEmpty()){
+			db.Product.update(
+				{
+					...req.body,
 				},
-			}
-		)
-			.them(() => res.redirect("/products/totalProducts"))
+				{
+					where: {
+						id: req.params.id,
+					},
+				}
+			)
+				.then(async () => {
+				
+					if (req.files.length) {
+						await db.Image.destroy({
+							where : {
+								productId : req.params.id
+							}
+						})
+						let images = req.files.map(({ filename }) => {
+							return {
+								file: filename,
+								productId: req.params.id,
+							};
+						});
+						db.Image.bulkCreate(images, {
+							validate: true,
+						}).then((result) => console.log(result));
+					}
+
+					return res.redirect("/products/totalProducts")
+
+				})
+				
+				
+				.catch((error) => console.log(error));
+		}else{
+			db.Product.findByPk(req.params.id, {
+				include : ['images']
+			})
+			.then((product) => {
+				return res.render("editionProduct", {
+					product,
+					errors : errors.mapped()
+				});
+			})
 			.catch((error) => console.log(error));
+		}
+	
 	},
 	
 	destroy: (req, res) => {

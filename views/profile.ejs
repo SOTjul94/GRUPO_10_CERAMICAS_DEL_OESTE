@@ -9,61 +9,86 @@
         <link   href="/stylesheets/register.css" rel="stylesheet">
         <link   href="/stylesheets/header.css" rel="stylesheet">
         <link   href="/stylesheets/footer.css" rel="stylesheet">
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      <a>   <script src="https://kit.fontawesome.com/ae1423e40e.js" crossorigin="anonymous"></script></a>
     </head>
 <body class="registro">
     <%- include('./partials/header',) %>
-    <main class="registro__main">
+    <main class="card">
         <section class="registro__main__section">
             <h1>Perfil de Usuario</h1>
-
+            <hr class="mb-5">
            
 
-            <img src="/images/avatars/<%= user.avatar %>" alt="avatar" class="registro__main__section_image">
+            
 
    
-            <form action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data" class="row" id="profile">
           
                 
                 
-                <div class="form__box">
-                    <label class="form__label" for="nombre">Nombre*</label>
-                    <input class="form__input" type="text" placeholder="nombre" id="nombre" name="firstname" value="<%= user.firstname %>">
+                <div class="input-field col-12 col-md-6">
+                    <label class="colorLabek" for="nombre" id="name">Nombre*</label>
+                    <input class="form-control" type="text" placeholder="nombre" id="nombre" name="firstname" value="<%= user.firstname %>">
+                    <p id="nameMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.firstname? errors.firstname.msg : null%> </p>
                 </div>
-                <div class="form__box">
-                    <label class="form__label" for="apellido">Apellido*</label>
-                    <input class="form__input" type="text" placeholder="apellido" id="apellido" name="lastname" value="<%= user.lastname %>">
+                <div class="input-field col-12 col-md-6">
+                    <label class="colorLabek" for="apellido" id="surname">Apellido*</label>
+                    <input class="form-control" type="text" placeholder="apellido" id="apellido" name="lastname" value="<%= user.lastname %>">
+                    <p id="surnameMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.lastname? errors.lastname.msg : null%> </p>
                 </div>
-                <div class="form__box">
-                    <label class="form__label" for="nacionalidad">Nacionalidad</label>
-                    <input class="form__input" type="text" placeholder="Seleccionar" id="nacionalidad" name="nacionality" value="<%= user.nacionality %>">
+                <div class="input-field col-12 col-md-6">
+                    <label class="colorLabek" for="nacionalidad" id="nacionality">Nacionalidad</label>
+                    <input class="form-control" type="text" placeholder="Seleccionar" id="nacionalidad" name="nacionality" value="<%= user.nacionality %>">
+                    <p id="nacionalityMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.nacionality? errors.nacionality.msg : null%> </p>
                 </div>
-                <div class="form__box">
-                    <label class="form__label" for="numero de documento">Número de documento</label>
-                    <input class="form__input" type="text" placeholder="(sin puntos)" id="numero de documento" name="document" value="<%= user.document %>">
+                <div class="input-field col-12 col-md-6">
+                    <label class="colorLabek" for="numero de documento" id="documentNumber">Número de documento</label>
+                    <input class="form-control" type="text" placeholder="(sin puntos)" id="numero de documento" name="document" value="<%= user.document %>">
+                    <p id="documentNumberMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.document? errors.document.msg : null%> </p>
                 </div>
-                <div class="form__box">
-                    <label class="form__label" for="genero">Género</label>
-                    <input class="form__input" type="text" placeholder="Seleccionar" id="genero" name="gender" value="<%= user.gender %>">
+                <div class="input-field col-12 col-md-6">
+                    <label class="colorLabek" for="genero" id="genre">Género</label>
+                    <input class="form-control" type="text" placeholder="Seleccionar" id="genero" name="gender" value="<%= user.gender %>">
+                    <p id="genreMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.gender? errors.gender.msg : null%> </p>
                 </div>
-                <div class="form__box">
-                    <label class="form__label" for="fecha">Fecha de nacimiento</label>
-                    <input class="form__input" type="date" name="birthday" value="<%= moment(user.birthday).format('YYYY-MM-DD') %>" min="1985-01-01" max="2022-12-31">
+               
+                <div class="input-field col-12 col-md-6">
+                    <label class="colorLabek" for="fecha">Fecha de nacimiento*</label>
+                    <input class="form-control" type="date" name="birthday" id="birthday" value="<%= locals.old && old.birthday ? moment(old.birthday).format('YYYY-MM-DD') : null %>" min="1985-01-01" max="2022-12-31">
+                    <p class="errorNombre"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.birthday? errors.birthday.msg : null%> </p>
                 </div>
-                <label class="form__button form__button--cancel pointer" for="avatar">Subir imagen de perfil</label>
-                    <input hidden type="file" id="avatar" name="avatar">
-                <div class="form__box--caja">
-                    <button class="form__box--button" type="submit">Guardar cambios</button>
+                
+                <div class="row gap-1 mx-auto">
+                    <h4>Imagen de Perfil</h4>
+                    <div class="input-field col-12 col-md-6"><img src="/images/avatars/defaultUser.png" height="70%" width="50%" alt="">
+                        <div class="m-2 w-50">
+                            <label for="images" class="btn btn-success " width="50%">Cargar Imagen de Perfil</label>
+                            <input type="file" name="avatar" id="avatar" hidden multiple />
+                            </div>
+                    </div>
                     
-                    <input hidden type="file" id="avatar" name="avatar">
-                    <div class="form__box--caja">
+                    <div class="col-12 col-md-6 col-lg-8">
+                      <div id="preview" class="d-flex justify-content-around">
+                       
+                      </div>
+                      <p class="text-danger">
+                        <%= locals.errors && errors.images ? errors.images.msg : null %>
+                      </p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        
+                          <button type="submit" id="editionProductButton" class="btn btn-primary w-100 m-2" width="50%">Guardar
+                            Cambios</button>
+                  
+                    </div>
                 </div>
             </form>
         </section>

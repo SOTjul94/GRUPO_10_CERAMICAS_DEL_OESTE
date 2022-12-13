@@ -7,7 +7,7 @@ const { rmSync } = require("fs");
 
 module.exports = {
   register: (req, res) => {
-    return res.render("userRegister", {
+    return res.render("register", {
       title: "Register",
     });
   },
@@ -181,4 +181,14 @@ module.exports = {
 
     return res.redirect("/");
   },
+  medidasDePago : (req, res) =>{
+      return res.render("medidasDePago", {
+        title: 'Medios de Pago'
+      })
+  },
+  quienesSomos : (req, res) => {
+      return res.render("quienesSomos", {
+        title : 'Quienes Somos'
+      })
+  }
 };

@@ -14,4 +14,63 @@
     --colorCrema:antiquewhite;
 }
 
+.bg-crema {
+    background-color: antiquewhite;
+}
+.bg-verde {
+    background-color: var(--colorVerdeBajo);
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    display: block;
+}
+
+.btn:hover {
+    box-shadow:2px 2px 5px gray;
+    transition: all ease 0.5s;
+}
+.btn_primary{
+    background-color: #2E6157;
+    color: #fff;
+  
+}
+.btn_primary:hover{
+    background-color:#51AD9B;
+}
+
+.btn_danger{
+    background-color: darkred;
+    color: #fff;
+    
+}
+.btn_danger:hover{
+    background-color:red;
+
+}
+
+.btn_success{
+    background-color: darkgreen;
+    color: #fff;
+    
+}
+.btn_success:hover{
+    background-color:green;
+
+}
+
+.card{
+    box-shadow: 10px 10px 10px 5px rgb(185, 180, 180);
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+
+}
+
+
 

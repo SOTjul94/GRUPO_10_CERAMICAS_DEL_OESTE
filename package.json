@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "server": "nodemon ./bin/www",
+    "client:start": "cd admin && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client:start\""
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parse": "^0.1.0",
     "cli": "^1.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -16,6 +20,7 @@
     "express-session": "^1.17.3",
     "express-validator": "^6.14.2",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "moment": "^2.29.4",
     "morgan": "~1.9.1",
@@ -24,5 +29,8 @@
     "nodemon": "^2.0.20",
     "sequelize": "^6.25.2",
     "sequelize-cli": "^6.5.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }

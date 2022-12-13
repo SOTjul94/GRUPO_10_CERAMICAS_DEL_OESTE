@@ -1,5 +1,6 @@
 const db = require('../../database/models');
 const { literal } = require("sequelize");
+const { sign } = require("jsonwebtoken");
 
 module.exports = {
     image: (req, res) => {
@@ -10,7 +11,7 @@ module.exports = {
     getAllProducts : async (req,res) => {
         
     try {
-      const products = await db.Products.findAndCountAll({
+      const products = await db.Products.findAll({
           attributes : {
             exclude : ['updateAt', 'createdAt'],
             include : ['name', 'description', 'id','price']

@@ -7,4 +7,5 @@ const {index} = require('../controllers/indexController')
 /* Home */
 router.get('/', index);
 
+
 module.exports = router;
