@@ -1,6 +1,10 @@
+console.log('eifeifiehfiheifhe');
 const $ = e => document.getElementById(e) 
-const registrer = $("registrer");
-const elements = registrer.elements;
+const register = $("register");
+const elements = register.elements;
+const emailExp =  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+
 const cleanError = (element, {target}) => {
     target.classList.remove('is-invalid');
     target.classList.remove('is-valid');
@@ -12,29 +16,13 @@ const validField = (element, {target}) => {
     target.classList.add('is-valid');
   };
 
-const msgError = (element, msg, event) => {
+  const msgError = (element, msg, event) => {
     $(element).style.color = "red";
     $(element).innerHTML = msg;
     event.target.classList.add('is-invalid');
 }
 
 
-const checkFields = () => {
-    let error = false;
-    for (let i = 0; i < elements.length - 1; i++) {
-      
-      if(!elements[i].value || elements[i].classList.contains('is-invalid')) {
-        error = true
-      }
-      console.log(error)
-    }
-  
-    if(!error){
-      $('registrerButton').disabled = false;
-    }else {
-      $('registrerButton').disabled = true;
-    }
-  }
 
 
 
@@ -45,7 +33,7 @@ $('name').addEventListener('focus', function(e){
 $('name').addEventListener('blur', function (e) {
     switch (true) {
         case !this.value.trim():
-            msgError('nameMsg', 'Minimo 10 caracteres', e)
+            msgError('nameMsg', 'Nombre requerido', e)
             break;
     
         default:
@@ -137,9 +125,12 @@ $('email').addEventListener('focus', function(e){
 $('email').addEventListener('blur', function (e) {
     switch (true) {
         case !this.value.trim():
-            msgError('emailMsg', 'Estilo requerido', e)
+            msgError('emailMsg', 'Email requerido', e)
             break;
-         default:
+        case !emailExp.test(this.value):
+            msgError('emailMsg', 'El email tiene un formato invalido', e);
+            break;
+        default:
             validField('emailMsg', e)
             break;
     }
@@ -147,20 +138,19 @@ $('email').addEventListener('blur', function (e) {
 })
 
 
-
-$('registrer').addEventListener('submit', (e)=>{
+$('register').addEventListener('submit', (e)=>{
     e.preventDefault();
     let error = false;
-    const elements = $('registrer').elements;
+    const elements = $('register').elements;
     for (let i = 0; i < elements.length - 2; i++) {
           
       if(!elements[i].value || elements[i].classList.contains('is-invalid')){
           error = true;
           elements[i].classList.add('is-invalid')
-          $('msgCreationError').innerText = "Algunos tienen errores y/o están vacíos."
+          $('msgEditionError').innerText = "Algunos tienen errores y/o están vacíos."
       }
       
   }
   
-  !error &&  $('registrer').submit()
+  !error &&  $('register').submit()
   })

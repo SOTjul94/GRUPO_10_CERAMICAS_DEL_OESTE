@@ -29,32 +29,32 @@
                 
                 
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="nombre" id="name">Nombre*</label>
-                    <input class="form-control" type="text" placeholder="nombre" id="nombre" name="firstname" value="<%= user.firstname %>">
+                    <label class="colorLabek" for="nombre" >Nombre*</label>
+                    <input class="form-control" type="text" placeholder="nombre" id="name" name="firstname" value="<%= user.firstname %>">
                     <p id="nameMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.firstname? errors.firstname.msg : null%> </p>
                 </div>
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="apellido" id="surname">Apellido*</label>
-                    <input class="form-control" type="text" placeholder="apellido" id="apellido" name="lastname" value="<%= user.lastname %>">
+                    <label class="colorLabek" for="apellido" >Apellido*</label>
+                    <input class="form-control" type="text" placeholder="apellido" id="surname" name="lastname" value="<%= user.lastname %>">
                     <p id="surnameMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.lastname? errors.lastname.msg : null%> </p>
                 </div>
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="nacionalidad" id="nacionality">Nacionalidad</label>
-                    <input class="form-control" type="text" placeholder="Seleccionar" id="nacionalidad" name="nacionality" value="<%= user.nacionality %>">
+                    <label class="colorLabek" for="nacionalidad" >Nacionalidad</label>
+                    <input class="form-control" type="text" placeholder="Seleccionar" id="nacionality" name="nacionality" value="<%= user.nacionality %>">
                     <p id="nacionalityMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.nacionality? errors.nacionality.msg : null%> </p>
                 </div>
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="numero de documento" id="documentNumber">Número de documento</label>
-                    <input class="form-control" type="text" placeholder="(sin puntos)" id="numero de documento" name="document" value="<%= user.document %>">
+                    <label class="colorLabek" for="numero de documento" >Número de documento</label>
+                    <input class="form-control" type="text" placeholder="(sin puntos)" id="documentNumber" name="document" value="<%= user.document %>">
                     <p id="documentNumberMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.document? errors.document.msg : null%> </p>
                 </div>
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="genero" id="genre">Género</label>
-                    <input class="form-control" type="text" placeholder="Seleccionar" id="genero" name="gender" value="<%= user.gender %>">
+                    <label class="colorLabek" for="genero" >Género</label>
+                    <input class="form-control" type="text" placeholder="Seleccionar" id="genre" name="gender" value="<%= user.gender %>">
                     <p id="genreMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.gender? errors.gender.msg : null%> </p>
                 </div>

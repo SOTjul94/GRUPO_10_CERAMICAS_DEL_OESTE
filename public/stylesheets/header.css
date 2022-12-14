@@ -1,6 +1,8 @@
 @import './general.css';
 
-
+.sesionCelu{
+  display: none;
+}
 li{
   list-style: none;
 }
@@ -216,7 +218,14 @@ color: red;
     .productCart__header__div-Location {
       display: none;
     }
+   
   }
+  @media (max-width:425px) {
+    .sesionCelu{
+      display: block;
+    }
+  }
+ 
   @media (min-width: 768px) {
 
   .index__header__menu--nav{
