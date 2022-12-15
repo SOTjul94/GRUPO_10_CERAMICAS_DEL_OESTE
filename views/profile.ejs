@@ -71,7 +71,7 @@
                     <div class="input-field col-12 col-md-6"><img src="/images/avatars/defaultUser.png" height="70%" width="50%" alt="">
                         <div class="m-2 w-50">
                             <label for="images" class="btn btn-success " width="50%">Cargar Imagen de Perfil</label>
-                            <input type="file" name="avatar" id="avatar" hidden multiple />
+                            <input type="file" name="images" id="images" hidden multiple />
                             </div>
                     </div>
                     
@@ -83,6 +83,7 @@
                         <%= locals.errors && errors.images ? errors.images.msg : null %>
                       </p>
                     </div>
+                    
                     <div class="col-12 col-md-6 col-lg-3">
                         
                           <button type="submit" id="editionProductButton" class="btn btn-primary w-100 m-2" width="50%">Guardar

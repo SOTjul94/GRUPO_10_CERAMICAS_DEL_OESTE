@@ -38,7 +38,7 @@ module.exports = {
         let user = await db.User.findByPk(id, {
             attributes : {
               exclude : ['createdAt', 'updatedAt', 'rolId', 'password'],
-              include : [[literal(`CONCAT( '${req.protocol}://${req.get("host")}/users/images/avatars/', 'defaultUser.png')`),'avatarUrl']]
+              include : [[literal(`CONCAT( '${req.protocol}://${req.get("host")}/users/image/', 'defaultUser.png')`),'avatarUrl']]
             }
         })
         

@@ -40,7 +40,7 @@ $('name').addEventListener('blur', function (e) {
             validField('nameMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('surname').addEventListener('focus', function(e){
@@ -59,7 +59,7 @@ $('surname').addEventListener('blur', function (e) {
             validField('surnameMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 
@@ -80,7 +80,7 @@ $('documentNumber').addEventListener('blur', function (e) {
             validField('documentNumberMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('nacionality').addEventListener('focus', function(e){
@@ -99,7 +99,7 @@ $('nacionality').addEventListener('blur', function (e) {
             validField('nacionalityMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('pass').addEventListener('focus', function(e){
@@ -115,7 +115,7 @@ $('pass').addEventListener('blur', function (e) {
             validField('passMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 $('email').addEventListener('focus', function(e){
@@ -134,7 +134,7 @@ $('email').addEventListener('blur', function (e) {
             validField('emailMsg', e)
             break;
     }
-    checkFields()
+    
 })
 
 
