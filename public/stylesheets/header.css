@@ -115,6 +115,7 @@ color: red;
     flex-wrap: wrap;
     align-items: center;
     border: solid 1px black;
+    justify-content: space-around;
   }
   
   .header__logo1 {

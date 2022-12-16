@@ -11,6 +11,7 @@ li{
     text-decoration: none;
     color: black;
   }
+  /*
   .productCart__header__div-Location a{
   color: red;
   }
@@ -52,6 +53,7 @@ li{
     margin-bottom: 4%;
     
   }
+  */
   .interiores{
     width: 25%;
     height: 30%;
@@ -103,6 +105,7 @@ li{
   .caja__oferta:hover{
     box-shadow: 10px 10px 10px 5px rgb(185, 180, 180);
   }
+  /*
   .header__logo1 {
     display: flex;
     height: 30px;
@@ -186,10 +189,11 @@ li{
     width: 100px;
     
   }
+  */
   .footer__retiro{
     margin-right: 1%;
   }
-  
+  /*
   .productCart__heater__section2 {
     background-color: #69E0C9;
     display: flex;
@@ -198,6 +202,7 @@ li{
     align-items: center;
     border: solid 1px black;
   }
+  */
   .footer__logo1 {
     display: flex;
     height: 30px;
