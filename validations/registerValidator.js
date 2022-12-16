@@ -34,7 +34,7 @@ module.exports = [
     check('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
         .isLength({
-            min : 8,
+            min : 6,
             max : 15
         }).withMessage('La contraseña debe tener entre 8 y 15 carácteres'),
     check('document')

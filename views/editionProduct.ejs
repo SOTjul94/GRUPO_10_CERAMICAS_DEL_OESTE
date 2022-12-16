@@ -164,8 +164,9 @@
 
       <label>Descripción</label>
     
-      <p id="descriptionInfo" hidden><span id="numberCharacters"></span> disponibles</p>
-      <p class="text-danger">
+      <p id="descriptionInfo" hidden></p>
+      <p class="text-danger" id="description">
+        <p id="descriptionMsg"></p>
         <%= locals.errors && errors.description ? errors.description.msg : null %>
       </p>
     </div>

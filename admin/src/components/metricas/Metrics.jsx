@@ -8,19 +8,19 @@ export const Metrics = () => {
         products : {
             title : "Total Productos",
             icon : "fa-boxes",
-            value : 0,
+            value : 53,
             color : "primary"
         },
         users : {
             title : "Usuarios registrados",
             icon : "fa-users",
-            value : 0,
+            value : 5,
             color : "success"
         },
         categories : {
             title : "Categorias activas",
             icon : "fa-folder",
-            value : 0,
+            value : 3,
             color : "warning"
         }
     });

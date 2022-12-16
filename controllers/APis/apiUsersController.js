@@ -11,20 +11,18 @@ module.exports = {
         
     try {
       let users = await db.User.findAll({
-        attributes : ['id', 'firstname', 'email']
+        attributes : ['id', 'firstname', 'email'
+        ,[literal(`CONCAT('${req.protocol}://${req.get("host")}${req.baseUrl}/', id)`),'detailUrl']] 
       })
           
-    /*users.map(user =>{
-      return{
-        ...user,
-        detail : 
-      }
-    })*/
-      //const token = await sign({ id, rolId });
+    
     return res.status(200).json({
-        count : 12,
-        data: users
-        //urlData: `${req.protocol}://${req.get("host")}${req.baseUrl}/me/${token}`
+        ok : true,
+        meta: {
+          total: users.length
+        },
+        users: users
+        
     })
     } catch (error) {
       res.status(500).json({
@@ -34,21 +32,24 @@ module.exports = {
       }); 
 }
     },
-    getById : (req,res) => {
+    getById : async (req,res) => {
       try {
-        const options = {
+        const {id} = req.params;
+        let user = await db.User.findByPk(id, {
             attributes : {
               exclude : ['createdAt', 'updatedAt', 'rolId', 'password'],
-              include : [[literal(`CONCAT( '${req.protocol}://${req.get("host")}/users/image/',avatar)`),'avatar']]
+              include : [[literal(`CONCAT( '${req.protocol}://${req.get("host")}/users/image/', 'defaultUser.png')`),'avatarUrl']]
             }
-        }
-        const {id} = req.params.id
-        const data = db.User.findByPk(id,options)
+        })
+        
+       
   
        return res.status(200).json({
           ok:true,
-          status:200,
-          data : options
+          meta: {
+            total :1
+          },
+          data : user
         })
       } catch (error) {
         res.status(500).json({

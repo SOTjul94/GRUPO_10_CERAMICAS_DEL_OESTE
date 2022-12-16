@@ -62,31 +62,39 @@
                 <nav>
                     <ul>
                         <li><a class="" href="/products/totalProducts">Productos</a></li>
-                        <li><a href="">Adhesivos</a></li>
-                        <li><a href="#">Pastinas</a></li>
-                        <li><a href="#">Decorados</a></li>
+                        <li><a class="" href="/users/quienesSomos">Quienes somos?</a></li>
+                        <li><a href="/users/medidasDePago">Medios de pago</a></li>
+                        <li><a href="/users/login" class="sesionCelu" >Inicia Sesion</a></li>
+                        
                     </ul>
                     
                 </nav>
                 
             </div>
-            <div class="">
-                <nav>
-                    <ul>
-                        <li><a class="" href="">Quienes somos?</a></li>
-                        <li><a href="">Medios de pago</a></li>
-                        
-                        
-                    </ul>
-                </nav>
+            
                 <div class="icons2">
                     <nav>
                         <ul>
                             <li><a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i> Carrito de Compras</a></li>
-                            <li><a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
-                            <li><a href="/users/login"><i class="fa-solid fa-user"></i> Inicia Sesion</a></li>
-                            <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
-                       
+                            <% if (locals.userLogin) { %>
+                                <div class="icons">
+                                   
+                                </div>
+                                <div class="icons">
+                                  
+                                </div>
+                                <% if (locals.userLogin.rolId === 1) { %>
+                                   <li><a href="/users/logout">Salir</a></li>
+                                   <li><a href="/users/profile">Mi perfil </a></li>
+                                <% } %>
+                               <% } else { %>
+                               
+                               <div class="icons">
+                                   <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                                   
+
+                               </div>
+                               <% } %>
                         </ul>
                     </nav>
                     
