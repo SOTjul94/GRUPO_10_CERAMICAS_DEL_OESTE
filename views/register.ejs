@@ -19,29 +19,29 @@
         <section class="registro__main__section">
             <h1>Datos personales del titular</h1>
             <hr class="mb-5">
-            <form action="" class="row" method="post" id="registrer">
+            <form action="" class="row" method="POST" id="register" enctype="multipart/form-data" >
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="nombre" id="name">Nombre*</label>
-                    <input class="form-control" type="text" placeholder="nombre" id="nombre" name="firstname" value="<%= locals.old && old.firstname ? old.firstname : null %>">
+                    <label class="colorLabek" for="nombre" >Nombre*</label>
+                    <input class="form-control" type="text" placeholder="nombre" id="name" name="firstname" value="<%= locals.old && old.firstname ? old.firstname : null %>">
+                    <p id="nameMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.firstname? errors.firstname.msg : null%> </p>
-                    <p class="nameMsg"></p>
                 </div>
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="apellido" id="surname">Apellido*</label>
-                    <input class="form-control" type="text" placeholder="apellido" id="apellido" name="lastname" value="<%= locals.old && old.lastname ? old.lastname : null %>">
+                    <label class="colorLabek" for="apellido" >Apellido*</label>
+                    <input class="form-control" type="text" placeholder="apellido" id="surname" name="lastname" value="<%= locals.old && old.lastname ? old.lastname : null %>">
                     <p class="form_error_msg"><%= locals.errors && errors.lastname? errors.lastname.msg : null%> </p>
-                    <p class="surnameMsg"></p>
+                    <p id="surnameMsg"></p>
                 </div>
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="nacionalidad" id="nacionality">Nacionalidad*</label>
-                    <input class="form-control" type="text" placeholder="Seleccionar" id="nacionalidad" name="nacionality" value="<%= locals.old && old.nacionality ? old.nacionality : null %>">
+                    <label class="colorLabek" for="nacionalidad" >Nacionalidad*</label>
+                    <input class="form-control" type="text" placeholder="Seleccionar" id="nacionality" name="nacionality" value="<%= locals.old && old.nacionality ? old.nacionality : null %>">
                     <p class="form_error_msg"><%= locals.errors && errors.nacionality? errors.nacionality.msg : null%> </p>
-                    <p class="nacionalityMsg"></p>
+                    <p id="nacionalityMsg"></p>
                 </div>
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="numero de documento" id="documentNumber">Número de documento*</label>
-                    <input class="form-control" type="text" placeholder="(sin puntos)" id="document" name="document" value="<%= locals.old && old.document ? old.document : null %>">
-                    <p class="documentNumberMsg"></p>
+                    <label class="colorLabek" for="numero de documento" >Número de documento*</label>
+                    <input class="form-control" type="text" placeholder="(sin puntos)" id="documentNumber" name="document" value="<%= locals.old && old.document ? old.document : null %>">
+                    <p id="documentNumberMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.document? errors.document.msg : null%> </p>
                 </div>
                 <!--<div class="input-field col-12 col-md-6"> FALTA AGREGAR A LA BASE DE DATOS
@@ -51,19 +51,19 @@
                 <div class="input-field col-12 col-md-6">
                     <label class="colorLabek" for="fecha">Fecha de nacimiento*</label>
                     <input class="form-control" type="date" name="birthday" id="birthday" value="<%= locals.old && old.birthday ? moment(old.birthday).format('YYYY-MM-DD') : null %>" min="1985-01-01" max="2022-12-31">
-                    <p class="errorNombre"></p>
+                    <p id="errorNombre"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.birthday? errors.birthday.msg : null%> </p>
                 </div>
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="password" id="pass">Contraseña*</label>
-                    <input class="form-control" type="password" placeholder="(entre 8 y 15 caracteres, usar mayúsculas, letra y número)" id="password" name="password" value="<%= locals.old && old.password ? old.password : null %>">
-                    <p class="passMsg"></p>
+                    <label class="colorLabek" for="password">Contraseña*</label>
+                    <input class="form-control" type="password" placeholder="(entre 8 y 15 caracteres, usar mayúsculas, letra y número)"  id="pass" name="password" value="<%= locals.old && old.password ? old.password : null %>">
+                    <p id="passMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.password? errors.password.msg : null%> </p>
                 </div>
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="email" id="email">Correo Eléctronico*</label>
-                    <input class="form-control" type="email" placeholder="fulanitoDeLa12@gmail.com" id="email" name="email" value="<%= locals.old && old.email ? old.email : null %>">
-                    <p class="emailMsg"></p>
+                    <label class="colorLabek" for="email" >Correo Eléctronico*</label>
+                    <input class="form-control" type="email" placeholder="fulanito@gmail.com" id="email" name="email" value="<%= locals.old && old.email ? old.email : null %>">
+                    <p id="emailMsg"></p>
                     <p class="form_error_msg"><%= locals.errors && errors.email? errors.email.msg : null%> </p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
