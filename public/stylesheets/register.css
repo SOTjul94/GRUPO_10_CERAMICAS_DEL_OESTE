@@ -7,6 +7,9 @@
     background: rgb(0,167,14);
     background: linear-gradient(0deg, rgba(0,167,14,1) 0%, rgba(31,255,0,0) 9%, rgba(10,227,9,0) 19%);
   }
+.body{
+  background-color: red;
+}
 /*
 .index__header__menu--nav{
     background-color: #69E0C9;
