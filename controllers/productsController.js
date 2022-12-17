@@ -61,7 +61,7 @@ const controller = {
 				description: description.trim(),
 				model: model.trim(),
 				style: style.trim(),
-				dimension: dimension.trim(),
+				dimension: dimension,
 				transit: transit.trim(),
 				origin: origin.trim(),
 				recomendation: recomendation.trim(),
