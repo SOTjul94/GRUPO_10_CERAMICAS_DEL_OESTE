@@ -13,7 +13,7 @@ module.exports = {
     try {
       const products = await db.Product.findAll({
         attributes: 
-           ["id","name","description",[literal(`CONCAT('${req.protocol}://${req.get("host")}${req.baseUrl}/', id)`),"detailUrl",],],
+           ["id","name","description","price","category",[literal(`CONCAT('${req.protocol}://${req.get("host")}${req.baseUrl}/', id)`),"detailUrl",],],
       
       })
       

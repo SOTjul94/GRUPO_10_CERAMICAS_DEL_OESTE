@@ -1,6 +1,7 @@
 import React from 'react';
 import { Categories } from '../components/categories/Categories';
 import {Metrics} from '../components/metricas/Metrics'
+<script src="https://kit.fontawesome.com/ae1423e40e.js" crossorigin="anonymous"></script>
 
 export const Home = () => {
   return (
