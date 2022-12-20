@@ -1,3 +1,4 @@
+/*
 .header__logo1 {
     display: flex;
     height: 30px;
@@ -93,7 +94,87 @@
     align-items: center;
     border: solid 1px black;
     
+  }*/
+  .footer__padre{
+    border: 1px solid black;
+    background-color: #fff;
   }
+    .productCart__footer__section {
+      background-color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+     
+       
+    }
+    
+  
+  
+    .footer__logo1 {
+      display: flex;
+      height: 30px;
+      padding-left: 6px;
+    }
+    
+    .footer__logo2 {
+      display: flex;
+      height: 23px;
+      padding-left: 0px;
+      margin-bottom: 5px;
+    }
+    
+    .footer__h1 {
+      
+      font-size: 18px;
+      color: #2E6157;
+      width: 20%;
+    
+    }
+    
+    .productCart__footer__div-iconRedes {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 8%;
+    }
+    
+    .productCart__footer__div-Location {
+      display: flex;
+      width: 5%;
+      color: red;
+    }
+    .productCart__footer__div-busqueda-input {
+      font-size: 14px;
+      width: 100px;;
+    }
+    
+    .productCart__footer__section2 {
+      background-color: #69E0C9;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      border: solid 1px black;
+    }
+    .footer__3{
+      margin-left: 12px;
+    }
+    .footer__3 p{
+      margin:0%
+    }
+    .footer__3 h4{
+      margin-bottom: 0%;
+    }
+  
+    .footer__retiro__horario{
+      margin-top: 0%;
+    }
+    .footer__copy{
+      margin-top: 12px;
+      font-size: 11px;
+      margin-left: 12px;
+    }
   @media (min-width:320px) {
     .productCart__header__div-iconRedes{
       display: none;
