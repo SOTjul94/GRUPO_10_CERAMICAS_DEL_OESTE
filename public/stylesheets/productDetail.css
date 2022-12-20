@@ -16,6 +16,12 @@ a{
   margin: 30px auto;
   max-width: 900px;
 }
+header{
+  margin: 8px;
+}
+footer{
+  margin: 8px;
+}
 /*
 .productCart__heater__section {
   background-color: white;
@@ -96,8 +102,6 @@ a{
 }
 .detail__main__section img {
   width: 100%;
-  
-  
 }
 
 .detail__main__section--images{
@@ -321,6 +325,7 @@ color: black;
   
 
 /*FOOTER*/
+/*
 .footer__padre{
   border: 1px solid black;
 }
@@ -400,7 +405,7 @@ color: black;
     font-size: 11px;
     margin-left: 12px;
   }
-  
+  */
   @media (min-width:460px) {
     .productCart__header__div-iconRedes{
       display: flex;
