@@ -25,8 +25,7 @@ module.exports = {
       email,
       password,
       document,
-      nacionality,
-      birthday,
+      nacionality
     } = req.body;
 
     /* creo el registro en la base de datos */
@@ -38,8 +37,7 @@ module.exports = {
       rolId: 2,
       avatar: "defaultUser.png",
       document: document,
-      nacionality: nacionality?.trim(),
-      birthday: birthday,
+      nacionality: nacionality?.trim()
     });
 
     /* redirecciono al login */
@@ -118,7 +116,7 @@ module.exports = {
     let errors = validationResult(req);
     if(errors.isEmpty()){
      /* recibo los datos del formulario */
-    const { firstname, lastname, document, nacionality, gender, birthday } =
+    const { firstname, lastname, document, nacionality, gender } =
       req.body;
 
     /* actualizo el registro en la base de datos */
@@ -129,7 +127,6 @@ module.exports = {
         avatar: req.file ? req.file.filename : req.session.userLogin.avatar,
         document: document,
         nacionality: nacionality?.trim(),
-        birthday: birthday ? birthday : null,
         gender: gender?.trim(),
       },
       {
