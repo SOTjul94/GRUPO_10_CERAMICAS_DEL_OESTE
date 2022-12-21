@@ -1,7 +1,7 @@
 import React from 'react'
 import { RowUser } from './RowUser'
 
-export const TableUser = (users) => {
+export const TableUser = ({users}) => {
   return (
     <table className="table">
         <thead>
@@ -18,7 +18,7 @@ export const TableUser = (users) => {
         </thead>
         <tbody>
         {
-            //users.map(user => <RowUser/>) 
+            users.map(user => <RowUser {...user}/>) 
           }
           
         </tbody>
