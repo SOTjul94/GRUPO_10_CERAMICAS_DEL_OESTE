@@ -43,12 +43,6 @@ export const SideBar = () => {
             <span>Usuarios</span></Link>
     </li>
 
-    
-    <li className="nav-item">
-        <Link className="nav-link" to="/categories">
-            <i className="fas fa-fw fa-table"></i>
-            <span>Categorias</span></Link>
-    </li>
 
     
     <hr className="sidebar-divider d-none d-md-block"/>

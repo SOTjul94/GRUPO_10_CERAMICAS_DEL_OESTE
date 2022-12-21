@@ -182,11 +182,6 @@
     .productCart__header__div-Location{
   display: none;
     } }
-  @media (min-width:425px) {
-    .productCart__header__div-iconRedes{
-      display: flex;
-    }
-  }
   .footer__3 {
     margin-left: 12px;
   }
