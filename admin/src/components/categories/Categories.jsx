@@ -33,17 +33,7 @@ export const Categories = () => {
                 <div className="card-body">
                     <div className="row">
 
-                        {
-                            state.loading
-                                ?
-                                <p>Cargando...</p>
-                                :
-                                state.categories.map((category, index) => (
-                                    <Category {...category} key={category.name + index}/>
-                                ))
-
-
-                        }
+                        <Category/>
 
 
                     </div>

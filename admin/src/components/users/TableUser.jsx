@@ -1,7 +1,7 @@
 import React from 'react'
 import { RowUser } from './RowUser'
 
-export const TableUser = (users, getInfoUser) => {
+export const TableUser = (users) => {
   return (
     <table className="table">
         <thead>
@@ -9,12 +9,16 @@ export const TableUser = (users, getInfoUser) => {
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
             <th scope="col">Email</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Nacionalidad</th>
+            <th scope="col">Número de documento</th>
+            <th scope="col">Género</th>
+            <th scope="col">Fecha de nacimiento</th>
           </tr>
         </thead>
         <tbody>
         {
-            //users.map((user, index) => <RowUser getInfoUser={getInfoUser} {...user} key={index}/>) 
+            //users.map(user => <RowUser/>) 
           }
           
         </tbody>

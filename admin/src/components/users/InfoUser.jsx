@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 
 export const InfoUser = ({firstname,lastname,email,document,birthday,nacionality,gender, avatar}) => {
   return (
@@ -47,4 +47,4 @@ export const InfoUser = ({firstname,lastname,email,document,birthday,nacionality
              </div>
     </div>
   )
-}
+}*/

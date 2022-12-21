@@ -1,22 +1,16 @@
 import React from 'react'
 
-export const RowUser = (id,firstname, email, getInfoUser) => {
+export const RowUser = ({id,firstname,lastname,email,nacionality,gender,document,birthday}) => {
   return (
     <tr>
-          <th scope="row">{id}</th>
-          <td>{firstname}</td>
-          <td>{email}</td>
-          
-          <td>
-         
-          <button className='btn btn-sm btn-primary mx-1' style={{ width: '30px' }}
-          onClick={()=>getInfoUser(id)}>
-            <i className='fas fa-edit'></i>
-            <p>Detalles del Usuario</p>
-            </button>
-         
-          
-          </td>
-    </tr>
+            <th>{id}</th>
+            <th>{firstname}</th>
+            <th>{email}</th>
+            <th>{lastname}</th>
+            <th>{nacionality}</th>
+            <th>{document}</th>
+            <th>{gender}</th>
+            <th>{birthday}</th>
+      </tr>
   )
 }

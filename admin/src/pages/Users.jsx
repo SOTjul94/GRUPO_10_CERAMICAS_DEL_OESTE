@@ -2,14 +2,14 @@ import { useState } from 'react'
 import { UseFetch } from '../hooks/UseFetch'
 import React, { useEffect } from 'react'
 import { TableUser } from '../components/users/TableUser';
-import { InfoUser } from '../components/users/InfoUser';
+//import { InfoUser } from '../components/users/InfoUser';
 
 export const Users = () => {
   const [users, setUsers] = useState({
     loading : true,
     data: []
   });
-  const [user, setUser] = useState({});
+  //const [user, setUser] = useState({});
 
   useEffect(() => {
     UseFetch('/users')
@@ -25,7 +25,7 @@ export const Users = () => {
    
   }, []);
 
-  const getInfoUser = (id) => {
+  /*const getInfoUser = (id) => {
     UseFetch(`/users/${id}`)
      .then(({ok, data}) =>{
       console.log(data);
@@ -35,7 +35,7 @@ export const Users = () => {
         )
       }
      }).catch(() => console.error)
-  }
+  }*/
   return (
     <div className="container">
           <div className="row">
@@ -53,8 +53,7 @@ export const Users = () => {
             :
             <TableUser
             users={users.data}
-            getInfoUser={getInfoUser}
-            />
+             />
        
             
           }
@@ -63,17 +62,7 @@ export const Users = () => {
             
             </div>
             <div className="col-4">
-              {
-                user
-                &&
-                <InfoUser
-                {...user}
-                />
-               
-              
-
-              }
-            </div>
+              </div>
           </div>
     </div>
   )
