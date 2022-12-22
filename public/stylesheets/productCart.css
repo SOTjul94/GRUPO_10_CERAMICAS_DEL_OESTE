@@ -298,12 +298,8 @@ width: 30px;
  #pago {
     width: 100px;
  }
-    .productCart__main__section-end {
-        /* margin-left: 40%; */
-        /* width: 30px; */
-        /* justify-content: center; */
-    }
-   .productCart__main__section-end button {
+
+  .productCart__main__section-end button {
     /* width: 180px; */
     /* margin-bottom: 5px; */
     text-align: center;
