@@ -1,5 +1,10 @@
 <link href="/stylesheets/header.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<%- include('./modalCart') %>
+
+ <%- include('./scripts') %> 
+ 
 <header class="productCart__header">
    
    
@@ -38,6 +43,12 @@
          <div class="icons">
             <a href="/users/logout">Salir</a>
          </div>
+         <div class="icons">
+            <li id="btn-cart"><button type="button" class="btn fs-4" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <i class="fa-solid fa-cart-shopping"></i>
+              </button></li>
+            </div>
+        
          <% if (locals.userLogin.rolId === 1) { %>
             <li><a href="/products/creationProduct">Crear Producto</a></li>
          <% } %>
@@ -109,10 +120,5 @@
     <div class="hide">
         <i class="fa fa-bars" aria-hidden="true"></i> Menu
       </div> 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script>
-    $(".hide").on('click', function() {
-      $("nav ul").toggle('slow');
-    })
-  </script>
+
 </header>

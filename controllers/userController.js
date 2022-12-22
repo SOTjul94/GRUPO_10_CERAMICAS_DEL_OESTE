@@ -71,6 +71,7 @@ module.exports = {
       /* si no hay errores, busco a la segura el usuario que se está loguenado */
       db.User.findOne({ where: { email } })
         .then(({ id, firstname, lastname, rolId, avatar }) => {
+
           /* levanto sesión */
           req.session.userLogin = {
             id,
@@ -84,7 +85,42 @@ module.exports = {
             res.cookie("ceramicas10", req.session.userLogin, {
               maxAge: 1000 * 60,
             });
-          }
+          };
+
+          /* carrito */
+          db.Order.findOne({
+            where : {
+               userId : id,
+               statusId : 1
+            },
+            include : [{
+              association : 'carts',
+              include : [{
+                association : 'product',
+                include : ['images']
+              }]
+            }]
+          }).then(order => {
+            if(order){
+              req.session.orderCart = {
+              userId : order.userId,
+              total : order.total,
+              products : order.carts
+             };
+            return res.redirect('/');
+            }else{
+              db.Order.create({
+                userId : id,
+                status : 1
+              }).then(order => {
+                req.session.orderCart = {
+                  userId : order.userId,
+                  total : 0,
+                  products : []
+                 };
+              })
+            }
+          }).catch((error) => console.log(error));
 
           /* redirecciono al profile */
           return res.redirect("/users/profile");
