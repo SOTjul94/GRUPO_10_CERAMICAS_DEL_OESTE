@@ -50,7 +50,7 @@
                             <%= product.description %>
                         </p>
                                <div class="d-flex flex-column flex-md-row align-content-stretch gap-2">
-                                <button class="btn btn_primary" >Agregar al Carrito</button>
+                                <button class="btn btn_primary" onclick="addCartItem('<%=product.id%>')" >Agregar al Carrito</button>
                                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                                     <button class="btn btn_danger w-100" type="submit">Eliminar producto</button>
                                 </form>
