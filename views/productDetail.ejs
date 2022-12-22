@@ -49,16 +49,21 @@
                         <p class="my-3" style="text-transform: capitalize;">
                             <%= product.description %>
                         </p>
-                               <div class="d-flex flex-column flex-md-row align-content-stretch gap-2">
-                                <button class="btn btn_primary" >Agregar al Carrito</button>
-                                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                                    <button class="btn btn_danger w-100" type="submit">Eliminar producto</button>
-                                </form>
-                                    <a class="btn btn_success" href="/products/editionProduct/<%= product.id %>">Editar producto</a>
-                                  
 
-                               </div> 
-                         
+                        <div class="icons">
+                            <button class="btn btn_primary" >Agregar al Carrito</button></a>
+                        </div>
+                        <% if (locals.userLogin) { %>
+
+                         <% if (locals.userLogin.rolId === 1) { %>
+                            <a class="btn btn_success" href="/products/editionProduct/<%= product.id %>">Editar producto</a>
+                            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                <button class="btn btn_danger" type="submit">Eliminar producto</button>
+                            </form>
+                         <% } %>
+                        <% } else { %>
+                        <% } %>
+
                         </div>
                        
                     </div>
