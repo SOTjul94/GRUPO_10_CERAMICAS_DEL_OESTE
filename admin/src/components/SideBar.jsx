@@ -8,7 +8,7 @@ export const SideBar = () => {
 			
     <Link className="sidebar-brand " to="/">
         <div className="sidebar-brand-icon">
-            <img className="w-100" src="" alt="Ceramicas del Oeste"/>
+            <h3>Ceramicas Del Oeste</h3>
         </div>
     </Link>
 
@@ -43,12 +43,6 @@ export const SideBar = () => {
             <span>Usuarios</span></Link>
     </li>
 
-    
-    <li className="nav-item">
-        <Link className="nav-link" to="/categories">
-            <i className="fas fa-fw fa-table"></i>
-            <span>Categorias</span></Link>
-    </li>
 
     
     <hr className="sidebar-divider d-none d-md-block"/>
