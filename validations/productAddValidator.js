@@ -31,7 +31,6 @@ module.exports = [
     .notEmpty()
     .withMessage("Indica el numero de código")
     .bail()
-    .isNumeric({})
     .withMessage("Solo números positivos"),
   check("recomendation").notEmpty().withMessage("Debes dar una recomendación"),
   check("description").notEmpty().withMessage("Debes dar una descripción"),

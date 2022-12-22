@@ -14,12 +14,6 @@
     --colorCrema:antiquewhite;
 }
 
-.bg-crema {
-    background-color: antiquewhite;
-}
-.bg-verde {
-    background-color: var(--colorVerdeBajo);
-}
 
 .btn {
     border: none;

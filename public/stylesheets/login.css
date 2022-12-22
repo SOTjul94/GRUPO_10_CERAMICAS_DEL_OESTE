@@ -22,7 +22,9 @@ a{
 }
 body{
   font-family: 'ABeeZee', sans-serif;
-  background-color: #C0FAEE;
+}
+#productCart__header__div-img{
+  margin-right: 15%;
 }
 
 /*
@@ -149,6 +151,7 @@ form .button{
   color: white;
   font-size: 20px;
   cursor: pointer;
+  margin-top: 3%;
 
   
 }
@@ -368,7 +371,7 @@ margin-left: 6%;
       margin-left: 6.9%;
     }
     .container{
-      margin: 50px 450px;
+      margin: 25px 450px;
       box-shadow: 10px 10px 10px 5px rgb(185, 180, 180);
     }
 }

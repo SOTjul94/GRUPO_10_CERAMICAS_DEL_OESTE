@@ -11,8 +11,7 @@ module.exports = {
         
     try {
       let users = await db.User.findAll({
-        attributes : ['id', 'firstname', 'email'
-        ,[literal(`CONCAT('${req.protocol}://${req.get("host")}${req.baseUrl}/', id)`),'detailUrl']] 
+        attributes : ['id', 'firstname', 'email','birthday','gender','document','birthday',[literal(`CONCAT('${req.protocol}://${req.get("host")}${req.baseUrl}/', id)`),'detailUrl']] 
       })
           
     
@@ -21,7 +20,7 @@ module.exports = {
         meta: {
           total: users.length
         },
-        users: users
+        data: users
         
     })
     } catch (error) {
