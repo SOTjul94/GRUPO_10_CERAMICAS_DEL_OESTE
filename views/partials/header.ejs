@@ -1,5 +1,6 @@
 <link href="/stylesheets/header.css" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
 <header class="productCart__header">
    
    
@@ -28,9 +29,7 @@
             </form>
             </div>
         
-        <div class="icons">
-            <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+      
         <% if (locals.userLogin) { %>
          <div class="icons">
             <a href="/users/profile">Mi perfil </a>
@@ -38,6 +37,10 @@
          <div class="icons">
             <a href="/users/logout">Salir</a>
          </div>
+         <div class="icons">
+            <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        
          <% if (locals.userLogin.rolId === 1) { %>
             <li><a href="/products/creationProduct">Crear Producto</a></li>
          <% } %>
@@ -109,10 +112,5 @@
     <div class="hide">
         <i class="fa fa-bars" aria-hidden="true"></i> Menu
       </div> 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script>
-    $(".hide").on('click', function() {
-      $("nav ul").toggle('slow');
-    })
-  </script>
+
 </header>

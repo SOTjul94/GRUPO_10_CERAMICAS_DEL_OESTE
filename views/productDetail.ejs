@@ -50,7 +50,7 @@
                             <%= product.description %>
                         </p>
                                <div class="d-flex flex-column flex-md-row align-content-stretch gap-2">
-                                <button class="btn btn_primary" >Agregar al Carrito</button>
+                                <button class="btn btn_primary" onclick="addCartItem('<%=product.id%>')" >Agregar al Carrito</button>
                                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                                     <button class="btn btn_danger w-100" type="submit">Eliminar producto</button>
                                 </form>
@@ -120,6 +120,7 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
                 crossorigin="anonymous"></script>
+        <%- include('./partials/scripts') %> 
 </body>
 
 </html>
