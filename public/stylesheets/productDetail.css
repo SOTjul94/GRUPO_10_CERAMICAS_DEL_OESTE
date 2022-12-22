@@ -22,6 +22,14 @@ header{
 footer{
   margin: 8px;
 }
+.btn__primary{
+  width: 30%;
+}
+.btn_success{
+  width: 30%;
+  margin: 5px 0;
+}
+
 /*
 .productCart__heater__section {
   background-color: white;
