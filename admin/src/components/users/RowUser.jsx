@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const RowUser = ({id,firstname,lastname,email,nacionality,gender,document,birthday}) => {
+export const RowUser = ({id,firstname,lastname,email,nacionality,document,gender}) => {
   return (
     <tr>
             <th>{id}</th>
@@ -10,7 +10,7 @@ export const RowUser = ({id,firstname,lastname,email,nacionality,gender,document
             <th>{nacionality}</th>
             <th>{document}</th>
             <th>{gender}</th>
-            <th>{birthday}</th>
+            
       </tr>
   )
 }

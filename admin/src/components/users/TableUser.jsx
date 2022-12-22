@@ -3,7 +3,7 @@ import { RowUser } from './RowUser'
 
 export const TableUser = ({users}) => {
   return (
-    <table className="table">
+    <table  className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -12,8 +12,8 @@ export const TableUser = ({users}) => {
             <th scope="col">Apellido</th>
             <th scope="col">Nacionalidad</th>
             <th scope="col">Número de documento</th>
-            <th scope="col">Género</th>
-            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Genero</th>
+            
           </tr>
         </thead>
         <tbody>

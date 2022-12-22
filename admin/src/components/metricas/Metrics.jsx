@@ -14,7 +14,7 @@ export const Metrics = () => {
         users : {
             title : "Usuarios registrados",
             icon : "fa-users",
-            value : 5,
+            value : 4,
             color : "success"
         },
         categories : {
