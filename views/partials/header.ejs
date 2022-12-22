@@ -1,9 +1,5 @@
 <link href="/stylesheets/header.css" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<%- include('./modalCart') %>
-
- <%- include('./scripts') %> 
  
 <header class="productCart__header">
    
@@ -33,9 +29,7 @@
             </form>
             </div>
         
-        <div class="icons">
-            <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+      
         <% if (locals.userLogin) { %>
          <div class="icons">
             <a href="/users/profile">Mi perfil </a>
@@ -44,10 +38,8 @@
             <a href="/users/logout">Salir</a>
          </div>
          <div class="icons">
-            <li id="btn-cart"><button type="button" class="btn fs-4" data-bs-toggle="modal" data-bs-target="#cartModal">
-            <i class="fa-solid fa-cart-shopping"></i>
-              </button></li>
-            </div>
+            <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
         
          <% if (locals.userLogin.rolId === 1) { %>
             <li><a href="/products/creationProduct">Crear Producto</a></li>

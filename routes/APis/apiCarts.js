@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {list, addItem, removeItem, removeAllItem} = require('../../controllers/APis/apiCartsController');
+const {list, addItem, removeItem, modifyQuantity} = require('../../controllers/APis/apiCartsController');
 
 
 
@@ -11,8 +11,8 @@ const {list, addItem, removeItem, removeAllItem} = require('../../controllers/AP
 
 router
     .get('/', list)
-    .post('/:id', addItem)
-    .delete('/all/:id', removeAllItem)
+    .post('/', addItem)
+    .post('/quantity',modifyQuantity)
     .delete('/:id', removeItem)
 ;
 
