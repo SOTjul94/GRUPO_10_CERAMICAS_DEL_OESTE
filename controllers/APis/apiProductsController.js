@@ -11,17 +11,26 @@ module.exports = {
     getAllProducts : async (req,res) => {
         
     try {
+<<<<<<< HEAD
       const products = await db.Products.findAll({
           attributes : {
             exclude : ['updateAt', 'createdAt'],
             include : ['name', 'description', 'id','price']
           }
+=======
+      const products = await db.Product.findAll({
+        attributes: 
+           ["id","name","description","price","category",[literal(`CONCAT('${req.protocol}://${req.get("host")}${req.baseUrl}/', id)`),"detailUrl",],],
+      
+>>>>>>> 834b447851ec4363e7489d4a20301b716e225027
       })
-      const token = await sign({id});
+      
     return res.status(200).json({
-        count : 12,
-        products,
-        urlData: `${req.protocol}://${req.get("host")}${req.baseUrl}/me/${token}`
+      ok: true,
+      meta: {
+        totalProducts: products.length,
+      },
+      data: products,
     })
     } catch (error) {
       res.status(500).json({
@@ -31,21 +40,22 @@ module.exports = {
       }); 
 }
     },
-    getByIdProducts : (req,res) => {
+    getByIdProducts : async (req,res) => {
       try {
-        const options = {
+         const {id} = req.params;
+        let product = await db.Product.findByPk(id, {
             attributes : {
-              exlude : ['createdAt', 'updatedAt'],
-              include : [[literal(`CONCAT( '${req.protocol}://${req.get("host")}/products/image/',images.file)`),'urlImage']]
+              exclude : ['createdAt', 'updatedAt', 'rolId', 'password'],
+              include : [[literal(`CONCAT('${req.protocol}://${req.get("host")}${req.baseUrl}/images/', 'id')`),"fileUrl",]]
             }
-        }
-        const {id} = req.params.id
-        const data = db.Products.findByPk(id,options)
+        })
   
        return res.status(200).json({
-          ok:true,
-          status:200,
-          data
+           ok:true,
+          meta: {
+            total :1
+          },
+          data : product
         })
       } catch (error) {
         res.status(500).json({

@@ -47,12 +47,12 @@ const controller = {
 		return res.render("creationProduct");
 	},
 	store: (req, res) => {
-
-
+		let errors = validationResult(req);
+		
 		/* ************************** */
 		/* HACER VALIDACIONES BACKEND */
 		/* ************************** */
-
+		if(errors.isEmpty()){
 		const {name, model, price, box, discount, description, color, style, dimension, transit, origin ,pei, recomendation, code, category} = req.body
 
 		db.Product.create({
@@ -89,6 +89,12 @@ const controller = {
 				return res.redirect("/products/totalProducts");
 			})
 			.catch((error) => console.log(error));
+		}else {
+			return res.render("creationProduct",{
+				errors : errors.mapped(),
+				old : req.body
+			});
+		}
 	},
 	editionProduct: (req, res) => {
 		db.Product.findByPk(req.params.id,{

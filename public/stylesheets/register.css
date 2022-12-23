@@ -7,6 +7,15 @@
     background: rgb(0,167,14);
     background: linear-gradient(0deg, rgba(0,167,14,1) 0%, rgba(31,255,0,0) 9%, rgba(10,227,9,0) 19%);
   }
+.body{
+  background-color: red;
+}
+header{
+  margin: 8px;
+}
+footer{
+  margin: 8px;
+}
 /*
 .index__header__menu--nav{
     background-color: #69E0C9;
@@ -150,6 +159,7 @@ textarea:valid ~ label {
 .registro__main{
     padding: 1px;
 }
+/*
 .footer__padre{
   border: 1px solid var(--colorNegro);
   background-color: #fff;
@@ -230,7 +240,7 @@ textarea:valid ~ label {
     font-size: 11px;
     margin-left: 12px;
   }
-
+*/
 /*Tablet*/
 @media (min-width:768px) {
     h1{
@@ -266,7 +276,6 @@ textarea:valid ~ label {
 
 /*Desktop*/
 @media (min-width:1024px) {
-   
     h1{
         text-align: center;
     }

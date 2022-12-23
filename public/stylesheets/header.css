@@ -1,6 +1,11 @@
 @import './general.css';
 
-
+h1{
+  font-size: 37px;
+}
+.sesionCelu{
+  display: none;
+}
 li{
   list-style: none;
 }
@@ -30,7 +35,7 @@ color: red;
   display: flex;
   justify-content: space-between;
 }
-.header__h1  {
+.header__h1{
     color: #2E6157;
    
     margin-left: 18px;
@@ -63,12 +68,14 @@ color: red;
     background-color: #fff;
     overflow: hidden;
     margin-bottom: 7px;
+
     }
     #search-text {
     font-size: 14px;
-    color: #ddd;
+    color: #2E6157;
     border-width: 0;
     background: transparent;
+    outline: none;
     }
     
     #search-box input[type="text"] {
@@ -115,6 +122,7 @@ color: red;
     flex-wrap: wrap;
     align-items: center;
     border: solid 1px black;
+    justify-content: space-around;
   }
   
   .header__logo1 {
@@ -206,7 +214,33 @@ color: red;
     }
     .productCart__header__div-Location{
   display: none;
-    } }
+    } 
+    #search-box1{
+      margin-right: 6%;
+    }
+    .header__h1{
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+  
+  }
+  @media (min-width:375px) {
+    .productCart__header__div-iconRedes{
+      display: none;
+    }
+    .productCart__header__div-Location{
+  display: none;
+    } 
+    #search-box1{
+      margin-right: 10%;
+    }
+    .header__h1{
+      margin-left: 0px;
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+  
+  }
   
   @media (min-width:425px) {
     .productCart__header__div-iconRedes {
@@ -216,7 +250,14 @@ color: red;
     .productCart__header__div-Location {
       display: none;
     }
+    
   }
+  @media (max-width:425px) {
+    .sesionCelu{
+      display: block;
+    }
+  }
+ 
   @media (min-width: 768px) {
 
   .index__header__menu--nav{
@@ -248,4 +289,22 @@ color: red;
     margin-bottom: 1%;
   
   }
+  .productCart__header__div-iconRedes{
+    display: none;
+  }
+  .productCart__header__div-Location{
+display: none;
+  } 
 }
+@media (max-width: 768px) {
+  .productCart__header__div-iconRedes {
+    display: none;
+}
+.productCart__header__div-iconRedes{
+      display: none;
+    }
+    .productCart__header__div-Location{
+  display: none;
+    } 
+}
+
