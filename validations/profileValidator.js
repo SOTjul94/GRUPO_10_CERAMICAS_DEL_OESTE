@@ -22,9 +22,6 @@ module.exports = [
         }),
     check('gender')
         .isString('on').withMessage('No está permitido utilizar carácteres numéricos'),
-    check('birthday')
-        .isISO8601().bail()
-        .toDate().withMessage('Debe llenar este campo')
     
 
  ]

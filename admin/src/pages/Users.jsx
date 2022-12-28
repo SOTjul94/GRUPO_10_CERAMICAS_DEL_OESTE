@@ -2,14 +2,14 @@ import { useState } from 'react'
 import { UseFetch } from '../hooks/UseFetch'
 import React, { useEffect } from 'react'
 import { TableUser } from '../components/users/TableUser';
-//import { InfoUser } from '../components/users/InfoUser';
+
 
 export const Users = () => {
   const [users, setUsers] = useState({
     loading : true,
     data: []
   });
-  //const [user, setUser] = useState({});
+ 
 
   useEffect(() => {
     UseFetch('/users')
@@ -25,27 +25,17 @@ export const Users = () => {
    
   }, []);
 
-  /*const getInfoUser = (id) => {
-    UseFetch(`/users/${id}`)
-     .then(({ok, data}) =>{
-      console.log(data);
-      if (ok) {
-        setUser(
-          data 
-        )
-      }
-     }).catch(() => console.error)
-  }*/
+  
   return (
     <div className="container">
           <div className="row">
-            <div className="col-8">
+            <div className="">
               <div className="card">
                 <div className="card-header">
-                <h4>Productos</h4>
+                <h4>Usuarios</h4>
                 </div>
                 
-                <div className="card-body">
+                <div style={{ width: '100%' }} className="card-body" id='cardbody'>
                 {
             users.loading
             ?

@@ -19,7 +19,7 @@
         <section class="registro__main__section">
             <h1>Datos personales del titular</h1>
             <hr class="mb-5">
-            <form action="" class="row" method="POST" id="register" enctype="multipart/form-data" >
+            <form action="" class="row" method="POST" id="register" >
                 <div class="input-field col-12 col-md-6">
                     <label class="colorLabek" for="nombre" >Nombre*</label>
                     <input class="form-control" type="text" placeholder="nombre" id="name" name="firstname" value="<%= locals.old && old.firstname ? old.firstname : null %>">
@@ -49,12 +49,6 @@
                     <input class="form-control" type="text" placeholder="Seleccionar" id="gender" name="gender">
                 </div>-->
                 <div class="input-field col-12 col-md-6">
-                    <label class="colorLabek" for="fecha">Fecha de nacimiento*</label>
-                    <input class="form-control" type="date" name="birthday" id="birthday" value="<%= locals.old && old.birthday ? moment(old.birthday).format('YYYY-MM-DD') : null %>" min="1985-01-01" max="2022-12-31">
-                    <p id="errorNombre"></p>
-                    <p class="form_error_msg"><%= locals.errors && errors.birthday? errors.birthday.msg : null%> </p>
-                </div>
-                <div class="input-field col-12 col-md-6">
                     <label class="colorLabek" for="password">Contraseña*</label>
                     <input class="form-control" type="password" placeholder="(entre 8 y 15 caracteres, usar mayúsculas, letra y número)"  id="pass" name="password" value="<%= locals.old && old.password ? old.password : null %>">
                     <p id="passMsg"></p>
@@ -67,7 +61,7 @@
                     <p class="form_error_msg"><%= locals.errors && errors.email? errors.email.msg : null%> </p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
-                    <button class="btn btn-primary w-100 m-2" type="submit" id="registrerButton">Finalizar</button>
+                    <button class="btn btn-primary w-100 m-2" type="submit" id="registrerButton">Registrate</button>
                 </div>
                 <p id="msgEditionError"></p>
             </form>

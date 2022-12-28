@@ -16,11 +16,11 @@ body{
 	55% { transform: translateX(-300%); }
 	70% { transform: translateX(-300%); }
 
-	75% { transform: translateX(-400%); }
-	100% { transform: translateX(-400%); }
-
 }
 
+.exteriorImg{
+  margin: 1%;
+}
 
 .wrapper {
 	max-width: 1200px;
